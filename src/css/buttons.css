@@ -1,0 +1,22 @@
+.btn{
+    max-width: 150px;
+    width: 50%;
+    height: 40px;
+    border: 1px solid var(--laranja);
+    cursor: pointer;
+    color: var(--laranja);
+    background-color: white;
+    border-radius: 10px;
+}
+
+.btn:hover{
+    background-color: #F6E7C9;
+}
+
+/* ---------------------------------------------------------- */
+
+@media (max-width: 1000px) {
+    .btn{
+        width: 60%;
+    }
+  }
