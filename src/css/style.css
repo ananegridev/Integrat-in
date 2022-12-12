@@ -131,7 +131,8 @@ footer {
 @media (max-width: 768px) {
   body {
     height: 100vh;
-    align-items: initial;
+    /* align-items: initial; */
+    display: block;
   }
 
   main {
