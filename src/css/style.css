@@ -65,6 +65,8 @@ nav {
   border-bottom: 1px solid black;
   display: flex;
   align-items: center;
+
+  padding: 10px 0;
 }
 
 nav div {
@@ -164,6 +166,7 @@ footer {
     width: 80%;
   }
   footer{
-    height: 20px;
+    /* height: 20px; */
+    padding: 10px;
   }
 }
