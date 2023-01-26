@@ -6,10 +6,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Integrat-in</title>
     <link rel="shortcut icon" href="./src/img/logo.svg" />
-    <link rel="stylesheet" href="./src/css/quiz.css" />
+    <link rel="stylesheet" href="./src/css/style.css" />
     <link rel="stylesheet" href="./src/css/font.css" />
+    <link rel="stylesheet" href="./src/css/acc.css" />
     <link rel="stylesheet" href="./src/css/buttons.css" />
+    <link rel="stylesheet" href="./src/css/footer.css" />
+    <link rel="stylesheet" href="./src/css/nav.css" />
     <link rel="stylesheet" href="./src/css/form.css" />
+
+    <link rel="stylesheet" href="./src/css/quiz.css" />
+
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -26,70 +32,222 @@
         </div>
       </nav>
 
-      <!-- NAO ALTERAR ACIMA -->
+      <!-- N ALTERAR ACIMA -->
+      <div class="container">
+        <section>
+          <div class="content__quiz-text">
+            <h1>Quiz</h1>
+            <p>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Veniam id
+              consequatur aut quae ut officiis natus possimus in, esse nam
+              deleniti ratione nemo aperiam assumenda! Eius reiciendis illo
+              tempore accusamus?
+            </p>
+          </div>
+        </section>
 
-      <section>
-        <div class="content-text">
-          <h1 class="font-700">Quiz</h1>
-          <p class="font-400">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Veniam id
-            consequatur aut quae ut officiis natus possimus in, esse nam
-            deleniti ratione nemo aperiam assumenda! Eius reiciendis illo
-            tempore accusamus?
-          </p>
-        </div>
-
-        <div class="content-value">
-          <p class="content-value-text">
+        <section class="content__quiz-value">
+          <p>
             Select the answers based on how well each statement describes you.
           </p>
 
-          <div class="content-value-box">
-            <div class="value-box box-1"></div>
-            <div class="value-box box-2"></div>
-            <div class="value-box box-3"></div>
-            <div class="value-box box-4"></div>
-            <div class="value-box box-5"></div>
-            <div class="value-box box-6"></div>
-            <div class="value-box box-7"></div>
-          </div>
-
-          <div class="content-value-box-text">
-            <p> Stromgly <br /> Disagree </p>
-            <p>Disagree</p>
-            <p>Neutral</p>
-            <p>Agree</p>
-            <p> Stromgly <br /> Disagree </p>
-          </div>
-        </div>
-
-      </section>
-        <form action="" class="form-quiz">
-          <!-- <div>
-
-            <p>Lorem</p>
-            <div>
-              <input type="checkbox" name="" id="" class="check box-1">
-              <input type="checkbox" name="" id="">
-              <input type="checkbox" name="" id="">
-              <input type="checkbox" name="" id="">
-              <input type="checkbox" name="" id="">
-              <input type="checkbox" name="" id="">  
+          <div class="box__circle-question">
+            <div class="circle value-color-1">
+              <p>
+                Stromgly <br />
+                Disagree
+              </p>
             </div>
+            <div class="circle value-color-2"><p>Disagree</p></div>
+            <div class="circle value-color-3"><p>Disagree</p></div>
+            <div class="circle value-color-4"><p>Neutral</p></div>
+            <div class="circle value-color-5"><p>Agree</p></div>
+            <div class="circle value-color-6"><p>Agree</p></div>
+            <div class="circle value-color-7">
+              <p>
+                Stromgly <br />
+                Agree
+              </p>
+            </div>
+          </div>
+        </section>
 
-          </div> -->
+        <section class="content__quiz">
+          <div id="progress_bar">
+            
+            <form class="questions_box">
+              
+              <div id="question-1">
+                <h2>Questão 1</h2>
+                <h3>
+                  In this company, there is usually joint planning among the
+                  areas of marketing, logistics, and production.
+                </h3>
 
-          <img src="./src/img/quizPrototipo.png" alt="">
+                <div class="box__circle-question">
+                  <div class="circle value-color-1"></div>
+                  <div class="circle value-color-2"></div>
+                  <div class="circle value-color-3"></div>
+                  <div class="circle value-color-4"></div>
+                  <div class="circle value-color-5"></div>
+                  <div class="circle value-color-6"></div>
+                  <div class="circle value-color-7"></div>
+                </div>
 
-          
-      <a href="result.html" class="btn">Next</a>
-        </form>
+                <div class="box__answers">
+                  <div>
+                    <input
+                      id="question-1-answer-a"
+                      type="radio"
+                      name="favelang"
+                      value="1"
+                    />
+                  </div>
+                  <div>
+                    <input
+                      id="question-1-answer-b"
+                      type="radio"
+                      name="favelang"
+                      value="2"
+                    />
+                  </div>
+                  <div>
+                    <input
+                      id="question-1-answer-c"
+                      type="radio"
+                      name="favelang"
+                      value="3"
+                    />
+                  </div>
+                  <div>
+                    <input
+                      id="question-1-answer-d"
+                      type="radio"
+                      name="favelang"
+                      value="4"
+                    />
+                  </div>
+                  <div>
+                    <input
+                      id="question-1-answer-e"
+                      type="radio"
+                      name="favelang"
+                      value="5"
+                    />
+                  </div>
+                  <div>
+                    <input
+                      id="question-1-answer-f"
+                      type="radio"
+                      name="favelang"
+                      value="6"
+                    />
+                  </div>
+                  <div>
+                    <input
+                      id="question-1-answer-f"
+                      type="radio"
+                      name="favelang"
+                      value="7"
+                    />
+                  </div>
+                </div>
+                <!-- <div id="submit1" class="button">Enviar Resposta</div> -->
+                <div class="clearfix"></div>
+              </div>
 
-      
-      <!-- NÃO ALTERAR ABAIXO -->
+              <div id="question-1">
+                <h2>Questão 1</h2>
+                <h3>
+                  In this company, there is usually joint planning among the
+                  areas of marketing, logistics, and production.
+                </h3>
 
+                <div class="box__circle-question">
+                  <div class="circle value-color-1"></div>
+                  <div class="circle value-color-2"></div>
+                  <div class="circle value-color-3"></div>
+                  <div class="circle value-color-4"></div>
+                  <div class="circle value-color-5"></div>
+                  <div class="circle value-color-6"></div>
+                  <div class="circle value-color-7"></div>
+                </div>
 
-      <footer></footer>
+                <div class="box__answers">
+                  <div>
+                    <input
+                      id="question-1-answer-a"
+                      type="radio"
+                      name="favelang"
+                      value="1"
+                    />
+                  </div>
+                  <div>
+                    <input
+                      id="question-1-answer-b"
+                      type="radio"
+                      name="favelang"
+                      value="2"
+                    />
+                  </div>
+                  <div>
+                    <input
+                      id="question-1-answer-c"
+                      type="radio"
+                      name="favelang"
+                      value="3"
+                    />
+                  </div>
+                  <div>
+                    <input
+                      id="question-1-answer-d"
+                      type="radio"
+                      name="favelang"
+                      value="4"
+                    />
+                  </div>
+                  <div>
+                    <input
+                      id="question-1-answer-e"
+                      type="radio"
+                      name="favelang"
+                      value="5"
+                    />
+                  </div>
+                  <div>
+                    <input
+                      id="question-1-answer-f"
+                      type="radio"
+                      name="favelang"
+                      value="6"
+                    />
+                  </div>
+                  <div>
+                    <input
+                      id="question-1-answer-f"
+                      type="radio"
+                      name="favelang"
+                      value="7"
+                    />
+                  </div>
+                </div>
+                <!-- <div id="submit1" class="button">Enviar Resposta</div> -->
+                <div class="clearfix"></div>
+              </div>
+            </form>
+          </div>
+        </section>
+      </div>
+      <!-- N ALTERAR ABAIXO -->
+
+      <footer>
+        <!-- <a href="#">{code:ananegri}</a> -->
+        <a href="#"
+          ><img src="./src/img/author-code/brackets.svg" alt="brackets"
+        /></a>
+      </footer>
     </main>
+
+    <script src="./src/js/acc.js" defer></script>
   </body>
 </html>
