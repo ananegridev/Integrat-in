@@ -146,3 +146,14 @@ input{
     height: 55px;
   }
 }
+
+
+@media (max-width: 406px) {
+  .circle{
+    max-width: 42px;
+    width: 100%;
+    height: 42px;
+  }
+  .circle p{
+    font-size: 0.5rem;
+  }
