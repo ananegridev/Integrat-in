@@ -8,11 +8,11 @@
     <link rel="shortcut icon" href="./src/img/logo.svg" />
     <link rel="stylesheet" href="./src/css/style.css" />
     <link rel="stylesheet" href="./src/css/font.css" />
-    <link rel="stylesheet" href="./src/css/acc.css">
-    <link rel="stylesheet" href="./src/css/buttons.css">
-    <link rel="stylesheet" href="./src/css/footer.css">
-    <link rel="stylesheet" href="./src/css/nav.css">
-    <link rel="stylesheet" href="./src/css/form.css">
+    <link rel="stylesheet" href="./src/css/acc.css" />
+    <link rel="stylesheet" href="./src/css/buttons.css" />
+    <link rel="stylesheet" href="./src/css/footer.css" />
+    <link rel="stylesheet" href="./src/css/nav.css" />
+    <link rel="stylesheet" href="./src/css/form.css" />
 
     <link rel="stylesheet" href="./src/css/start.css" />
 
@@ -34,7 +34,6 @@
 
       <!-- N ALTERAR ACIMA -->
       <div class="container">
-
         <section class="content__start-text">
           <h1 class="font-700">About</h1>
           <p class="font-400">
@@ -45,40 +44,47 @@
 
         <section class="content__start-box">
           
-          <form action="" method="get">
-            
-            <input type="text" name="" id="" placeholder="Whats your name?" />
+          <form method="GET" action="quiz.html" id="form">
+            <input
+              type="text"
+              name="name"
+              id="name"
+              class="js-input-name"
+              placeholder="Whats your name?"
+              required
+            />
 
-            <select name="" id="">
+            <select
+              name="company"
+              id="company"
+              class="js-input-company"
+              required
+            >
               <option value="" selected>What's your company?</option>
-              <option value="">Lorem</option>
-              <option value="">Lorem</option>
-              <option value="">Lorem</option>
+              <option value="mkt">Mkt</option>
+              <option value="log">Logistic</option>
+              <option value="ceo">CEO</option>
             </select>
 
             <input
               type="text"
-              name=""
-              id=""
+              name="work"
+              id="work"
+              class="js-input-work"
               placeholder="What sector do you work?"
+              required
             />
 
-            <a href="quiz.html" class="btn">Next</a>
-            <!-- <button class="btn">Next</button> -->
-            
+            <!-- <a href="quiz.html" class="btn">Next</a> -->
+            <button class="btn" type="submit" onclick="nextPage()">Next</button>
           </form>
-      
-        <div class="content__start-img">
-          <img src="./src/img/introduction.svg" alt="" />
-        </div>
 
-      </div>
+          <div class="content__start-img">
+            <img src="./src/img/introduction.svg" alt="" />
+          </div>
         </section>
- 
       </div>
-    
-
-
+      <!-- END CONTAINER -->
 
       <!-- N ALTERAR ABAIXO -->
 
@@ -90,6 +96,7 @@
       </footer>
     </main>
 
-    <script src="./src/js/acc.js" defer></script>
+    <script src="./src/js/form.js" defer></script>
+    <!-- <script src="./src/js/quiz.js" defer></script> -->
   </body>
 </html>

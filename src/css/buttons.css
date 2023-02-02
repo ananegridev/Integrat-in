@@ -8,6 +8,12 @@
   background-color: white;
   border-radius: 10px;
   font-weight: 700;
+
+  -webkit-font-smoothing: subpixel-antialiased;
+  -webkit-transition: background-color 200ms ease-in-out;
+  -moz-transition: background-color 200ms ease-in-out;
+  -o-transition: background-color 200ms ease-in-out;
+  transition: background-color 200ms ease-in-out;
 }
 
 .btn:hover {
