@@ -76,3 +76,36 @@
     height: 55px;
   }
 }
+
+@media (max-width: 580px) {
+  .box-question div{
+    max-width: 45px;
+    width: 100%;
+  }
+  .box-circle{
+    height: 45px;
+  }
+}
+
+@media (max-width: 482px) {
+  .box-question div{
+    max-width: 35px;
+    width: 100%;
+  }
+  .box-circle{
+    height: 35px;
+  }
+}
+
+@media (max-width: 394px) {
+  .question p, h2{
+    text-align: center;
+  }
+  .box-question div{
+    max-width: 30px;
+    width: 100%;
+  }
+  .box-circle{
+    height: 30px;
+  }
+}
