@@ -2,6 +2,7 @@ form{
     width: 45%;
     display: flex;
     flex-direction: column;
+    justify-content: center;
     padding: 10px 0;
 }
 
@@ -27,6 +28,22 @@ input::placeholder {
 
   select{
     color: #0000007e;
+  }
+
+  form span {
+    /* display: none; */
+    font-size: 0.7rem;
+    margin: 2px;
+    color: red;
+   
+  }
+  
+  /* #nameError.visible {
+    display: block;
+  } */
+  
+  input.invalid {
+    border-color: red;
   }
 
   @media (max-width: 768px) {

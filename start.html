@@ -45,6 +45,10 @@
         <section class="content__start-box">
           
           <form method="GET" action="quiz.html" id="form">
+            
+            <span role="alert" id="nameError" aria-hidden="true">
+              Please Enter Your Name
+            </span>
             <input
               type="text"
               name="name"
@@ -54,18 +58,24 @@
               required
             />
 
+            <span role="alert" id="nameError" aria-hidden="true">
+              Please Enter Your Company
+            </span>
             <select
               name="company"
               id="company"
               class="js-input-company"
               required
             >
-              <option value="" selected>What's your company?</option>
-              <option value="mkt">Mkt</option>
-              <option value="log">Logistic</option>
-              <option value="ceo">CEO</option>
+              <option value="" selected autocomplete>What's your company?</option>
+              <option value="mkt">Ambev</option>
+              <option value="log">Natura&amp;Co</option>
+              <option value="ceo">Minsait</option>
             </select>
 
+            <span role="alert" id="nameError" aria-hidden="true">
+              Please Enter Your Occupation
+            </span>
             <input
               type="text"
               name="work"
@@ -75,8 +85,8 @@
               required
             />
 
-            <!-- <a href="quiz.html" class="btn">Next</a> -->
-            <button class="btn" type="submit" onclick="nextPage()">Next</button>
+
+            <button class="btn" type="submit" id="submit" onclick="nextPage()">Next</button>
           </form>
 
           <div class="content__start-img">
