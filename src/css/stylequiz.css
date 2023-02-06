@@ -68,6 +68,10 @@
   border-bottom: none;
 }
 
+.row-box-2, .row-box-3, .row-box-4{
+  display: none;
+}
+
 .box-circle {
   height: 75px;
   border-radius: 100px;

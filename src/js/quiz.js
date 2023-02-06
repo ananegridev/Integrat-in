@@ -189,7 +189,11 @@ q34.addEventListener('click', function(event){
 
 
 
+// --------- Paginação
 
+function quizPage(){
+    
+}
 
 
 
