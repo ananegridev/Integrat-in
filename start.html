@@ -67,21 +67,51 @@
               class="js-input-company"
               required
             >
-              <option value="" selected autocomplete>What's your company?</option>
-              <option value="mkt">Ambev</option>
-              <option value="log">Natura&amp;Co</option>
-              <option value="ceo">Minsait</option>
+              <option value="" selected disabled>Select your Company</option>
+              <option value="Ambev">Ambev</option>
+              <option value="NaturaCo">Natura&amp;Co</option>
+              <option value="Minsait">Minsait</option>
+              <option value="other">Other</option>
             </select>
 
+            <div class="form-flag-company">
+              <span role="alert" id="nameError" aria-hidden="true">
+                Check an Option
+              </span>
+
+              <div class="row-radio-start">
+                <input type="radio" name="typeCompany" id="typeCompany" class="js-input-typecompany" value="true"> <p class="text-type-radio-start">New Company</p>
+              </div>
+
+              <div class="row-radio-start">
+                <input type="radio" name="typeCompany" id="typeCompany" class="js-input-typecompany" value="false"> <p class="text-type-radio-start">Existing Company</p>
+              </div>
+            </div>
+
+            <div>
+              <span role="alert" id="nameError" aria-hidden="true">
+                Please Enter Your the Company Name
+              </span>
+              <input
+                type="text"
+                name="companyName"
+                id="companyName"
+                class="js-input-companyname"
+                placeholder="Whats your Company Name?"
+                required
+              />
+            </div>
+
+
             <span role="alert" id="nameError" aria-hidden="true">
-              Please Enter Your Occupation
+              Please Enter Your Departament?
             </span>
             <input
               type="text"
-              name="work"
-              id="work"
-              class="js-input-work"
-              placeholder="What sector do you work?"
+              name="departament"
+              id="departament"
+              class="js-input-departament"
+              placeholder="What is your Departament?"
               required
             />
 
@@ -92,6 +122,7 @@
           <div class="content__start-img">
             <img src="./src/img/introduction.svg" alt="" />
           </div>
+          
         </section>
       </div>
       <!-- END CONTAINER -->

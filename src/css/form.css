@@ -6,6 +6,17 @@ form{
     padding: 10px 0;
 }
 
+.form-flag-company{
+    width: 100%;
+    margin-bottom: 5px;
+}
+
+.row-radio-start{
+  display: flex;
+  align-items: center;
+
+}
+
 input, select{
     max-width: 400px;
     width: 100%;
@@ -30,11 +41,18 @@ input::placeholder {
     color: #0000007e;
   }
 
+  
+#typeCompany{
+  width: 30px;
+  margin: 0;
+}
+
   form span {
     /* display: none; */
     font-size: 0.7rem;
     margin: 2px;
     color: red;
+
    
   }
   
@@ -53,6 +71,7 @@ input::placeholder {
         flex-direction: column;
         align-items: center;
     }
+
 
 
   }

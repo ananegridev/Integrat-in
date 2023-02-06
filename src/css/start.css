@@ -28,7 +28,7 @@ main {
     border-left: 1px solid #000;
   }
 
-  .content__start-box div{
+  .content__start-img{
     width: 45%;
 
     display: flex;
@@ -55,7 +55,7 @@ main {
 
   @media (max-width: 768px) {
     main{
-        height: 100vh;
+        height: 100%;
         display: flex;
         flex-direction: column;
         justify-content: space-between;
@@ -79,7 +79,16 @@ main {
         border: none;
       }
 
-      .content__start-box div{
+      .form-flag-company{
+        max-width: 400px;
+        width: 100%;
+      }
+
+      .form-flag-company div{
+        width: 100%;
+      }
+
+      .content__start-img{
         width: 95%;
         display: flex;
         flex-direction: column;
@@ -87,6 +96,9 @@ main {
         align-items: center;
         text-align: center;
         margin-top: 20px;
+      }
+      .content__start-img img{
+        width: 80%;
       }
 
   }  

@@ -23,6 +23,10 @@ p{
     
 }
 
+.text-type-radio-start{
+    font-size: 0.8rem;
+}
+
 @media (max-width: 768px) {
     h2{
         font-size: 1.6rem;
