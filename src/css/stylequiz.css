@@ -68,7 +68,11 @@
   border-bottom: none;
 }
 
-.row-box-2, .row-box-3, .row-box-4{
+#row-box-1{
+  display: block;
+
+}
+#row-box-2, #row-box-3, #row-box-4{
   display: none;
 }
 

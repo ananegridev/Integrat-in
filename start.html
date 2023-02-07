@@ -58,21 +58,25 @@
               required
             />
 
-            <span role="alert" id="nameError" aria-hidden="true">
-              Please Enter Your Company
-            </span>
-            <select
-              name="company"
-              id="company"
-              class="js-input-company"
-              required
-            >
-              <option value="" selected disabled>Select your Company</option>
-              <option value="Ambev">Ambev</option>
-              <option value="NaturaCo">Natura&amp;Co</option>
-              <option value="Minsait">Minsait</option>
-              <option value="other">Other</option>
-            </select>
+            <div class="form-flag-company">
+              <span role="alert" id="nameError" aria-hidden="true">
+                Please Enter Your Company
+              </span>
+              <select
+                name="company"
+                id="company"
+                class="js-input-company"
+                required
+              >
+                <option value="" selected disabled>Select your Company</option>
+                <option value="Ambev">Ambev</option>
+                <option value="NaturaCo">Natura&amp;Co</option>
+                <option value="Minsait">Minsait</option>
+                <option value="other">Other</option>
+              </select>
+            </div>
+
+
 
             <div class="form-flag-company">
               <span role="alert" id="nameError" aria-hidden="true">
@@ -88,7 +92,7 @@
               </div>
             </div>
 
-            <div>
+            <div class="form-flag-company">
               <span role="alert" id="nameError" aria-hidden="true">
                 Please Enter Your the Company Name
               </span>

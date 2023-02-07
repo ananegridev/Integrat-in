@@ -79,9 +79,9 @@
           <!-- START QUIZ -->
           <div id="progress_bar"></div>
 
-          <form class="form__box">
+          <form class="form__box" id="form__box">
             
-            <div class="row-box-1">
+            <div  id="row-box-1">
               <div id="question-1" class="question">
                 <h2 class="q-title">Question 1</h2>
                 <h3>
@@ -496,10 +496,10 @@
                 </div>
               </div>
 
-              <button class="btn" type="" id="" onclick="quizPage()">Next</button>
+              <button class="btn" id="submit-1" onsubmit="submitForm()" >Next</button>
             </div>
 
-            <div class="row-box-2"> 
+            <div class="row-box-2" id="row-box-2"> 
               <div id="question-11" class="question">
                 <h2 class="q-title">Question 11</h2>
                 <h3>There is trust and commitment in the relationships among marketing, logistics, and production.</h3>
@@ -849,10 +849,12 @@
                   </div>
                 </div>
               </div>
-  
+              
+              <button class="btn" id="submit-2" onsubmit="submitForm()" >Next</button>
+
             </div>
 
-            <div class="row-box-3">
+            <div class="row-box-3" id="row-box-3">
               <div id="question-21" class="question">
                 <h2 class="q-title">Question 21</h2>
                 <h3>There is a lack of team spirit among marketing, logistics, and production.</h3>
@@ -1203,9 +1205,11 @@
                 </div>
               </div>
   
+              <button class="btn" id="submit-3" onsubmit="submitForm()" >Next</button>
+
             </div>
 
-            <div class="row-box-4">
+            <div class="row-box-4" id="row-box-4">
               <div id="question-31" class="question">
                 <h2 class="q-title">Question 31</h2>
                 <h3>There are conflicts between people and areas due to the system of rewards and performance evaluation. </h3>
@@ -1345,6 +1349,9 @@
                   </div>
                 </div>
               </div>
+            
+              <button class="btn" id="submit-1" onclick="clearHistory()" >Finish</button>
+
             </div>
 
           </form>

@@ -4,7 +4,7 @@ function formStart(){
     let typeCompanyValue = document.querySelector(".js-input-typecompany").value;
     let companyNameValue = document.querySelector(".js-input-companyname").value;
     let departamentValue = document.querySelector(".js-input-departament").value;
-  
+
     let formPerson = {
         name: nameValue,
         company: companyValue,

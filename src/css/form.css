@@ -1,88 +1,87 @@
-form{
-    width: 45%;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    padding: 10px 0;
+form {
+  width: 45%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 10px 0;
 }
 
-.form-flag-company{
-    width: 100%;
-    margin-bottom: 5px;
+.form-flag-company {
+  width: 100%;
+  margin-bottom: 5px;
+  display: flex;
+  flex-direction: column;
 }
 
-.row-radio-start{
+.row-radio-start {
   display: flex;
   align-items: center;
-
 }
 
-input, select{
-    max-width: 400px;
-    width: 100%;
-    margin-bottom: 10px;
-    padding: 10px 10px;
-    border-radius: 10px;
-    border: 1px solid #2F2E41;
+input,
+select {
+  max-width: 400px;
+  width: 100%;
+  margin-bottom: 10px;
+  padding: 10px 10px;
+  border-radius: 10px;
+  border: 1px solid #2f2e41;
 }
 
 input::placeholder {
-    color: #0000007e;
-  }
+  color: #0000007e;
+}
 
-  input:focus, select:focus{
-    color: #153462;
-    outline: 2px solid #FEB139;
-    border: none;
-    transition: ease-in-out .1s;
-  }
+input:focus,
+select:focus {
+  color: #153462;
+  outline: 2px solid #feb139;
+  border: none;
+  transition: ease-in-out 0.1s;
+}
 
-  select{
-    color: #0000007e;
-  }
+select {
+  color: #0000007e;
+}
 
-  
-#typeCompany{
+#typeCompany {
   width: 30px;
   margin: 0;
 }
 
-  form span {
-    /* display: none; */
-    font-size: 0.7rem;
-    margin: 2px;
-    color: red;
+form span {
+  display: none;
+  font-size: 0.7rem;
+  margin: 2px;
+  color: red;
+}
 
-   
-  }
-  
-  /* #nameError.visible {
+/* #nameError.visible {
     display: block;
   } */
-  
-  input.invalid {
-    border-color: red;
-  }
 
-  @media (max-width: 768px) {
-    form{
-      width: 95%;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-    }
+input.invalid {
+  border-color: red;
+}
 
-
-
-  }
-
-  /* ----------- pag quiz */
-
-  .questions_box{
-    width: 90%;
+@media (max-width: 768px) {
+  form {
+    width: 95%;
     display: flex;
     flex-direction: column;
-    padding: 0 1%;
+    align-items: center;
+    text-align: center;
+  }
+  .form-flag-company {
+    text-align: center;
+  }
+}
 
-  
+/* ----------- pag quiz */
+
+.questions_box {
+  width: 90%;
+  display: flex;
+  flex-direction: column;
+  padding: 0 1%;
 }

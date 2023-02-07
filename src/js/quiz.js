@@ -9,34 +9,43 @@
 
 var objURL = new URL(window.location.href);
 let startForm = Object.fromEntries(objURL.searchParams);
-let ddd = JSON.stringify(startForm);
-console.log(JSON.stringify(startForm));
 
-let today = new Date();
+// let ddd = JSON.stringify(startForm);
+// console.log(JSON.stringify(startForm));
+
+
 // let today = date.getDate();
-console.log(today.toLocaleDateString());
+// console.log(today);
 
+let today = new Date().toLocaleDateString();
+let time = new Date().toLocaleTimeString();
+
+var teste = startForm[today, time];
+// console.log(today);
 // let teste = startForm.concat(answers);
-
 // var end = [startForm, answers];
 
-// --- SALVANDO QUIZ
+// --------- ARMAZENANDO DADOS JSON
 
-var answers = {}; // Criado OBJ 
+var answers = {};
 
-function storeAnswer(question_number, event){
-    if(event.target.type === 'radio'){
+function storeAnswer(question_number, event) {
+    if (event.target.type === 'radio') {
         // console.log(event.target.value);
-        answers[''+question_number] = parseInt(event.target.value);
+        answers['' + question_number] = parseInt(event.target.value);
         // console.log(answers);
         // console.log(JSON.stringify(answers));
-        console.log(answers);
-        
-        var end = [startForm, answers];
+        // console.log(answers);
+
+        let today = new Date().toLocaleDateString();
+        let time = new Date().toLocaleTimeString();
+
+        var end = [today, time, startForm, answers];
         console.log(end);
 
         console.log(JSON.stringify(end));
     }
+    return end;
 }
 
 
@@ -77,123 +86,181 @@ var q33 = document.getElementById('question-33');
 var q34 = document.getElementById('question-34');
 
 
-q1.addEventListener('click', function(event){
+q1.addEventListener('click', function (event) {
     storeAnswer(1, event)
 });
-q2.addEventListener('click', function(event){
+q2.addEventListener('click', function (event) {
     storeAnswer(2, event)
 });
-q3.addEventListener('click', function(event){
+q3.addEventListener('click', function (event) {
     storeAnswer(3, event)
 });
-q4.addEventListener('click', function(event){
+q4.addEventListener('click', function (event) {
     storeAnswer(4, event)
 });
-q5.addEventListener('click', function(event){
+q5.addEventListener('click', function (event) {
     storeAnswer(5, event)
 });
-q6.addEventListener('click', function(event){
+q6.addEventListener('click', function (event) {
     storeAnswer(6, event)
 });
-q7.addEventListener('click', function(event){
+q7.addEventListener('click', function (event) {
     storeAnswer(7, event)
 });
-q8.addEventListener('click', function(event){
+q8.addEventListener('click', function (event) {
     storeAnswer(8, event)
 });
-q9.addEventListener('click', function(event){
+q9.addEventListener('click', function (event) {
     storeAnswer(9, event)
 });
-q10.addEventListener('click', function(event){
+q10.addEventListener('click', function (event) {
     storeAnswer(10, event)
 });
-q11.addEventListener('click', function(event){
+q11.addEventListener('click', function (event) {
     storeAnswer(11, event)
 });
-q12.addEventListener('click', function(event){
+q12.addEventListener('click', function (event) {
     storeAnswer(12, event)
 });
-q13.addEventListener('click', function(event){
+q13.addEventListener('click', function (event) {
     storeAnswer(13, event)
 });
-q14.addEventListener('click', function(event){
+q14.addEventListener('click', function (event) {
     storeAnswer(14, event)
 });
-q15.addEventListener('click', function(event){
+q15.addEventListener('click', function (event) {
     storeAnswer(15, event)
 });
-q16.addEventListener('click', function(event){
+q16.addEventListener('click', function (event) {
     storeAnswer(16, event)
 });
-q17.addEventListener('click', function(event){
+q17.addEventListener('click', function (event) {
     storeAnswer(17, event)
 });
-q18.addEventListener('click', function(event){
+q18.addEventListener('click', function (event) {
     storeAnswer(18, event)
 });
-q19.addEventListener('click', function(event){
+q19.addEventListener('click', function (event) {
     storeAnswer(19, event)
 });
-q20.addEventListener('click', function(event){
+q20.addEventListener('click', function (event) {
     storeAnswer(20, event)
 });
-q21.addEventListener('click', function(event){
+q21.addEventListener('click', function (event) {
     storeAnswer(21, event)
 });
-q21.addEventListener('click', function(event){
+q21.addEventListener('click', function (event) {
     storeAnswer(21, event)
 });
-q22.addEventListener('click', function(event){
+q22.addEventListener('click', function (event) {
     storeAnswer(22, event)
 });
-q23.addEventListener('click', function(event){
+q23.addEventListener('click', function (event) {
     storeAnswer(23, event)
 });
-q24.addEventListener('click', function(event){
+q24.addEventListener('click', function (event) {
     storeAnswer(24, event)
 });
-q25.addEventListener('click', function(event){
+q25.addEventListener('click', function (event) {
     storeAnswer(25, event)
 });
-q26.addEventListener('click', function(event){
+q26.addEventListener('click', function (event) {
     storeAnswer(26, event)
 });
-q26.addEventListener('click', function(event){
+q26.addEventListener('click', function (event) {
     storeAnswer(26, event)
 });
-q27.addEventListener('click', function(event){
+q27.addEventListener('click', function (event) {
     storeAnswer(27, event)
 });
-q28.addEventListener('click', function(event){
+q28.addEventListener('click', function (event) {
     storeAnswer(28, event)
 });
-q29.addEventListener('click', function(event){
+q29.addEventListener('click', function (event) {
     storeAnswer(29, event)
 });
-q30.addEventListener('click', function(event){
+q30.addEventListener('click', function (event) {
     storeAnswer(30, event)
 });
-q31.addEventListener('click', function(event){
+q31.addEventListener('click', function (event) {
     storeAnswer(31, event)
 });
-q32.addEventListener('click', function(event){
+q32.addEventListener('click', function (event) {
     storeAnswer(32, event)
 });
-q33.addEventListener('click', function(event){
+q33.addEventListener('click', function (event) {
     storeAnswer(33, event)
 });
-q34.addEventListener('click', function(event){
+q34.addEventListener('click', function (event) {
     storeAnswer(34, event)
 });
 
 
 
 
-// --------- Paginação
+// --------- PAGINAÇÃO QUIZ
 
-function quizPage(){
-    
+
+let sub1 = document.getElementById('submit-1');
+let sub2 = document.getElementById('submit-2');
+let sub3 = document.getElementById('submit-3');
+let sub4 = document.getElementById('submit-4');
+
+
+let row1 = document.getElementById('row-box-1');
+let row2 = document.getElementById('row-box-2');
+let row3 = document.getElementById('row-box-3');
+let row4 = document.getElementById('row-box-4');
+
+function submitForm(event) {
+    event.preventDefault();
 }
+document.querySelector('form').addEventListener('submit', event => {
+    event.preventDefault();
+})
 
 
 
+row1.style.display = 'block';
+row2.style.display = 'none';
+row3.style.display = 'none';
+row4.style.display = 'none';
+
+
+sub1.addEventListener('click', function (event) {
+    if (row1.style.display === 'block') {
+        row1.style.display = 'none';
+        row2.style.display = 'block';
+        row3.style.display = 'none';
+        row4.style.display = 'none';
+        window.location.href = "#question-11";
+    }
+})
+
+sub2.addEventListener('click', function (event) {
+    if (row2.style.display === 'block') {
+        row1.style.display = 'none';
+        row2.style.display = 'none';
+        row3.style.display = 'block';
+        row4.style.display = 'none';
+        window.location.href = "#question-21";
+    }
+})
+
+sub3.addEventListener('click', function (event) {
+    if (row3.style.display === 'block') {
+        row1.style.display = 'none';
+        row1.style.display = 'none';
+        row2.style.display = 'none';
+        row3.style.display = 'none';
+        row4.style.display = 'block';
+        window.location.href = "#question-31";
+
+    }
+})
+
+// --------- 
+
+function clearHistory() {
+    window.history.pushState("", "", "/");
+}
