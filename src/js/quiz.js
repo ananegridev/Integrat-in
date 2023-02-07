@@ -12,6 +12,7 @@ let today = new Date().toLocaleDateString();
 let time = new Date().toLocaleTimeString();
 
 // --------- PEGANDO DATA E HORA E ADICIONANDO NO OBJ
+
 startForm.dateDay = today;
 startForm.timeDay = time;
 
@@ -21,10 +22,9 @@ var answers = {};
 
 function storeAnswer(question_number, event) {
     if (event.target.type === 'radio') {
-        answers[question_number] = parseInt(event.target.value);
+        answers['' + question_number] = parseInt(event.target.value);
         var end = [startForm, answers];
-        // console.log(end);
-        // console.log(JSON.stringify(end));
+        console.log(JSON.stringify(end));
     }
     return end;
 }
@@ -189,7 +189,6 @@ let row4 = document.getElementById('row-box-4');
 function submitForm(event) {
     event.preventDefault();
 }
-
 document.querySelector('form').addEventListener('submit', event => {
     event.preventDefault();
 })
@@ -198,7 +197,6 @@ row1.style.display = 'block';
 row2.style.display = 'none';
 row3.style.display = 'none';
 row4.style.display = 'none';
-
 
 sub1.addEventListener('click', function () {
     if (row1.style.display === 'block') {
