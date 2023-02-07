@@ -35,11 +35,12 @@
 
 #progress_bar {
   background-color: #153462;
-  width: 20%;
+  width: 0%;
   height: 10px;
   transition: all 100ms ease-in-out;
-  margin: 2% 0
+  margin: 2% 0;
 }
+
 
 .box-question{
   width: 100%;

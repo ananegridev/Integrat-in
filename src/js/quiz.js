@@ -1,54 +1,33 @@
-
-// function parseJSON(){
-//     resultadoFinal = ddd.concat(answers());
-//     console.log(resultadoFinal);
-//     return true;
-
-// }
-
+// --------- PEGANDO DADOS DO START.HTML VIA URL
 
 var objURL = new URL(window.location.href);
+
+// --------- PEGANDO DADOS DO START.HTML VIA URL E TRANSFORMANDO EM OBJ
+
 let startForm = Object.fromEntries(objURL.searchParams);
 
-// let ddd = JSON.stringify(startForm);
-// console.log(JSON.stringify(startForm));
-
-
-// let today = date.getDate();
-// console.log(today);
+// --------- PEGANDO DATA E HORA DA RESPOSTA DO USUÁRIO
 
 let today = new Date().toLocaleDateString();
 let time = new Date().toLocaleTimeString();
 
-var teste = startForm[today, time];
-// console.log(today);
-// let teste = startForm.concat(answers);
-// var end = [startForm, answers];
+// --------- PEGANDO DATA E HORA E ADICIONANDO NO OBJ
+startForm.dateDay = today;
+startForm.timeDay = time;
 
-// --------- ARMAZENANDO DADOS JSON
+// --------- ARMAZENANDO DADOS JSON DAS PERGUNTAS E FORM NO JSON
 
 var answers = {};
 
 function storeAnswer(question_number, event) {
     if (event.target.type === 'radio') {
-        // console.log(event.target.value);
-        answers['' + question_number] = parseInt(event.target.value);
-        // console.log(answers);
-        // console.log(JSON.stringify(answers));
-        // console.log(answers);
-
-        let today = new Date().toLocaleDateString();
-        let time = new Date().toLocaleTimeString();
-
-        var end = [today, time, startForm, answers];
-        console.log(end);
-
-        console.log(JSON.stringify(end));
+        answers[question_number] = parseInt(event.target.value);
+        var end = [startForm, answers];
+        // console.log(end);
+        // console.log(JSON.stringify(end));
     }
     return end;
 }
-
-
 
 var q1 = document.getElementById('question-1');
 var q2 = document.getElementById('question-2');
@@ -195,17 +174,12 @@ q34.addEventListener('click', function (event) {
     storeAnswer(34, event)
 });
 
-
-
-
 // --------- PAGINAÇÃO QUIZ
-
 
 let sub1 = document.getElementById('submit-1');
 let sub2 = document.getElementById('submit-2');
 let sub3 = document.getElementById('submit-3');
 let sub4 = document.getElementById('submit-4');
-
 
 let row1 = document.getElementById('row-box-1');
 let row2 = document.getElementById('row-box-2');
@@ -215,11 +189,10 @@ let row4 = document.getElementById('row-box-4');
 function submitForm(event) {
     event.preventDefault();
 }
+
 document.querySelector('form').addEventListener('submit', event => {
     event.preventDefault();
 })
-
-
 
 row1.style.display = 'block';
 row2.style.display = 'none';
@@ -227,40 +200,63 @@ row3.style.display = 'none';
 row4.style.display = 'none';
 
 
-sub1.addEventListener('click', function (event) {
+sub1.addEventListener('click', function () {
     if (row1.style.display === 'block') {
         row1.style.display = 'none';
         row2.style.display = 'block';
         row3.style.display = 'none';
         row4.style.display = 'none';
-        window.location.href = "#question-11";
+        growProgressBar('25%');
+        window.location.href = "#progress_bar";
     }
 })
 
-sub2.addEventListener('click', function (event) {
+sub2.addEventListener('click', function () {
     if (row2.style.display === 'block') {
         row1.style.display = 'none';
         row2.style.display = 'none';
         row3.style.display = 'block';
         row4.style.display = 'none';
-        window.location.href = "#question-21";
+        growProgressBar('50%');
+        window.location.href = "#progress_bar";
     }
 })
 
-sub3.addEventListener('click', function (event) {
+sub3.addEventListener('click', function () {
     if (row3.style.display === 'block') {
         row1.style.display = 'none';
         row1.style.display = 'none';
         row2.style.display = 'none';
         row3.style.display = 'none';
         row4.style.display = 'block';
-        window.location.href = "#question-31";
+        growProgressBar('75%');
+        window.location.href = "#progress_bar";
 
     }
 })
 
-// --------- 
+sub4.addEventListener('click', function () {
+    if (row4.style.display === 'block') {
+        row1.style.display = 'none';
+        row2.style.display = 'none';
+        row3.style.display = 'none';
+        row4.style.display = 'none';
+        growProgressBar('100%');
+        window.location.href = "#progress_bar";
+        clearHistory();
+
+    }
+})
+
+// --------- LIMPAR URL
 
 function clearHistory() {
     window.history.pushState("", "", "/");
+}
+
+// --------- PROGRESS BAR
+
+function growProgressBar(percentage_width){
+    var bar = document.getElementById("progress_bar");
+    bar.style.width = percentage_width;
 }
