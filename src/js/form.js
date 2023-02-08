@@ -2,17 +2,19 @@ function formStart(){
     let nameValue = document.querySelector(".js-input-name").value;
     let emailValue = document.querySelector(".js-input-email").value;
     let companyValue = document.querySelector(".js-input-company").value;
-    // let typeCompanyValue = document.querySelector(".js-input-typecompany").value;
     let companyNameValue = document.querySelector(".js-input-companyname").value;
+    let cnpjValue = document.querySelector(".js-input-cnpj").value;
     let departamentValue = document.querySelector(".js-input-departament").value;
+    let sectorValue = document.querySelector(".js-input-sector").value;
 
     let formPerson = {
         name: nameValue,
         email: emailValue,
         company: companyValue,
-        // newCompany: typeCompanyValue,
         companyName: companyNameValue,
-        departament: departamentValue
+        cnpj: cnpjValue,
+        departament: departamentValue,
+        sector: sectorValue,
     };
 
     localStorage.getItem(formPerson);

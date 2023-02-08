@@ -88,20 +88,6 @@
               </select>
             </div>
 
-            <!-- <div class="form-flag-company">
-              <span role="alert" id="nameError" aria-hidden="true">
-                Check an Option
-              </span>
-
-              <div class="row-radio-start">
-                <input type="radio" name="typeCompany" id="typeCompany" class="js-input-typecompany" value="true"> <p class="text-type-radio-start">New Company</p>
-              </div>
-
-              <div class="row-radio-start">
-                <input type="radio" name="typeCompany" id="typeCompany" class="js-input-typecompany" value="false"> <p class="text-type-radio-start">Existing Company</p>
-              </div>
-            </div> -->
-
             <div class="form-flag-company">
               <span role="alert" id="nameError" aria-hidden="true">
                 Please Enter Your the Company Name
@@ -112,13 +98,23 @@
                 id="newCompany"
                 class="js-input-companyname"
                 placeholder="Whats your Company Name?"
-                required
               />
             </div>
 
+            <span role="alert" id="nameError" aria-hidden="true">
+              Please enter the company's CNPJ
+            </span>
+            <input
+              type="text"
+              name="cnpj"
+              id="cnpj"
+              class="js-input-cnpj"
+              placeholder="Please what is the CNPJ of the Company?"
+              required
+            />
 
             <span role="alert" id="nameError" aria-hidden="true">
-              Please Enter Your Departament?
+              Please Enter Your Departament
             </span>
             <input
               type="text"
@@ -126,6 +122,18 @@
               id="departament"
               class="js-input-departament"
               placeholder="What is your Departament?"
+              required
+            />
+
+            <span role="alert" id="nameError" aria-hidden="true">
+              Please Enter Your Sector
+            </span>
+            <input
+              type="text"
+              name="sector"
+              id="sector"
+              class="js-input-sector"
+              placeholder="What is your Sector?"
               required
             />
 
