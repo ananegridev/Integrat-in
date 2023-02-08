@@ -21,9 +21,10 @@ main {
 }
 
 .content__quiz-text {
-  padding: 0 1%;
+  padding: 3%;
   border-left: 1px solid black;
   margin: 0 auto;
+  text-align: justify;
 }
 .content__quiz-value {
   text-align: center;

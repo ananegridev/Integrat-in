@@ -1,5 +1,6 @@
 function formStart(){
     let nameValue = document.querySelector(".js-input-name").value;
+    let emailValue = document.querySelector(".js-input-email").value;
     let companyValue = document.querySelector(".js-input-company").value;
     // let typeCompanyValue = document.querySelector(".js-input-typecompany").value;
     let companyNameValue = document.querySelector(".js-input-companyname").value;
@@ -7,6 +8,7 @@ function formStart(){
 
     let formPerson = {
         name: nameValue,
+        email: emailValue,
         company: companyValue,
         // newCompany: typeCompanyValue,
         companyName: companyNameValue,
