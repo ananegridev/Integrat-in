@@ -21,23 +21,27 @@ function formStart(){
     return true;
   }
 
+// --------- APARECER CAMPO PARA NOVA EMPRESA
+
+let flagCompanyName = document.getElementById('form-flag-company');
+
+flagCompanyName.style.display = 'none';
+
+let select = document.getElementById('company');
+
+select.addEventListener('change', function() {
+    if(select.value === 'Other'){
+        flagCompanyName.style.display = 'block';
+    }else{
+        flagCompanyName.style.display = 'none';
+    }   
+});
+
+// --------- VALIDAÇÃO DE CAMPOS DO FORM
+
+
+// --------- IR PARA PRÓX PÁGINA
+
 function nextPage(){
     window.location.href = "/quiz.html"
 }
-
-// --------- APARECER CAMPO PARA NOVA EMPRESA
-
-// let select = document.getElementById('company');
-
-// let flagCompanyName = document.getElementById('form-flag-company');
-
-// flagCompanyName.style.display = 'none';
-
-// select.addEventListener('change', function() {
-//     if(select.value === 'Other'){
-//         flagCompanyName.style.display = 'block';
-//     }else{
-//         flagCompanyName.style.display = 'none';
-//     }   
-    
-// });

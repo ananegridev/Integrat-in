@@ -13,8 +13,8 @@ let time = new Date().toLocaleTimeString();
 
 // --------- PEGANDO DATA E HORA E ADICIONANDO NO OBJ
 
-startForm.dateDay = today;
-startForm.timeDay = time;
+startForm.answerDate = today;
+startForm.answerTime = time;
 
 // --------- ARMAZENANDO DADOS JSON DAS PERGUNTAS E FORM NO JSON
 
