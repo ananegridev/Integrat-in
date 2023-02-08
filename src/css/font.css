@@ -20,7 +20,11 @@ p{
     font-weight: 400;
     font-size: 1rem;
     line-height: 1.5;
-    
+}
+
+.circle-p{
+    font-weight: 400;
+    font-size: .8rem;
 }
 
 .text-type-radio-start{
