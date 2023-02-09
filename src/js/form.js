@@ -18,7 +18,7 @@ function formStart(){
     };
 
     localStorage.getItem(formPerson);
-    return true;
+    return formPerson;
   }
 
 // --------- APARECER CAMPO PARA NOVA EMPRESA
@@ -43,5 +43,6 @@ select.addEventListener('change', function() {
 // --------- IR PARA PRÓX PÁGINA
 
 function nextPage(){
-    window.location.href = "/quiz.html"
+    window.location.href = "/quiz.html";
+    localStorage.getItem(formStart);
 }

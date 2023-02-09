@@ -242,6 +242,7 @@ sub4.addEventListener('click', function () {
         growProgressBar('100%');
         window.location.href = "#progress_bar";
         clearHistory();
+        // getInfoBasedScore();
 
     }
 })
@@ -258,3 +259,66 @@ function growProgressBar(percentage_width){
     var bar = document.getElementById("progress_bar");
     bar.style.width = percentage_width;
 }
+
+// --------- TOTAL SCORE
+
+// function score(){
+//     let totalScore = 
+//     answers.q1 + 
+//     answers.q2 +
+//     answers.q3 +
+//     answers.q4 +
+//     answers.q5 +
+//     answers.q6 +
+//     answers.q7 +
+//     answers.q8 +
+//     answers.q9 +
+//     answers.q10 +
+//     answers.q11 +
+//     answers.q12 +
+//     answers.q13 +
+//     answers.q14 +
+//     answers.q15 +
+//     answers.q16 +
+//     answers.q17 +
+//     answers.q18 +
+//     answers.q19 +
+//     answers.q20 +
+//     answers.q21 +
+//     answers.q22 +
+//     answers.q23 +
+//     answers.q24 +
+//     answers.q25 +
+//     answers.q26 +
+//     answers.q27 +
+//     answers.q28 +
+//     answers.q29 +
+//     answers.q30 +
+//     answers.q31 +
+//     answers.q32 +
+//     answers.q33 +
+//     answers.q34;
+    
+//     console.log(totalScore);
+// }
+
+// function getInfoBasedScore(){
+//     if(score() <= 34){
+//         let scoreInfo = score();
+//         alert('Stromgly Disagree')
+//     }else if (score() <= 102){
+//         let scoreInfo = score();
+//         alert('Disagree')
+//     }else if(score() <= 136){
+//         let scoreInfo = score();
+//         alert('Neutral')
+//     }else if(score() <= 204){
+//         let scoreInfo = score();
+//         alert('Agree')
+//     }else{
+//         let scoreInfo = score();
+//         alert('Stromgly Agree')
+//     }
+//     return scoreInfo;
+// }
+
