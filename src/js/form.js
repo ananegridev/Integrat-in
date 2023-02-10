@@ -46,3 +46,5 @@ function nextPage(){
     window.location.href = "/quiz.html";
     localStorage.getItem(formStart);
 }
+
+// --------- VALIDAÇÃO DE CAMPOS DO FORM

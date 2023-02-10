@@ -80,7 +80,7 @@
           <!-- START QUIZ -->
           <div id="progress_bar"></div>
 
-          <form class="form__box" id="form__box">
+          <form method="GET" class="form__box" id="form__box" action="result.html">
             
             <div  id="row-box-1">
               <div id="question-1" class="question">
@@ -92,11 +92,11 @@
                 <div class="box-question">
                   <div>
                     <div class="box-circle circle-color-1"><p class="circle-p">1</p></div>
-                    <input id="answer-a" type="radio" name="q1" id="q1" value="1"/><br />
+                    <input id="q1" type="radio" name="q1" class="q1" value="1"/><br />
                   </div>
                   <div>
                     <div class="box-circle circle-color-2"><p class="circle-p">2</p></div>
-                    <input id="answer-b" type="radio" name="q1" value="2" /><br />
+                    <input id="2" type="radio" name="q1" value="2" /><br />
                   </div>
                   <div>
                     <div class="box-circle circle-color-3"><p class="circle-p">3</p></div>
@@ -497,7 +497,7 @@
                 </div>
               </div>
 
-              <button class="btn" id="submit-1" onsubmit="submitForm()" >Next</button>
+              <!-- <button class="btn" id="submit-1">Next</button> -->
             </div>
 
             <div class="row-box-2" id="row-box-2"> 
@@ -851,7 +851,7 @@
                 </div>
               </div>
               
-              <button class="btn" id="submit-2" onsubmit="submitForm()" >Next</button>
+              <!-- <button class="btn" id="submit-2" onsubmit="submitForm()" >Next</button> -->
 
             </div>
 
@@ -1206,7 +1206,7 @@
                 </div>
               </div>
   
-              <button class="btn" id="submit-3" onsubmit="submitForm()" >Next</button>
+              <!-- <button class="btn" id="submit-3" onsubmit="submitForm()" >Next</button> -->
 
             </div>
 
@@ -1351,11 +1351,16 @@
                 </div>
               </div>
             
-              <button class="btn" id="submit-4">Finish</button>
+              <button class="btn" id="submit-4" type="submit" onsubmit="nextPageEnd()">Finish</button>
 
             </div>
 
           </form>
+          <button class="btn" id="submit-1">Next</button>
+
+          <button class="btn" id="submit-2" >Next</button>
+
+          <button class="btn" id="submit-3" onsubmit="submitForm()" >Next</button>
           <!-- END QUIZ -->
         </section>
 
@@ -1372,8 +1377,6 @@
         /></a>
       </footer>
     </main>
-
-    <!-- <script src="./src/js/script.js" defer></script> -->
     <script src="./src/js/quiz.js" defer></script>
   </body>
 </html>

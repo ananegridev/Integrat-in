@@ -28,6 +28,13 @@ main {
     margin: 5% 0;
   }
 
+  .content__result-perc span{
+    font-size: 4rem;
+    font-weight: 700;
+    letter-spacing: 3px;
+    margin: 10px 0;
+  }
+
   .content__result-text{
     display: flex;
   justify-content: space-evenly;

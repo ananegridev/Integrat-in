@@ -64,114 +64,160 @@ var q32 = document.getElementById('question-32');
 var q33 = document.getElementById('question-33');
 var q34 = document.getElementById('question-34');
 
+// --------- TOTAL SCORE
+
+function score(answers){
+    if(Object.values(answers).length > 1){
+        var somaScore = Object.values(answers).reduce((a, b) => a + b, 0);
+        console.log(somaScore)
+    }
+}
+
+// --------- 
 
 q1.addEventListener('click', function (event) {
     storeAnswer(1, event)
+    // score(answers)
 });
 q2.addEventListener('click', function (event) {
     storeAnswer(2, event)
+    // score(answers)
 });
 q3.addEventListener('click', function (event) {
     storeAnswer(3, event)
+    // score(answers)
 });
 q4.addEventListener('click', function (event) {
     storeAnswer(4, event)
+    // score(answers)
 });
 q5.addEventListener('click', function (event) {
     storeAnswer(5, event)
+    // score(answers)
 });
 q6.addEventListener('click', function (event) {
     storeAnswer(6, event)
+    // score(answers)
 });
 q7.addEventListener('click', function (event) {
     storeAnswer(7, event)
+    // score(answers)
 });
 q8.addEventListener('click', function (event) {
     storeAnswer(8, event)
+    // score(answers)
 });
 q9.addEventListener('click', function (event) {
     storeAnswer(9, event)
+    // score(answers)
 });
 q10.addEventListener('click', function (event) {
     storeAnswer(10, event)
+    // score(answers)
 });
 q11.addEventListener('click', function (event) {
     storeAnswer(11, event)
+    // score(answers)
 });
 q12.addEventListener('click', function (event) {
     storeAnswer(12, event)
+    // score(answers)
 });
 q13.addEventListener('click', function (event) {
     storeAnswer(13, event)
+    // score(answers)
 });
 q14.addEventListener('click', function (event) {
     storeAnswer(14, event)
+    // score(answers)
 });
 q15.addEventListener('click', function (event) {
     storeAnswer(15, event)
+    // score(answers)
 });
 q16.addEventListener('click', function (event) {
     storeAnswer(16, event)
+    // score(answers)
 });
 q17.addEventListener('click', function (event) {
     storeAnswer(17, event)
+    // score(answers)
 });
 q18.addEventListener('click', function (event) {
     storeAnswer(18, event)
+    // score(answers)
 });
 q19.addEventListener('click', function (event) {
     storeAnswer(19, event)
+    // score(answers)
 });
 q20.addEventListener('click', function (event) {
     storeAnswer(20, event)
+    // score(answers)
 });
 q21.addEventListener('click', function (event) {
     storeAnswer(21, event)
+    // score(answers)
 });
 q21.addEventListener('click', function (event) {
     storeAnswer(21, event)
+    // score(answers)
 });
 q22.addEventListener('click', function (event) {
     storeAnswer(22, event)
+    // score(answers)
 });
 q23.addEventListener('click', function (event) {
     storeAnswer(23, event)
+    // score(answers)
 });
 q24.addEventListener('click', function (event) {
     storeAnswer(24, event)
+    // score(answers)
 });
 q25.addEventListener('click', function (event) {
     storeAnswer(25, event)
+    // score(answers)
 });
 q26.addEventListener('click', function (event) {
     storeAnswer(26, event)
+    // score(answers)
 });
 q26.addEventListener('click', function (event) {
     storeAnswer(26, event)
+    // score(answers)
 });
 q27.addEventListener('click', function (event) {
     storeAnswer(27, event)
+    // score(answers)
 });
 q28.addEventListener('click', function (event) {
     storeAnswer(28, event)
+    // score(answers)
 });
 q29.addEventListener('click', function (event) {
     storeAnswer(29, event)
+    // score(answers)
 });
 q30.addEventListener('click', function (event) {
     storeAnswer(30, event)
+    // score(answers)
 });
 q31.addEventListener('click', function (event) {
     storeAnswer(31, event)
+    // score(answers)
 });
 q32.addEventListener('click', function (event) {
     storeAnswer(32, event)
+    // score(answers)
 });
 q33.addEventListener('click', function (event) {
     storeAnswer(33, event)
+    // score(answers)
 });
 q34.addEventListener('click', function (event) {
     storeAnswer(34, event)
+    // score(answers)
 });
 
 // --------- PAGINAÇÃO QUIZ
@@ -186,17 +232,17 @@ let row2 = document.getElementById('row-box-2');
 let row3 = document.getElementById('row-box-3');
 let row4 = document.getElementById('row-box-4');
 
-function submitForm(event) {
-    event.preventDefault();
-}
-document.querySelector('form').addEventListener('submit', event => {
-    event.preventDefault();
-})
+
 
 row1.style.display = 'block';
 row2.style.display = 'none';
 row3.style.display = 'none';
 row4.style.display = 'none';
+
+sub1.style.display = 'block';
+sub2.style.display = 'none';
+sub3.style.display = 'none';
+sub4.style.display = 'none';
 
 sub1.addEventListener('click', function () {
     if (row1.style.display === 'block') {
@@ -204,6 +250,12 @@ sub1.addEventListener('click', function () {
         row2.style.display = 'block';
         row3.style.display = 'none';
         row4.style.display = 'none';
+
+        sub1.style.display = 'none';
+        sub2.style.display = 'block';
+        sub3.style.display = 'none';
+        sub4.style.display = 'none';
+
         growProgressBar('25%');
         window.location.href = "#progress_bar";
     }
@@ -215,6 +267,13 @@ sub2.addEventListener('click', function () {
         row2.style.display = 'none';
         row3.style.display = 'block';
         row4.style.display = 'none';
+
+        sub1.style.display = 'none';
+        sub2.style.display = 'none';
+        sub3.style.display = 'block';
+        sub4.style.display = 'none';
+
+    
         growProgressBar('50%');
         window.location.href = "#progress_bar";
     }
@@ -227,6 +286,12 @@ sub3.addEventListener('click', function () {
         row2.style.display = 'none';
         row3.style.display = 'none';
         row4.style.display = 'block';
+
+        sub1.style.display = 'none';
+        sub2.style.display = 'none';
+        sub3.style.display = 'none';
+        sub4.style.display = 'block';
+
         growProgressBar('75%');
         window.location.href = "#progress_bar";
 
@@ -240,18 +305,17 @@ sub4.addEventListener('click', function () {
         row3.style.display = 'none';
         row4.style.display = 'none';
         growProgressBar('100%');
-        window.location.href = "#progress_bar";
-        clearHistory();
-        // getInfoBasedScore();
+        window.location.href = "/result.html"+"?"+answers;
+        // clearHistory();
 
     }
 })
 
 // --------- LIMPAR URL
 
-function clearHistory() {
-    window.history.pushState("", "", "/");
-}
+// function clearHistory() {
+//     window.history.pushState("", "", "/");
+// }
 
 // --------- PROGRESS BAR
 
@@ -260,65 +324,18 @@ function growProgressBar(percentage_width){
     bar.style.width = percentage_width;
 }
 
-// --------- TOTAL SCORE
+// --------- 
 
-// function score(){
-//     let totalScore = 
-//     answers.q1 + 
-//     answers.q2 +
-//     answers.q3 +
-//     answers.q4 +
-//     answers.q5 +
-//     answers.q6 +
-//     answers.q7 +
-//     answers.q8 +
-//     answers.q9 +
-//     answers.q10 +
-//     answers.q11 +
-//     answers.q12 +
-//     answers.q13 +
-//     answers.q14 +
-//     answers.q15 +
-//     answers.q16 +
-//     answers.q17 +
-//     answers.q18 +
-//     answers.q19 +
-//     answers.q20 +
-//     answers.q21 +
-//     answers.q22 +
-//     answers.q23 +
-//     answers.q24 +
-//     answers.q25 +
-//     answers.q26 +
-//     answers.q27 +
-//     answers.q28 +
-//     answers.q29 +
-//     answers.q30 +
-//     answers.q31 +
-//     answers.q32 +
-//     answers.q33 +
-//     answers.q34;
-    
-//     console.log(totalScore);
+// function nextPageEnd(){
+//     window.location.href = "/result.html"+"?"+somaScore;
 // }
 
-// function getInfoBasedScore(){
-//     if(score() <= 34){
-//         let scoreInfo = score();
-//         alert('Stromgly Disagree')
-//     }else if (score() <= 102){
-//         let scoreInfo = score();
-//         alert('Disagree')
-//     }else if(score() <= 136){
-//         let scoreInfo = score();
-//         alert('Neutral')
-//     }else if(score() <= 204){
-//         let scoreInfo = score();
-//         alert('Agree')
-//     }else{
-//         let scoreInfo = score();
-//         alert('Stromgly Agree')
-//     }
-//     return scoreInfo;
-// }
+function submitForm(event) {
+    event.preventDefault();
+}
 
+document.querySelector('form').addEventListener('submit', event => {
+    event.preventDefault();
+
+    window.location.href = "/result.html"+"?"+answers;
+})
