@@ -227,6 +227,11 @@ let sub2 = document.getElementById('submit-2');
 let sub3 = document.getElementById('submit-3');
 let sub4 = document.getElementById('submit-4');
 
+let back1 = document.getElementById('back-1');
+let back2 = document.getElementById('back-2');
+let back3 = document.getElementById('back-3');
+let back4 = document.getElementById('back-4');
+
 let row1 = document.getElementById('row-box-1');
 let row2 = document.getElementById('row-box-2');
 let row3 = document.getElementById('row-box-3');
@@ -244,6 +249,11 @@ sub2.style.display = 'none';
 sub3.style.display = 'none';
 sub4.style.display = 'none';
 
+back1.style.display = 'none';
+back2.style.display = 'none';
+back3.style.display = 'none';
+back4.style.display = 'none';
+
 sub1.addEventListener('click', function () {
     if (row1.style.display === 'block') {
         row1.style.display = 'none';
@@ -255,6 +265,11 @@ sub1.addEventListener('click', function () {
         sub2.style.display = 'block';
         sub3.style.display = 'none';
         sub4.style.display = 'none';
+
+        back1.style.display = 'none';
+        back2.style.display = 'block';
+        back3.style.display = 'none';
+        back4.style.display = 'none';
 
         growProgressBar('25%');
         window.location.href = "#progress_bar";
