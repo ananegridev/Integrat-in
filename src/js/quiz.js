@@ -249,10 +249,10 @@ sub2.style.display = 'none';
 sub3.style.display = 'none';
 sub4.style.display = 'none';
 
-back1.style.display = 'none';
-back2.style.display = 'none';
-back3.style.display = 'none';
-back4.style.display = 'none';
+// back1.style.display = 'none';
+// back2.style.display = 'none';
+// back3.style.display = 'none';
+// back4.style.display = 'none';
 
 sub1.addEventListener('click', function () {
     if (row1.style.display === 'block') {
@@ -288,7 +288,6 @@ sub2.addEventListener('click', function () {
         sub3.style.display = 'block';
         sub4.style.display = 'none';
 
-    
         growProgressBar('50%');
         window.location.href = "#progress_bar";
     }

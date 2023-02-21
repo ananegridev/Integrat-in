@@ -6,6 +6,8 @@ main {
   justify-content: space-between;
   flex-direction: column;
   margin: 10px 0;
+
+  position: relative;
 }
 
 /* container ---------- */
@@ -106,6 +108,10 @@ main {
 input{
   /* width: 100px;
   display: block; */
+}
+
+dialog{
+  position: absolute;
 }
 /* media ----  */
 

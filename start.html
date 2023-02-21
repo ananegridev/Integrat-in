@@ -44,7 +44,7 @@
 
         <section class="content__start-box">
           
-          <form method="GET" action="quiz.html" id="form">
+          <form method="GET" action="quiz.html" id="form-person">
             
             <span class="error" role="alert" id="nameError" aria-hidden="true">
               Please enter your name*
@@ -78,47 +78,9 @@
                 class="js-input-company"
               >
                 <option value="Other">Select your company*</option>
-                <option value="Ambev">Ambev</option>
-                <option value="NaturaCo">Natura&amp;Co</option>
-                <option value="Minsait">Minsait</option>
-                <option value="Other">Other</option>
+                <option value="Other">Add a new Company</option>
               </select>
             </div>
-
-            <div class="form-flag-company" id="form-flag-company">
-              <span role="alert" id="nameError" aria-hidden="true">
-                Please enter your the company name
-              </span>
-              <input
-                type="text"
-                name="newCompany"
-                id="newCompany"
-                class="js-input-companyname"
-                placeholder="Whats your company name?*"
-              />
-            </div>
-
-            <span class="error" role="alert" id="nameError" aria-hidden="true">
-              Please what your domain company
-            </span>
-            <input 
-              type="text"
-              name="domain"
-              id="domain"
-              class="js-input-domain"
-              placeholder="Please what your domain company?"
-            />
-
-            <!-- <span class="error" role="alert" id="nameError" aria-hidden="true">
-              Please enter your departament
-            </span>
-            <input required
-              type="text"
-              name="departament"
-              id="departament"
-              class="js-input-departament"
-              placeholder="What is your Departament?*"
-            /> -->
 
             <span class="error" role="alert" id="nameError" aria-hidden="true">
               Please enter your departament*
@@ -138,39 +100,60 @@
               <option value="Other">Other</option>
             </select>
 
-            <!-- <span class="error" role="alert" id="nameError" aria-hidden="true">
-              Please enter your sector
-            </span>
-            <input required
-              type="text"
-              name="sector"
-              id="sector"
-              class="js-input-sector"
-              placeholder="What is your sector?*"
-            /> -->
-
-            <span class="error" role="alert" id="nameError" aria-hidden="true">
-              Please enter your sector
-            </span>
-            <select required
-              name="sector"
-              id="sector"
-              class="js-input-sector"
-            >
-              <option value="Other">What is your sector?*</option>
-              <option value="Energy">Energy</option>
-              <option value="Materials">Materials</option>
-              <option value="Insdustrials">Insdustrials</option>
-              <option value="Utilities">Utilities</option>
-              <option value="Healthcare">Healthcare</option>
-              <option value="Financials">Financials</option>
-              <option value="Consumer Discretionary">Consumer Discretionary</option>
-              <option value="Consumer Staples">Consumer Staples</option>
-              <option value="Other">Other</option>
-            </select>
-
-
             <button class="btn" type="submit" id="submit" >Next</button>
+          </form>
+
+          <form method="GET" action="" id="form-company">
+           
+            <p>When choosing the "<b>Other</b>" option, you must register your company</p> <br>
+
+              <span role="alert" id="nameError" aria-hidden="true">
+                Please enter your the company name
+              </span>
+              <input
+                type="text"
+                name="newCompany"
+                id="newCompany"
+                class="js-input-companyname"
+                placeholder="Whats your company name?*"
+              />
+   
+              <span class="error" role="alert" id="nameError" aria-hidden="true">
+                Please what your domain company
+              </span>
+              <input 
+                type="text"
+                name="domain"
+                id="domain"
+                class="js-input-domain"
+                placeholder="Please what your domain company?"
+              />
+
+              <span class="error" role="alert" id="nameError" aria-hidden="true">
+                Please enter your sector
+              </span>
+              <select required
+                name="sector"
+                id="sector"
+                class="js-input-sector"
+              >
+                <option value="Other">What is your sector?*</option>
+                <option value="Energy">Energy</option>
+                <option value="Materials">Materials</option>
+                <option value="Insdustrials">Industrials</option>
+                <option value="Utilities">Utilities</option>
+                <option value="Healthcare">Healthcare</option>
+                <option value="Financials">Financials</option>
+                <option value="Consumer Discretionary">Consumer Discretionary</option>
+                <option value="Consumer Staples">Consumer Staples</option>
+                <option value="Other">Other</option>
+              </select>
+
+              <div>
+                <button class="btn" type="">Register Company</button>
+                <button class="btn" type="" id="btnCancel">Cancel</button>
+              </div>
+
           </form>
 
           <div class="content__start-img">
@@ -192,6 +175,5 @@
     </main>
 
     <script src="./src/js/form.js" defer></script>
-    <!-- <script src="./src/js/quiz.js" defer></script> -->
   </body>
 </html>
