@@ -44,15 +44,13 @@ function formStart() {
   let nameValue = document.querySelector(".js-input-name").value;
   let emailValue = document.querySelector(".js-input-email").value;
   let companyValue = document.querySelector(".js-input-company").value;
-  let companyNameValue = document.querySelector(".js-input-companyname").value;
+  // let companyNameValue = document.querySelector(".js-input-companyname").value;
   let domainValue = document.querySelector(".js-input-domain").value;
-  let departamentValue = document.querySelector(".js-input-departament").value;
+  // let departamentValue = document.querySelector(".js-input-departament").value;
   let sectorValue = document.querySelector(".js-input-sector").value;
 
-
-
   let formPerson = {
-    name: namevalue,
+    name: nameValue,
     email: emailValue,
     company: companyValue,
     domain: domainValue,
@@ -132,7 +130,7 @@ function jsonNewCompany() {
     sector: sector.value,
   };
   registerNewCompany = JSON.stringify(registerNewCompany);
-  console.log(registerNewCompany);
+  // console.log(registerNewCompany);
   return registerNewCompany;
 }
 
