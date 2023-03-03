@@ -99,6 +99,14 @@ function cancelSubmitForm() {
   });
 }
 
+// --------- RECARREGAR PÁGINA
+
+btnRegisterCompany.addEventListener("click", function() {
+  document.location.reload();
+  location.reload();
+  window.location.reload(true);
+});
+
 // --------- API: PUXAR AS COMPANYS CADASTRADAS NO SELECT
 
 async function getCompanies() {
