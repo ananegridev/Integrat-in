@@ -49,7 +49,7 @@ function formStart() {
   let departamentValue = document.querySelector(".js-input-departament").value;
   let sectorValue = document.querySelector(".js-input-sector").value;
 
-  
+
 
   let formPerson = {
     name: namevalue,
@@ -69,21 +69,21 @@ function formStart() {
 rowRegisterCompany.style.display = 'none';
 rowRegisterPerson.style.display = 'none';
 
-company.addEventListener('change', function() {
-    if(company.value === 'Add'){
-      rowRegisterCompany.style.display = 'block';
-      rowRegisterPerson.style.display = 'none';
-    }else if(company.value != 'Add'){
-      rowRegisterCompany.style.display = 'none';
-      rowRegisterPerson.style.display = 'block';
-    }else{
-      rowRegisterCompany.style.display = 'none';
-      rowRegisterCompany.style.display = 'none';
-    }
+company.addEventListener('change', function () {
+  if (company.value === 'Add') {
+    rowRegisterCompany.style.display = 'block';
+    rowRegisterPerson.style.display = 'none';
+  } else if (company.value != 'Add') {
+    rowRegisterCompany.style.display = 'none';
+    rowRegisterPerson.style.display = 'block';
+  } else {
+    rowRegisterCompany.style.display = 'none';
+    rowRegisterCompany.style.display = 'none';
+  }
 });
 
-company.addEventListener('change', function() {
-  if(company.value === 'None'){
+company.addEventListener('change', function () {
+  if (company.value === 'None') {
     rowRegisterCompany.style.display = 'none';
     rowRegisterPerson.style.display = 'none';
   }
@@ -125,7 +125,7 @@ getCompanies();
 
 // --------- OBJ NEW COMPANY 
 
-function jsonNewCompany(){
+function jsonNewCompany() {
   let registerNewCompany = {
     company_name: newCompany.value,
     domain: domain.value,
@@ -138,10 +138,10 @@ function jsonNewCompany(){
 
 // --------- API: CADASTRO NOVA EMPRESA POSTMAN
 
-function postNewCompany(){
-      fetch(url, {
+function postNewCompany() {
+  fetch(url, {
     method: "POST",
-    mode:"no-cors",
+    mode: "no-cors",
 
     headers: {
       "Access-Control-Request-Method": "POST",
@@ -157,10 +157,11 @@ function postNewCompany(){
     body: jsonNewCompany(),
   })
 
-    .then(function(response){
-      console.log(response);})
+    .then(function (response) {
+      console.log(response);
+    })
     .then((json) => console.log(json))
-    .catch(error => console.error('Error:', error)); 
+    .catch(error => console.error('Error:', error));
 }
 
 // --------- CÓDIGO PARA USAR DEPOIS

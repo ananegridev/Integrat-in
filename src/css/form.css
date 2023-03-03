@@ -56,21 +56,18 @@ form span {
   color: red;
 }
 
-.row-register-company{
+.row-register-company {
   margin-bottom: 1%;
 }
 
-#form-company div{
+#form-company div {
   max-width: 400px;
-height: 90px;
+  height: 90px;
   width: 100%;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
 }
-
-
-
 
 /* #nameError.visible {
     display: block;
@@ -90,6 +87,10 @@ input.invalid {
   }
   .form-flag-company {
     text-align: center;
+  }
+
+  .row-select-company {
+    width: 100%;
   }
 }
 
