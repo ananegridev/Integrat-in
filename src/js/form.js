@@ -1,3 +1,45 @@
+// --------- VÁRIAVEIS 
+
+//FORM
+let form = document.querySelector("#form");
+
+// CAMPOS FORMULÁRIO
+
+let company = document.querySelector(".js-input-company");
+let newCompany = document.querySelector(".js-input-companyname");
+let domain = document.querySelector(".js-input-domain");
+let sector = document.querySelector(".js-input-sector");
+let name = document.querySelector(".js-input-name");
+let email = document.querySelector(".js-input-email");
+let departament = document.querySelector(".js-input-departament");
+
+// DIV SEPARAÇÃO FORMULARIOS
+
+let rowSelectCompany = document.querySelector(".row-select-company");
+let rowRegisterCompany = document.querySelector(".row-register-company");
+let rowRegisterPerson = document.querySelector(".row-register-person");
+
+// BUTTONS 
+let btnRegisterCompany = document.getElementById("btn-register-company");
+
+// URL POSTMAN
+const url =
+  "https://03uctuell0.execute-api.us-east-1.amazonaws.com/dev/companies";
+
+// ----------------------------------------------------------------------------
+// ----------------------------------------------------------------------------
+// ----------------------------------------------------------------------------
+// ----------------------------------------------------------------------------
+// ----------------------------------------------------------------------------
+// ----------------------------------------------------------------------------
+// ----------------------------------------------------------------------------
+// ----------------------------------------------------------------------------
+// ----------------------------------------------------------------------------
+// ----------------------------------------------------------------------------
+// ----------------------------------------------------------------------------
+
+// --------- JOGAR DADOS PARA PROX PÁGINA
+
 function formStart() {
   let nameValue = document.querySelector(".js-input-name").value;
   let emailValue = document.querySelector(".js-input-email").value;
@@ -7,86 +49,61 @@ function formStart() {
   let departamentValue = document.querySelector(".js-input-departament").value;
   let sectorValue = document.querySelector(".js-input-sector").value;
 
+  
+
   let formPerson = {
-    name: nameValue,
+    name: namevalue,
     email: emailValue,
     company: companyValue,
-    companyName: companyNameValue,
     domain: domainValue,
-    departament: departamentValue,
     sector: sectorValue,
   };
 
+  console.log(formPerson);
   localStorage.getItem(formPerson);
   return formPerson;
 }
 
 // --------- APARECER CAMPO PARA NOVA EMPRESA
 
-// let flagCompanyName = document.getElementById('form-flag-company');
+rowRegisterCompany.style.display = 'none';
+rowRegisterPerson.style.display = 'none';
 
-// flagCompanyName.style.display = 'none';
+company.addEventListener('change', function() {
+    if(company.value === 'Add'){
+      rowRegisterCompany.style.display = 'block';
+      rowRegisterPerson.style.display = 'none';
+    }else if(company.value != 'Add'){
+      rowRegisterCompany.style.display = 'none';
+      rowRegisterPerson.style.display = 'block';
+    }else{
+      rowRegisterCompany.style.display = 'none';
+      rowRegisterCompany.style.display = 'none';
+    }
+});
 
-// let select = document.getElementById('company');
-
-// select.addEventListener('change', function() {
-//     if(select.value === 'Other'){
-//         flagCompanyName.style.display = 'block';
-//     }else{
-//         flagCompanyName.style.display = 'none';
-//     }
-// });
-
-// --------- FORM COMPANY
-
-let formCompany = document.getElementById("form-company");
-let formPerson = document.getElementById("form-person");
-let select = document.getElementById("company");
-formCompany.style.display = "none";
-formPerson.style.display = "block";
-
-select.addEventListener("change", function () {
-  if (select.value === "Other") {
-    formCompany.style.display = "block";
-    formPerson.style.display = "none";
-  } else {
-    formCompany.style.display = "none";
-    formPerson.style.display = "block";
+company.addEventListener('change', function() {
+  if(company.value === 'None'){
+    rowRegisterCompany.style.display = 'none';
+    rowRegisterPerson.style.display = 'none';
   }
 });
 
-// --------- FORM COMPANY BTN CANCEL
+// --------- CANCELAR SUBMIT
 
-let btnCancel = document.getElementById("btnCancel");
-
-btnCancel.addEventListener("click", function () {
-  if (formCompany.style.display === "block") {
-    formPerson.style.display = "block";
-    formCompany.style.display = "none";
-
-    document.querySelector("form").addEventListener("submit", (event) => {
-      event.preventDefault();
-    });
-  }
-});
-
-// --------- IR PARA PRÓX PÁGINA
-
-function nextPage() {
-  window.location.href = "/quiz.html";
-  localStorage.getItem(formStart);
+function cancelSubmitForm() {
+  document.querySelector('form').addEventListener('submit', event => {
+    event.preventDefault();
+    jsonNewCompany();
+    postNewCompany();
+    location.reload();
+    // return false;
+  });
 }
 
-// --------- API PUXAR AS COMPANYS CADASTRADAS
+// --------- API: PUXAR AS COMPANYS CADASTRADAS NO SELECT
 
-const url =
-  "https://03uctuell0.execute-api.us-east-1.amazonaws.com/dev/companies";
-
-// let apiCompanyNameValue = document.querySelector(".js-input-companyname").value;
-// let apiDomainValue = document.querySelector(".js-input-domain").value;
-// let apiSectorValue = document.querySelector(".js-input-sector").value;
-
-async function getAllPosts() {
+async function getCompanies() {
   const response = await fetch(url);
   console.log(response);
   const data = await response.json();
@@ -94,7 +111,6 @@ async function getAllPosts() {
   // console.log(Object.keys(data).length);
   // console.log(data[0].company_name);
   // data.sort();
-
   for (const x of Object.keys(data)) {
     let apiCompanyValue = document.querySelector(".js-input-company");
     // console.log(data[x].company_name);
@@ -105,126 +121,47 @@ async function getAllPosts() {
   }
 }
 
-getAllPosts();
+getCompanies();
 
-// --------- API CADASTRAR COMPANY NA API
+// --------- OBJ NEW COMPANY 
 
-let apiFormCompany = document.querySelector("#form-company");
-
-apiFormCompany.addEventListener("submit", (e) => {
-  e.preventDefault();
-
-  let apiCompanyNameValue = document.querySelector(".js-input-companyname");
-  let apiDomainValue = document.querySelector(".js-input-domain");
-  let apiSectorValue = document.querySelector(".js-input-sector");
-
-  let newCompany = {
-    company_name: apiCompanyNameValue.value,
-    domain: apiDomainValue.value,
-    sector: apiSectorValue.value,
+function jsonNewCompany(){
+  let registerNewCompany = {
+    company_name: newCompany.value,
+    domain: domain.value,
+    sector: sector.value,
   };
+  registerNewCompany = JSON.stringify(registerNewCompany);
+  console.log(registerNewCompany);
+  return registerNewCompany;
+}
 
-  console.log(newCompany);
+// --------- API: CADASTRO NOVA EMPRESA POSTMAN
 
-    fetch(url, {
+function postNewCompany(){
+      fetch(url, {
     method: "POST",
     mode:"no-cors",
 
     headers: {
-        "Access-Control-Request-Method": "POST",
+      "Access-Control-Request-Method": "POST",
       "Content-Type": "application/json",
       "Content-Length": "189",
       "Connection": "keep-alive",
       "x-amzn-RequestId": "6c5844fc-ec35-44c1-92c6-148b6d5c599b",
       "Access-Control-Allow-Origin": "*",
       "Access-Control-Allow-Origin": "https://127.0.0.1:5500",
-      "x-amz-apigw-id": "Azc6jHfgIAMFlMA=",
+      // "x-amz-apigw-id": "Azc6jHfgIAMFlMA=",
       "X-Amzn-Trace-Id": "Root=1-63f7a843-26fa33d11deb0e5066ae33bf;Sampled=0",
     },
-    body: JSON.stringify(newCompany),
+    body: jsonNewCompany(),
   })
+
     .then(function(response){
       console.log(response);})
     .then((json) => console.log(json))
     .catch(error => console.error('Error:', error)); 
-
-    if (formCompany.style.display = "block") {
-      formCompany.style.display = "none";
-      formPerson.style.display = "block";
-      document.location.reload();
-    } else {
-      formCompany.style.display = "block";
-      formPerson.style.display = "none";
-    }
-
-
-  // --------------
-
-
-});
-
-//   async function getPost() {
-    
-//   fetch(url, {
-//     method: "POST",
-//     mode:"no-cors",
-
-//     headers: {
-//         "Access-Control-Request-Method": "POST",
-//       "Content-Type": "application/json",
-//       "Content-Length": "189",
-//       "Connection": "keep-alive",
-//       "x-amzn-RequestId": "6c5844fc-ec35-44c1-92c6-148b6d5c599b",
-//       "Access-Control-Allow-Origin": "*",
-//       "Access-Control-Allow-Origin": "https://127.0.0.1:5500",
-//       "x-amz-apigw-id": "Azc6jHfgIAMFlMA=",
-//       "X-Amzn-Trace-Id": "Root=1-63f7a843-26fa33d11deb0e5066ae33bf;Sampled=0",
-//     },
-//     body: JSON.stringify(newCompany),
-//   })
-//     .then(function(response){
-//       console.log(response);})
-
-//     .then((json) => console.log(json))
-
-//     .catch(error => console.error('Error:', error)); 
-//     } //END GETPOST
-
-// getPost();
-
-// async function getPost() {
-
-// let apiFormCompany = document.querySelector("#form-company");
-
-// //RETIRANDO ENVIO DO FORM
-// apiFormCompany.addEventListener("submit", (e) => {
-//     e.preventDefault();
-
-//     newCompany = JSON.stringify(newCompany);
-
-//     function success() {
-//         var data = JSON.parse(this.responseText); //fazer o parsing da string para JSON
-//         console.log(data);
-//     }
-
-//     // // função para tratar o erro
-//     // function error(err) {
-//     //     console.log('Erro de solicitação', err); //os detalhes do erro estarão no objeto "err"
-//     // }
-
-//     fetch('http://localhost:5500/start.html?'+url, {
-//         method: "POST",
-//         body: newCompany,
-//         headers: { "Content-type": "application/json;" , "Access-Control-Allow-Origin" : '*' }
-//     })
-//         // .then(response => response.json())
-//         // .then(json => console.log(json));
-
-// }) //END APIFORMCOMPANY
-
-//} //END GETPOST
-
-// getPost();
+}
 
 // --------- CÓDIGO PARA USAR DEPOIS
 

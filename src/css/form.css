@@ -56,6 +56,10 @@ form span {
   color: red;
 }
 
+.row-register-company{
+  margin-bottom: 1%;
+}
+
 #form-company div{
   max-width: 400px;
 height: 90px;

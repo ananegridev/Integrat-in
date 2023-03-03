@@ -44,31 +44,10 @@
 
         <section class="content__start-box">
           
-          <form method="GET" action="quiz.html" id="form-person">
+          <form action="quiz.html" id="form">
+            <!-- <form method="GET" action="quiz.html" id="form"> -->
             
-            <span class="error" role="alert" id="nameError" aria-hidden="true">
-              Please enter your name*
-            </span>
-            <input required
-              type="text"
-              name="name"
-              id="name"
-              class="js-input-name"
-              placeholder="Whats your name?*"
-            />
-
-            <span class="error" role="alert" id="nameError" aria-hidden="true">
-              Please enter your e-mail*
-            </span>
-            <input required
-              type="text"
-              name="email"
-              id="email"
-              class="js-input-email"
-              placeholder="Whats your e-mail?*"
-            />
-
-            <div class="form-flag-company" >
+            <div class="row-select-company" >
               <span class="error" role="alert" id="nameError" aria-hidden="true">
                 Please enter your company*
               </span>
@@ -77,82 +56,112 @@
                 id="company"
                 class="js-input-company"
               >
-                <option value="Other">Select your company*</option>
-                <option value="Other">Add a new Company</option>
+                <option value="None">Select your company*</option>
+                <option value="Add">Add a new Company</option>
               </select>
+              
             </div>
 
-            <span class="error" role="alert" id="nameError" aria-hidden="true">
-              Please enter your departament*
-            </span>
-            <select required
-              name="departament"
-              id="departament"
-              class="js-input-departament"
-            >
-              <option value="Other">What is your departament*</option>
-              <option value="Administration/Operations">Administration/Operations</option>
-              <option value="Research and development">Research and development</option>
-              <option value="Marketing and sales">Marketing and sales</option>
-              <option value="Human resources">Human resources</option>
-              <option value="Customer service">Customer service</option>
-              <option value="Accounting and finance">Accounting and finance</option>
-              <option value="Other">Other</option>
-            </select>
+            <!-- START REGISTER NEW COMPANY -->
 
-            <button class="btn" type="submit" id="submit" >Next</button>
-          </form>
+            <div id="form-company" class="row-register-company">
+              <p class="text-help">When choosing the "<b>Add a new Company</b>" option, you must register your company</p> 
+                <span role="alert" id="nameError" aria-hidden="true">
+                  Please enter your the company name
+                </span>
+                <input
+                  type="text"
+                  name="newCompany"
+                  id="newCompany"
+                  class="js-input-companyname"
+                  placeholder="Whats your company name?*"
+                />
+     
+                <span class="error" role="alert" id="nameError" aria-hidden="true">
+                  Please what your domain company
+                </span>
+                <input 
+                  type="text"
+                  name="domain"
+                  id="domain"
+                  class="js-input-domain"
+                  placeholder="Please what your domain company?"
+                />
+  
+                <span class="error" role="alert" id="nameError" aria-hidden="true">
+                  Please enter your sector
+                </span>
+                <select required
+                  name="sector"
+                  id="sector"
+                  class="js-input-sector"
+                >
+                  <option value="Other">What is your sector?*</option>
+                  <option value="Energy">Energy</option>
+                  <option value="Materials">Materials</option>
+                  <option value="Insdustrials">Industrials</option>
+                  <option value="Utilities">Utilities</option>
+                  <option value="Healthcare">Healthcare</option>
+                  <option value="Financials">Financials</option>
+                  <option value="Consumer Discretionary">Consumer Discretionary</option>
+                  <option value="Consumer Staples">Consumer Staples</option>
+                  <option value="Other">Other</option>
+                </select>
+  
+                  <button class="btn" type="submit" onclick="cancelSubmitForm()" id="btn-register-company">Register Company</button>
 
-          <form id="form-company">
-           
-            <p>When choosing the "<b>Other</b>" option, you must register your company</p> <br>
+                  <!-- <button class="btn" id="btnCancel">Cancel</button> -->
 
-              <span role="alert" id="nameError" aria-hidden="true">
-                Please enter your the company name
+            </div>
+            <!-- END REGISTER NEW COMPANY -->
+
+            <!-- START REGISTER PERSON -->
+            <div class="row-register-person">
+              <span class="error" role="alert" id="nameError" aria-hidden="true">
+                Please enter your name*
               </span>
               <input
                 type="text"
-                name="newCompany"
-                id="newCompany"
-                class="js-input-companyname"
-                placeholder="Whats your company name?*"
+                name="name"
+                id="name"
+                class="js-input-name"
+                placeholder="Whats your name?*"
               />
-   
+  
               <span class="error" role="alert" id="nameError" aria-hidden="true">
-                Please what your domain company
+                Please enter your e-mail*
               </span>
               <input 
                 type="text"
-                name="domain"
-                id="domain"
-                class="js-input-domain"
-                placeholder="Please what your domain company?"
+                name="email"
+                id="email"
+                class="js-input-email"
+                placeholder="Whats your e-mail?*"
               />
-
+  
+  
+  
               <span class="error" role="alert" id="nameError" aria-hidden="true">
-                Please enter your sector
+                Please enter your departament*
               </span>
-              <select required
-                name="sector"
-                id="sector"
-                class="js-input-sector"
+              <select 
+                name="departament"
+                id="departament"
+                class="js-input-departament"
               >
-                <option value="Other">What is your sector?*</option>
-                <option value="Energy">Energy</option>
-                <option value="Materials">Materials</option>
-                <option value="Insdustrials">Industrials</option>
-                <option value="Utilities">Utilities</option>
-                <option value="Healthcare">Healthcare</option>
-                <option value="Financials">Financials</option>
-                <option value="Consumer Discretionary">Consumer Discretionary</option>
-                <option value="Consumer Staples">Consumer Staples</option>
+                <option value="Other">What is your departament*</option>
+                <option value="Administration/Operations">Administration/Operations</option>
+                <option value="Research and development">Research and development</option>
+                <option value="Marketing and sales">Marketing and sales</option>
+                <option value="Human resources">Human resources</option>
+                <option value="Customer service">Customer service</option>
+                <option value="Accounting and finance">Accounting and finance</option>
                 <option value="Other">Other</option>
               </select>
 
-                <button class="btn" type="submit">Register Company</button>
-
-          
-              <button class="btn" id="btnCancel">Cancel</button>
+              <button class="btn">Next</button>
+            </div>
+             <!-- END REGISTER PERSON -->
 
           </form>
 
