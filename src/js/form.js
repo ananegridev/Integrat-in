@@ -96,7 +96,7 @@ function cancelSubmitForm() {
     event.preventDefault();
     jsonNewCompany();
     postNewCompany();
-    location.reload();
+    document.location.reload();
     // return false;
   });
 }
