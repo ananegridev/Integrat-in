@@ -1,32 +1,36 @@
-// --------- PEGANDO DADOS DO START.HTML VIA URL
+// const startForm = localStorage.getItem('register')
+var answer = JSON.parse(window.localStorage.getItem('register'));
 
-var objURL = new URL(window.location.href);
 
-// --------- PEGANDO DADOS DO START.HTML VIA URL E TRANSFORMANDO EM OBJ
+//if (answer.calculation === 'i'){
+//    format_answer[result_type] = "individual";
+//}
+//if(answer.calculation === 'c'){
+//    format_answer[result_type] = "company-wide";
+//}
+//console.log(format_answer)
+// console.log('---------------------------------------------------------------')
 
-let startForm = Object.fromEntries(objURL.searchParams);
 
-// --------- PEGANDO DATA E HORA DA RESPOSTA DO USUÁRIO
+// calculation: "i"
+// company: "BOTICARIO"
+// departament: "Marketing and sales"
+// email: "anywtf@outlook.com"
+// name: "Ana Paula Negri de Macedo"
 
-let today = new Date().toLocaleDateString();
-let time = new Date().toLocaleTimeString();
-
-// --------- PEGANDO DATA E HORA E ADICIONANDO NO OBJ
-
-startForm.answerDate = today;
-startForm.answerTime = time;
-
-// --------- ARMAZENANDO DADOS JSON DAS PERGUNTAS E FORM NO JSON
-
-var answers = {};
+// var answers = {};
 
 function storeAnswer(question_number, event) {
     if (event.target.type === 'radio') {
-        answers['' + question_number] = parseInt(event.target.value);
-        var end = [startForm, answers];
-        console.log(JSON.stringify(end));
+        var question = {}
+        question[question_number] = parseInt(event.target.value);
+        Object.assign(answer, question)
+        // answer[question_number] = parseInt(event.target.value);
+        // var jsonAnswers = JSON.stringify({answer}); 
+
     }
-    return end;
+    // console.log(JSON.stringify(answer));
+    return answer;
 }
 
 var q1 = document.getElementById('question-1');
@@ -64,195 +68,198 @@ var q32 = document.getElementById('question-32');
 var q33 = document.getElementById('question-33');
 var q34 = document.getElementById('question-34');
 
-// --------- TOTAL SCORE
-
-function score(answers){
-    if(Object.values(answers).length > 1){
-        var somaScore = Object.values(answers).reduce((a, b) => a + b, 0);
-        console.log(somaScore)
-    }
-}
 
 // --------- 
 
-q1.addEventListener('click', function (event) {
-    storeAnswer(1, event)
-    // score(answers)
-});
-q2.addEventListener('click', function (event) {
-    storeAnswer(2, event)
-    // score(answers)
-});
-q3.addEventListener('click', function (event) {
-    storeAnswer(3, event)
-    // score(answers)
-});
-q4.addEventListener('click', function (event) {
-    storeAnswer(4, event)
-    // score(answers)
-});
-q5.addEventListener('click', function (event) {
-    storeAnswer(5, event)
-    // score(answers)
-});
-q6.addEventListener('click', function (event) {
-    storeAnswer(6, event)
-    // score(answers)
-});
-q7.addEventListener('click', function (event) {
-    storeAnswer(7, event)
-    // score(answers)
-});
-q8.addEventListener('click', function (event) {
-    storeAnswer(8, event)
-    // score(answers)
-});
-q9.addEventListener('click', function (event) {
-    storeAnswer(9, event)
-    // score(answers)
-});
-q10.addEventListener('click', function (event) {
-    storeAnswer(10, event)
-    // score(answers)
-});
-q11.addEventListener('click', function (event) {
-    storeAnswer(11, event)
-    // score(answers)
-});
-q12.addEventListener('click', function (event) {
-    storeAnswer(12, event)
-    // score(answers)
-});
-q13.addEventListener('click', function (event) {
-    storeAnswer(13, event)
-    // score(answers)
-});
-q14.addEventListener('click', function (event) {
-    storeAnswer(14, event)
-    // score(answers)
-});
-q15.addEventListener('click', function (event) {
-    storeAnswer(15, event)
-    // score(answers)
-});
-q16.addEventListener('click', function (event) {
-    storeAnswer(16, event)
-    // score(answers)
-});
-q17.addEventListener('click', function (event) {
-    storeAnswer(17, event)
-    // score(answers)
-});
-q18.addEventListener('click', function (event) {
-    storeAnswer(18, event)
-    // score(answers)
-});
-q19.addEventListener('click', function (event) {
-    storeAnswer(19, event)
-    // score(answers)
-});
-q20.addEventListener('click', function (event) {
-    storeAnswer(20, event)
-    // score(answers)
-});
-q21.addEventListener('click', function (event) {
-    storeAnswer(21, event)
-    // score(answers)
-});
-q21.addEventListener('click', function (event) {
-    storeAnswer(21, event)
-    // score(answers)
-});
-q22.addEventListener('click', function (event) {
-    storeAnswer(22, event)
-    // score(answers)
-});
-q23.addEventListener('click', function (event) {
-    storeAnswer(23, event)
-    // score(answers)
-});
-q24.addEventListener('click', function (event) {
-    storeAnswer(24, event)
-    // score(answers)
-});
-q25.addEventListener('click', function (event) {
-    storeAnswer(25, event)
-    // score(answers)
-});
-q26.addEventListener('click', function (event) {
-    storeAnswer(26, event)
-    // score(answers)
-});
-q26.addEventListener('click', function (event) {
-    storeAnswer(26, event)
-    // score(answers)
-});
-q27.addEventListener('click', function (event) {
-    storeAnswer(27, event)
-    // score(answers)
-});
-q28.addEventListener('click', function (event) {
-    storeAnswer(28, event)
-    // score(answers)
-});
-q29.addEventListener('click', function (event) {
-    storeAnswer(29, event)
-    // score(answers)
-});
-q30.addEventListener('click', function (event) {
-    storeAnswer(30, event)
-    // score(answers)
-});
-q31.addEventListener('click', function (event) {
-    storeAnswer(31, event)
-    // score(answers)
-});
-q32.addEventListener('click', function (event) {
-    storeAnswer(32, event)
-    // score(answers)
-});
-q33.addEventListener('click', function (event) {
-    storeAnswer(33, event)
-    // score(answers)
-});
-q34.addEventListener('click', function (event) {
-    storeAnswer(34, event)
-    // score(answers)
-});
+q1.addEventListener('click', function (event) { answer = storeAnswer("FIF1.1", event) });
+q2.addEventListener('click', function (event) { answer = storeAnswer("FIF1.2", event) });
+q3.addEventListener('click', function (event) { answer = storeAnswer("FIF1.3", event) });
+q4.addEventListener('click', function (event) { answer = storeAnswer("FIF1.4", event) });
+q5.addEventListener('click', function (event) { answer = storeAnswer("FIF1.5", event) });
+q6.addEventListener('click', function (event) { answer = storeAnswer("FIF1.6", event) });
+q7.addEventListener('click', function (event) { answer = storeAnswer("FIF1.7", event) });
+q8.addEventListener('click', function (event) { answer = storeAnswer("FIF1.10", event) });
+q9.addEventListener('click', function (event) { answer = storeAnswer("IIF1.2", event) });
+q10.addEventListener('click', function (event) { answer = storeAnswer("IIF1.3", event) });
+q11.addEventListener('click', function (event) { answer = storeAnswer("IIF1.5", event) });
+q12.addEventListener('click', function (event) { answer = storeAnswer("IIF1.6", event) });
+q13.addEventListener('click', function (event) { answer = storeAnswer("IIF1.7", event) });
+q14.addEventListener('click', function (event) { answer = storeAnswer("IIF1.8", event) });
+q15.addEventListener('click', function (event) { answer = storeAnswer("IIF1.9", event) });
+q16.addEventListener('click', function (event) { answer = storeAnswer("IIF1.10", event) });
+q17.addEventListener('click', function (event) { answer = storeAnswer("IIF1.11", event) });
+q18.addEventListener('click', function (event) { answer = storeAnswer("IIF1.12", event) });
+q19.addEventListener('click', function (event) { answer = storeAnswer("IIF1.13", event) });
+q20.addEventListener('click', function (event) { answer = storeAnswer("C1.1", event) });
+q21.addEventListener('click', function (event) { answer = storeAnswer("C1.2", event) });
+q22.addEventListener('click', function (event) { answer = storeAnswer("C1.3", event) });
+q23.addEventListener('click', function (event) { answer = storeAnswer("C1.4", event) });
+q24.addEventListener('click', function (event) { answer = storeAnswer("C1.5", event) });
+q25.addEventListener('click', function (event) { answer = storeAnswer("C1.6", event) });
+q26.addEventListener('click', function (event) { answer = storeAnswer("C1.7", event) });
+q27.addEventListener('click', function (event) { answer = storeAnswer("C1.8", event) });
+q28.addEventListener('click', function (event) { answer = storeAnswer("C1.9", event) });
+q29.addEventListener('click', function (event) { answer = storeAnswer("C1.10", event) });
+q30.addEventListener('click', function (event) { answer = storeAnswer("C1.11", event) });
+q31.addEventListener('click', function (event) { answer = storeAnswer("C1.12", event) });
+q32.addEventListener('click', function (event) { answer = storeAnswer("IM1.1", event) });
+q33.addEventListener('click', function (event) { answer = storeAnswer("IM1.2", event) });
+q34.addEventListener('click', function (event) { answer = storeAnswer("IM1.3", event) });
+
+// URL POSTMAN
+const url =
+    "https://03uctuell0.execute-api.us-east-1.amazonaws.com/dev/companies/fef24e30-4114-4393-88d7-20b7f89ce091/answers";
+
+async function postAnswer(answer, event) {
+
+    var result_type = {}
+    if (answer.calculation === 'i') { result_type["result_type"] = "individual"; }
+    if (answer.calculation === 'c') { result_type["result_type"] = "company-wide"; }
+    var format_answer = {}
+    Object.assign(format_answer, result_type)
+    delete answer.calculation
+    Object.assign(format_answer, { answer })
+
+    let teste = JSON.stringify(format_answer);
+    console.log(teste)
+
+    if (event.target.type === 'submit') {
+
+        // var raw = JSON.stringify({
+        //     "result_type": "individual",
+        //     "answer": {
+        //         "name": "saulo coutinho",
+        //         "email": "some@email.com",
+        //         "department": "marketing",
+        //         "FIF1.1": 6,
+        //         "FIF1.2": 5,
+        //         "FIF1.3": 3,
+        //         "FIF1.4": 3,
+        //         "FIF1.5": 7,
+        //         "FIF1.6": 7,
+        //         "FIF1.7": 3,
+        //         "FIF1.10": 3,
+        //         "IIF1.2": 5,
+        //         "IIF1.3": 6,
+        //         "IIF1.5": 6,
+        //         "IIF1.6": 7,
+        //         "IIF1.7": 3,
+        //         "IIF1.8": 5,
+        //         "IIF1.9": 3,
+        //         "IIF1.10": 3,
+        //         "IIF1.11": 3,
+        //         "IIF1.12": 5,
+        //         "IIF1.13": 3,
+        //         "C1.1": 3,
+        //         "C1.2": 7,
+        //         "C1.3": 3,
+        //         "C1.4": 7,
+        //         "C1.5": 3,
+        //         "C1.6": 4,
+        //         "C1.7": 5,
+        //         "C1.8": 3,
+        //         "C1.9": 6,
+        //         "C1.10": 3,
+        //         "C1.11": 7,
+        //         "C1.12": 3,
+        //         "IM1.1": 7,
+        //         "IM1.2": 3,
+        //         "IM1.3": 3
+        //     }
+        // });
+
+        var myHeaders = new Headers();
+        myHeaders.append("Access-Control-Request-Method", "POST", "Content-Type", "application/json", "Access-Control-Allow-Origin", "*","Access-Control-Allow-Origin", "https://127.0.0.1:5500");
+        // myHeaders.append("Content-Type", "application/json");
+        // myHeaders.append("Content-Length", "");
+        // myHeaders.append("Host", "");
+        // myHeaders.append("User-Agent","PostmanRuntime/7.31.1");
+        // myHeaders.append("Accept","*/*");
+        // myHeaders.append("Accept-Encoding","gzip, deflate, br");
+        // myHeaders.append("Connection","keep-alive");
+
+
+        var requestOptions = {
+            method: 'POST',
+            // mode: "no-cors",
+            dataType: 'json',
+            headers: myHeaders,
+            body: JSON.stringify(format_answer),
+            redirect: 'follow'
+        };
+
+        fetch("https://03uctuell0.execute-api.us-east-1.amazonaws.com/dev/companies/fef24e30-4114-4393-88d7-20b7f89ce091/answers", requestOptions)
+            .then(response => response.text())
+            .then(result => console.log(result))
+            .catch(error => console.log('error', error));
+    }
+
+
+
+
+    // var myHeaders = new Headers();
+    // myHeaders.append("Content-Type", "application/json");
+    // myHeaders.append("Connection", "keep-alive");
+    // myHeaders.append("x-amzn-RequestId", "11c436f5-e53a-4c9e-b719-250a146c3cb6");
+    // myHeaders.append("Access-Control-Allow-Origin","*");
+    // myHeaders.append("x-amz-apigw-id","BVFvVFDOoAMF7IA=");
+    // myHeaders.append("X-Amzn-Trace-Id","Root=1-64051cc8-6c49f7aa4c541e0f1b39cfa7;Sampled=0");
+
+    // if (event.target.type === 'submit') {
+    //     var requestOptions = {
+    //         method: 'POST',
+    //         mode: "no-cors",
+    //         headers: myHeaders,
+    //         body: body
+    //     };
+
+    //     fetch(url, requestOptions)
+    //         .then(response => response.text())
+    //         .then(result => console.log(result))
+    //         .catch(error => console.log('error', error));
+
+
+    //     }
+
+}
 
 // --------- PAGINAÇÃO QUIZ
 
 let sub1 = document.getElementById('submit-1');
 let sub2 = document.getElementById('submit-2');
 let sub3 = document.getElementById('submit-3');
-let sub4 = document.getElementById('submit-4');
+let finish = document.getElementById('submit-4');
+
+finish.addEventListener('click', function (event) {
+    postAnswer(answer, event)
+});
 
 let back1 = document.getElementById('back-1');
 let back2 = document.getElementById('back-2');
 let back3 = document.getElementById('back-3');
 let back4 = document.getElementById('back-4');
 
+
 let row1 = document.getElementById('row-box-1');
 let row2 = document.getElementById('row-box-2');
 let row3 = document.getElementById('row-box-3');
 let row4 = document.getElementById('row-box-4');
 
-
+const boxBtn1 = document.getElementById('box-btn-1');
+const boxBtn2 = document.getElementById('box-btn-2');
+const boxBtn3 = document.getElementById('box-btn-3');
 
 row1.style.display = 'block';
 row2.style.display = 'none';
 row3.style.display = 'none';
 row4.style.display = 'none';
 
-sub1.style.display = 'block';
-sub2.style.display = 'none';
-sub3.style.display = 'none';
-sub4.style.display = 'none';
+boxBtn1.style.display = 'block';
+boxBtn2.style.display = 'none';
+boxBtn3.style.display = 'none';
 
-// back1.style.display = 'none';
-// back2.style.display = 'none';
-// back3.style.display = 'none';
-// back4.style.display = 'none';
+finish.style.display = 'none';
+back4.style.display = 'none';
 
 sub1.addEventListener('click', function () {
     if (row1.style.display === 'block') {
@@ -261,14 +268,11 @@ sub1.addEventListener('click', function () {
         row3.style.display = 'none';
         row4.style.display = 'none';
 
-        sub1.style.display = 'none';
-        sub2.style.display = 'block';
-        sub3.style.display = 'none';
-        sub4.style.display = 'none';
+        boxBtn1.style.display = 'none';
+        boxBtn2.style.display = 'block';
+        boxBtn3.style.display = 'none';
 
-        back1.style.display = 'none';
-        back2.style.display = 'block';
-        back3.style.display = 'none';
+        finish.style.display = 'none';
         back4.style.display = 'none';
 
         growProgressBar('25%');
@@ -283,10 +287,13 @@ sub2.addEventListener('click', function () {
         row3.style.display = 'block';
         row4.style.display = 'none';
 
-        sub1.style.display = 'none';
-        sub2.style.display = 'none';
-        sub3.style.display = 'block';
-        sub4.style.display = 'none';
+
+        boxBtn1.style.display = 'none';
+        boxBtn2.style.display = 'none';
+        boxBtn3.style.display = 'block';
+
+        finish.style.display = 'none';
+        back4.style.display = 'none';
 
         growProgressBar('50%');
         window.location.href = "#progress_bar";
@@ -301,10 +308,12 @@ sub3.addEventListener('click', function () {
         row3.style.display = 'none';
         row4.style.display = 'block';
 
-        sub1.style.display = 'none';
-        sub2.style.display = 'none';
-        sub3.style.display = 'none';
-        sub4.style.display = 'block';
+        boxBtn1.style.display = 'none';
+        boxBtn2.style.display = 'none';
+        boxBtn3.style.display = 'none';
+
+        finish.style.display = 'block';
+        back4.style.display = 'block';
 
         growProgressBar('75%');
         window.location.href = "#progress_bar";
@@ -312,38 +321,86 @@ sub3.addEventListener('click', function () {
     }
 })
 
-sub4.addEventListener('click', function () {
+finish.addEventListener('click', function () {
     if (row4.style.display === 'block') {
         row1.style.display = 'none';
         row2.style.display = 'none';
         row3.style.display = 'none';
         row4.style.display = 'none';
         growProgressBar('100%');
-        window.location.href = "/result.html"+"?"+answers;
-        // clearHistory();
 
     }
 })
 
-// --------- LIMPAR URL
+// BOTÃO BACK
+back2.addEventListener('click', function () {
+    if (row2.style.display === 'block') {
+        row1.style.display = 'block';
+        row2.style.display = 'none';
+        row3.style.display = 'none';
+        row4.style.display = 'none';
 
-// function clearHistory() {
-//     window.history.pushState("", "", "/");
-// }
+        boxBtn1.style.display = 'block';
+        boxBtn2.style.display = 'none';
+        boxBtn3.style.display = 'none';
+
+        finish.style.display = 'none';
+        back4.style.display = 'none';
+
+        growProgressBar('0%');
+        window.location.href = "#progress_bar";
+
+    }
+})
+
+back3.addEventListener('click', function () {
+    if (row3.style.display === 'block') {
+        row1.style.display = 'none';
+        row2.style.display = 'block';
+        row3.style.display = 'none';
+        row4.style.display = 'none';
+
+        boxBtn1.style.display = 'none';
+        boxBtn2.style.display = 'block';
+        boxBtn3.style.display = 'none';
+
+        finish.style.display = 'none';
+        back4.style.display = 'none';
+
+        growProgressBar('25%');
+        window.location.href = "#progress_bar";
+
+    }
+})
+
+back4.addEventListener('click', function () {
+    if (row4.style.display === 'block') {
+        row1.style.display = 'none';
+        row2.style.display = 'none';
+        row3.style.display = 'block';
+        row4.style.display = 'none';
+
+        boxBtn1.style.display = 'none';
+        boxBtn2.style.display = 'none';
+        boxBtn3.style.display = 'block';
+
+        finish.style.display = 'none';
+        back4.style.display = 'none';
+
+        growProgressBar('100%');
+        window.location.href = "#progress_bar";
+
+    }
+})
 
 // --------- PROGRESS BAR
 
-function growProgressBar(percentage_width){
+function growProgressBar(percentage_width) {
     var bar = document.getElementById("progress_bar");
     bar.style.width = percentage_width;
 }
 
-// --------- 
-
-// function nextPageEnd(){
-//     window.location.href = "/result.html"+"?"+somaScore;
-// }
-
+// --------- RETIRANDO PREVENT DEFAULT DO FORM
 function submitForm(event) {
     event.preventDefault();
 }
@@ -351,5 +408,5 @@ function submitForm(event) {
 document.querySelector('form').addEventListener('submit', event => {
     event.preventDefault();
 
-    window.location.href = "/result.html"+"?"+answers;
+    // window.location.href = "/result.html";
 })

@@ -21,20 +21,6 @@ main {
     margin: 20px 0;
   }
 
-  .content__result-perc{
-        display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin: 5% 0;
-  }
-
-  .content__result-perc span{
-    font-size: 4rem;
-    font-weight: 700;
-    letter-spacing: 3px;
-    margin: 10px 0;
-  }
-
   .content__result-text{
     display: flex;
   justify-content: space-evenly;
@@ -58,30 +44,29 @@ main {
   }
 
   .spot-advert{
+    width: 100%;
     padding: 5%;
     background-color:#f6f6c9;
     margin-bottom: 1%;
   }
+
   .spot-great{
+    width: 100%;
     padding: 5%;
     background-color: #bad1c2;
     margin-bottom: 1%;
 
   }
 
-  .spot-title  {
-    display: flex;
-    align-items: center;
-  }
+.spot-title{
+  display: flex;
+  align-items: center;
+}
 
-  .spot-title  h2{
-    margin-left: 20px;
-  }
-
-  .spot-title img{
+.spot-title img{
   width: 30px;
-  height: 30px;
-  }
+  margin-right: 1%;
+}
 
 
   

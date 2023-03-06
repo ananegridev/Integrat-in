@@ -1,7 +1,9 @@
 // --------- VÁRIAVEIS 
 
 //FORM
-let form = document.querySelector("#form");
+// let form = document.querySelector("#form");
+const form = document.querySelector("[data-formulario]");
+
 
 // CAMPOS FORMULÁRIO
 
@@ -9,9 +11,13 @@ let company = document.querySelector(".js-input-company");
 let newCompany = document.querySelector(".js-input-companyname");
 let domain = document.querySelector(".js-input-domain");
 let sector = document.querySelector(".js-input-sector");
-let name = document.querySelector(".js-input-name");
+let fullname = document.querySelector(".js-input-name");
 let email = document.querySelector(".js-input-email");
 let departament = document.querySelector(".js-input-departament");
+let calculation = document.querySelector(".js-input-calculation");
+
+// TODOS ELEMENTOS COM REQUIRED
+let inputsFormRequired = document.querySelectorAll("[required]");
 
 // DIV SEPARAÇÃO FORMULARIOS
 
@@ -21,6 +27,7 @@ let rowRegisterPerson = document.querySelector(".row-register-person");
 
 // BUTTONS 
 let btnRegisterCompany = document.getElementById("btn-register-company");
+let btnNext = document.getElementById("btn-next");
 
 // URL POSTMAN
 const url =
@@ -38,29 +45,32 @@ const url =
 // ----------------------------------------------------------------------------
 // ----------------------------------------------------------------------------
 
+// --------- LIMPAR LOCAL STORAGE DA PÁGINA
+// localStorage.clear();
+
 // --------- JOGAR DADOS PARA PROX PÁGINA
 
-function formStart() {
+form.addEventListener("submit", (e) => {
+  e.preventDefault();
+
   let nameValue = document.querySelector(".js-input-name").value;
   let emailValue = document.querySelector(".js-input-email").value;
   let companyValue = document.querySelector(".js-input-company").value;
-  // let companyNameValue = document.querySelector(".js-input-companyname").value;
-  let domainValue = document.querySelector(".js-input-domain").value;
-  // let departamentValue = document.querySelector(".js-input-departament").value;
-  let sectorValue = document.querySelector(".js-input-sector").value;
+  let departamentValue = document.querySelector(".js-input-departament").value;
+  let calculationValue = document.querySelector(".js-input-calculation").value;
 
-  let formPerson = {
+  const listRegister = {
     name: nameValue,
     email: emailValue,
     company: companyValue,
-    domain: domainValue,
-    sector: sectorValue,
+    departament: departamentValue,
+    calculation: calculationValue
   };
 
-  console.log(formPerson);
-  localStorage.getItem(formPerson);
-  return formPerson;
-}
+  localStorage.setItem("register", JSON.stringify(listRegister));
+  window.location.href = "./quiz.html"+"?"+listRegister;
+});
+
 
 // --------- APARECER CAMPO PARA NOVA EMPRESA
 
@@ -92,18 +102,16 @@ company.addEventListener('change', function () {
 function cancelSubmitForm() {
   document.querySelector('form').addEventListener('submit', event => {
     event.preventDefault();
-    jsonNewCompany();
-    postNewCompany();
-    document.location.reload();
-    // return false;
   });
 }
 
 // --------- RECARREGAR PÁGINA
 
-btnRegisterCompany.addEventListener("click", function() {
+btnRegisterCompany.addEventListener("click", function () {
   document.location.reload();
   location.reload();
+  jsonNewCompany();
+  postNewCompany();
   window.location.reload(true);
 });
 
@@ -138,7 +146,7 @@ function jsonNewCompany() {
     sector: sector.value,
   };
   registerNewCompany = JSON.stringify(registerNewCompany);
-  // console.log(registerNewCompany);
+  console.log(registerNewCompany);
   return registerNewCompany;
 }
 
@@ -157,18 +165,69 @@ function postNewCompany() {
       "x-amzn-RequestId": "6c5844fc-ec35-44c1-92c6-148b6d5c599b",
       "Access-Control-Allow-Origin": "*",
       "Access-Control-Allow-Origin": "https://127.0.0.1:5500",
-      // "x-amz-apigw-id": "Azc6jHfgIAMFlMA=",
       "X-Amzn-Trace-Id": "Root=1-63f7a843-26fa33d11deb0e5066ae33bf;Sampled=0",
     },
     body: jsonNewCompany(),
   })
-
-    .then(function (response) {
-      console.log(response);
-    })
-    .then((json) => console.log(json))
-    .catch(error => console.error('Error:', error));
 }
+
+// --------- VALIDAÇÃO FORMULÁRIO 1
+
+const msgs = {
+  name: {
+    valueMissing: "Name field cannot be empty.",
+    patternMismatch: "Please fill in a valid name.",
+    tooShort: "Please fill in a valid name."
+  },
+  email: {
+    valueMissing: "The email field cannot be empty.",
+    typeMismatch: "Please fill in a valid email.",
+    tooShort: "Please fill in a valid email."
+  },
+  departament: {
+    valueMissing: "You must choose a department before continuing",
+  },
+  calculation: {
+    valueMissing: "You need to select a calculation type to continue.",
+  },
+  company: {
+    valueMissing: "You must choose a company before continuing",
+  }
+}
+
+const typesOfErrors = [
+  'valueMissing',
+  'typeMismatch',
+  'patternMismatch',
+  'tooShort'
+];
+
+function checkField(field) {
+  let msg = "";
+  field.setCustomValidity('');
+
+  typesOfErrors.forEach(erro => {
+    if (field.validity[erro]) {
+      msg = msgs[field.name][erro];
+    }
+  })
+  const textErro = field.parentNode.querySelector('.text-error')
+  const validInput = field.checkValidity();
+  if (!validInput) {
+    textErro.textContent = msg;
+    field.style.border = '2px solid red';
+  } else {
+    textErro.textContent = '';
+    field.style.border = '1px solid black'
+  }
+}
+
+inputsFormRequired.forEach((field) => {
+  field.addEventListener("blur", () => checkField(field));
+  field.addEventListener("invalid", event => event.preventDefault());
+})
+
+// --------- VALIDAÇÃO FORMULÁRIO ADD NEW COMPANY
 
 // --------- CÓDIGO PARA USAR DEPOIS
 
