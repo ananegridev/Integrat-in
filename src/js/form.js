@@ -1,12 +1,9 @@
 // --------- VÁRIAVEIS 
 
 //FORM
-// let form = document.querySelector("#form");
 const form = document.querySelector("[data-formulario]");
 
-
 // CAMPOS FORMULÁRIO
-
 let company = document.querySelector(".js-input-company");
 let newCompany = document.querySelector(".js-input-companyname");
 let domain = document.querySelector(".js-input-domain");

@@ -1,3 +1,4 @@
+
 // const startForm = localStorage.getItem('register')
 var answer = JSON.parse(window.localStorage.getItem('register'));
 
