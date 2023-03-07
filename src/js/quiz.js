@@ -1,4 +1,3 @@
-
 // const startForm = localStorage.getItem('register')
 var answer = JSON.parse(window.localStorage.getItem('register'));
 
@@ -190,8 +189,12 @@ async function postAnswer(answer, event) {
         };
 
         fetch("https://03uctuell0.execute-api.us-east-1.amazonaws.com/dev/companies/fef24e30-4114-4393-88d7-20b7f89ce091/answers", requestOptions)
-            .then(response => response.text())
-            .then(result => console.log(result))
+            .then(response => response.json())
+            .then(function (result) {
+                // localStorage.setItem("result", JSON.stringify(listRegister));
+                localStorage.setItem("result", JSON.stringify(result));
+                window.location.href = "./result.html";
+            })
             .catch(error => console.log('error', error));
     }
 
