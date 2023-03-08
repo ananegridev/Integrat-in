@@ -171,7 +171,7 @@ function landingPage() {
         '</div>' 
         ;
   
-        //  contentBoxSpots.innerHTML = html;
+         contentBoxSpots.innerHTML = html;
       }
       landingPage();
 
