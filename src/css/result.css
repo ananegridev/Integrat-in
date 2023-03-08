@@ -115,13 +115,13 @@ main {
 }
 
 .spot-result-low li:first-child {
-  color: #fd7e14;
-  font-weight: 600;
+  /* color: #fd7e14; */
+  /* font-weight: 600; */
 }
 
 .spot-result-high li:first-child {
-  color: #12b886;
-  font-weight: 600;
+  /* color: #12b886; */
+  /* font-weight: 600; */
 }
 
 /* end container ---------- */
