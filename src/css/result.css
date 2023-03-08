@@ -161,6 +161,7 @@ main {
 
   .content__box-spots {
     margin-top: 5%;
+    padding: 5% 0;
     border-top: 1px solid black;
   }
 
@@ -189,6 +190,10 @@ main {
     margin-bottom: 1%;
   }
 
+  ul li{
+    font-size: .7rem;
+  }
+
   /* .spot-low {
     background-color: #f6f6c9;
   }
@@ -207,8 +212,18 @@ main {
     margin-bottom: 2%;
   }
 
+
+
   .spot-title {
     margin-bottom: 5%;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    line-height: 1.5;
+  }
+
+  .spot-title img{
+    margin-bottom: 2%;
   }
 
   .spot-result-low p,
