@@ -1,7 +1,4 @@
-window.onbeforeunload = function() {
-    localStorage.removeItem(register);
-    localStorage.removeItem(result);
-    
+  function limparLocalStorage() {
     localStorage.clear();
-    
-  };
+  }
+  limparLocalStorage()

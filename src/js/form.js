@@ -42,8 +42,6 @@ const url =
 // ----------------------------------------------------------------------------
 // ----------------------------------------------------------------------------
 
-// --------- LIMPAR LOCAL STORAGE DA PÁGINA
-// localStorage.clear();
 
 // --------- JOGAR DADOS PARA PROX PÁGINA
 
@@ -110,6 +108,8 @@ btnRegisterCompany.addEventListener("click", function () {
   jsonNewCompany();
   postNewCompany();
   window.location.reload(true);
+
+
 });
 
 // --------- API: PUXAR AS COMPANYS CADASTRADAS NO SELECT
@@ -224,8 +224,18 @@ inputsFormRequired.forEach((field) => {
   field.addEventListener("invalid", event => event.preventDefault());
 })
 
-// --------- VALIDAÇÃO FORMULÁRIO ADD NEW COMPANY
+// --------- VALIDAÇÃO CAMPO NULO FORMULÁRIO ADD NEW COMPANY
 
-// --------- CÓDIGO PARA USAR DEPOIS
+// let newCompany 
+// let domain 
+// let sector 
 
-// const urlSearchParams = new URLSearchParams(window.location.search);
+function checkNullField(campo) {
+  if (!campo || campo.trim() === '') {
+    return true;
+  } else {
+    return false;
+  }
+}
+
+

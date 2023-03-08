@@ -108,17 +108,18 @@ main {
   margin-bottom: 2%;
 }
 
-.spot-result-low p,
-.spot-result-high p {
+.spot-result-low li,
+.spot-result-high li {
   margin: 2% 0;
+  line-height: 1.5;
 }
 
-.spot-result-low p:first-child {
+.spot-result-low li:first-child {
   color: #fd7e14;
   font-weight: 600;
 }
 
-.spot-result-high p:first-child {
+.spot-result-high li:first-child {
   color: #12b886;
   font-weight: 600;
 }
