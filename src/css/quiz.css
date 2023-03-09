@@ -105,6 +105,10 @@ main {
   justify-content: space-evenly;
 }
 
+.btn-align{
+  justify-content: space-evenly;
+}
+
 input{
   /* width: 100px;
   display: block; */

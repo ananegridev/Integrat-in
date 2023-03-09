@@ -229,6 +229,10 @@ async function postAnswer(answer, event) {
 
 // --------- PAGINAÇÃO QUIZ
 
+let load = document.querySelector('.container-load');
+
+load.style.display = 'none';
+
 let sub1 = document.getElementById('submit-1');
 let sub2 = document.getElementById('submit-2');
 let sub3 = document.getElementById('submit-3');
@@ -331,6 +335,8 @@ finish.addEventListener('click', function () {
         row2.style.display = 'none';
         row3.style.display = 'none';
         row4.style.display = 'none';
+
+        load.style.display = 'flex';
         growProgressBar('100%');
 
     }
@@ -390,6 +396,8 @@ back4.addEventListener('click', function () {
 
         finish.style.display = 'none';
         back4.style.display = 'none';
+
+
 
         growProgressBar('100%');
         window.location.href = "#progress_bar";
