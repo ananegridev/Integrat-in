@@ -256,15 +256,17 @@ let row4 = document.getElementById('row-box-4');
 const boxBtn1 = document.getElementById('box-btn-1');
 const boxBtn2 = document.getElementById('box-btn-2');
 const boxBtn3 = document.getElementById('box-btn-3');
+const boxBtn4 = document.getElementById('box-btn-4');
 
 row1.style.display = 'block';
 row2.style.display = 'none';
 row3.style.display = 'none';
 row4.style.display = 'none';
 
-boxBtn1.style.display = 'block';
+boxBtn1.style.display = 'flex';
 boxBtn2.style.display = 'none';
 boxBtn3.style.display = 'none';
+boxBtn4.style.display = 'none';
 
 finish.style.display = 'none';
 back4.style.display = 'none';
@@ -277,8 +279,9 @@ sub1.addEventListener('click', function () {
         row4.style.display = 'none';
 
         boxBtn1.style.display = 'none';
-        boxBtn2.style.display = 'block';
+        boxBtn2.style.display = 'flex';
         boxBtn3.style.display = 'none';
+        boxBtn4.style.display = 'none';
 
         finish.style.display = 'none';
         back4.style.display = 'none';
@@ -298,7 +301,8 @@ sub2.addEventListener('click', function () {
 
         boxBtn1.style.display = 'none';
         boxBtn2.style.display = 'none';
-        boxBtn3.style.display = 'block';
+        boxBtn3.style.display = 'flex';
+        boxBtn4.style.display = 'none';
 
         finish.style.display = 'none';
         back4.style.display = 'none';
@@ -319,6 +323,7 @@ sub3.addEventListener('click', function () {
         boxBtn1.style.display = 'none';
         boxBtn2.style.display = 'none';
         boxBtn3.style.display = 'none';
+        boxBtn4.style.display = 'flex';
 
         finish.style.display = 'block';
         back4.style.display = 'block';
