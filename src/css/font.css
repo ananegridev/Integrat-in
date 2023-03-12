@@ -32,6 +32,18 @@ p{
     text-align: center;
 }
 
+.text__modal{
+    font-size: .6rem;
+    line-height: 2;
+    padding: 2%;
+    border-radius: 5px;
+    max-width: 400px;
+    text-align: start;
+
+    background-color: #FEB139;
+
+}
+
 .circle-p{
     font-weight: 400;
     font-size: .8rem;

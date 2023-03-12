@@ -107,14 +107,25 @@ q33.addEventListener('click', function (event) { answer = storeAnswer("IM1.2", e
 q34.addEventListener('click', function (event) { answer = storeAnswer("IM1.3", event) });
 
 // URL POSTMAN
-const url =
-    "https://03uctuell0.execute-api.us-east-1.amazonaws.com/dev/companies/fef24e30-4114-4393-88d7-20b7f89ce091/answers";
 
-async function postAnswer(answer, event) {
+var url = ""; 
+
+// const urlIndividual =
+//     "https://03uctuell0.execute-api.us-east-1.amazonaws.com/dev/companies/fef24e30-4114-4393-88d7-20b7f89ce091/answers";
+
+// const urlCompanyWide = "https://03uctuell0.execute-api.us-east-1.amazonaws.com/dev/companies/ed9786fb-e8e3-45bc-9c61-9b2b22b2f190/answers";
+
+    async function postAnswer(answer, event) {
 
     var result_type = {}
-    if (answer.calculation === 'i') { result_type["result_type"] = "individual"; }
-    if (answer.calculation === 'c') { result_type["result_type"] = "company-wide"; }
+    if (answer.calculation === 'i') {
+         result_type["result_type"] = "individual"; 
+        url = "https://03uctuell0.execute-api.us-east-1.amazonaws.com/dev/companies/fef24e30-4114-4393-88d7-20b7f89ce091/answers";
+        }
+    if (answer.calculation === 'c') {
+         result_type["result_type"] = "company-wide"; 
+        url = "https://03uctuell0.execute-api.us-east-1.amazonaws.com/dev/companies/ed9786fb-e8e3-45bc-9c61-9b2b22b2f190/answers";
+        }
     var format_answer = {}
     Object.assign(format_answer, result_type)
     delete answer.calculation
@@ -124,49 +135,6 @@ async function postAnswer(answer, event) {
     console.log(teste)
 
     if (event.target.type === 'submit') {
-
-        // var raw = JSON.stringify({
-        //     "result_type": "individual",
-        //     "answer": {
-        //         "name": "saulo coutinho",
-        //         "email": "some@email.com",
-        //         "department": "marketing",
-        //         "FIF1.1": 6,
-        //         "FIF1.2": 5,
-        //         "FIF1.3": 3,
-        //         "FIF1.4": 3,
-        //         "FIF1.5": 7,
-        //         "FIF1.6": 7,
-        //         "FIF1.7": 3,
-        //         "FIF1.10": 3,
-        //         "IIF1.2": 5,
-        //         "IIF1.3": 6,
-        //         "IIF1.5": 6,
-        //         "IIF1.6": 7,
-        //         "IIF1.7": 3,
-        //         "IIF1.8": 5,
-        //         "IIF1.9": 3,
-        //         "IIF1.10": 3,
-        //         "IIF1.11": 3,
-        //         "IIF1.12": 5,
-        //         "IIF1.13": 3,
-        //         "C1.1": 3,
-        //         "C1.2": 7,
-        //         "C1.3": 3,
-        //         "C1.4": 7,
-        //         "C1.5": 3,
-        //         "C1.6": 4,
-        //         "C1.7": 5,
-        //         "C1.8": 3,
-        //         "C1.9": 6,
-        //         "C1.10": 3,
-        //         "C1.11": 7,
-        //         "C1.12": 3,
-        //         "IM1.1": 7,
-        //         "IM1.2": 3,
-        //         "IM1.3": 3
-        //     }
-        // });
 
         var myHeaders = new Headers();
         myHeaders.append("Access-Control-Request-Method", "POST", "Content-Type", "application/json", "Access-Control-Allow-Origin", "*","Access-Control-Allow-Origin", "https://127.0.0.1:5500");
@@ -188,7 +156,7 @@ async function postAnswer(answer, event) {
             redirect: 'follow'
         };
 
-        fetch("https://03uctuell0.execute-api.us-east-1.amazonaws.com/dev/companies/fef24e30-4114-4393-88d7-20b7f89ce091/answers", requestOptions)
+        fetch(url, requestOptions)
             .then(response => response.json())
             .then(function (result) {
                 // localStorage.setItem("result", JSON.stringify(listRegister));
@@ -198,9 +166,7 @@ async function postAnswer(answer, event) {
             .catch(error => console.log('error', error));
     }
 
-
-
-
+    
     // var myHeaders = new Headers();
     // myHeaders.append("Content-Type", "application/json");
     // myHeaders.append("Connection", "keep-alive");
