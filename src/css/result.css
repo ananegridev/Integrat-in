@@ -37,6 +37,13 @@ main {
   width: 45%;
   display: flex;
 }
+
+ul{
+  list-style-position: inside;
+  line-height: 2;
+  margin: 2% 0;
+}
+
 .content__result-img {
   width: 45%;
   display: flex;
@@ -114,16 +121,6 @@ main {
   line-height: 1.5;
 }
 
-.spot-result-low li:first-child {
-  /* color: #fd7e14; */
-  /* font-weight: 600; */
-}
-
-.spot-result-high li:first-child {
-  /* color: #12b886; */
-  /* font-weight: 600; */
-}
-
 /* end container ---------- */
 
 /* media ----  */
@@ -191,7 +188,7 @@ main {
   }
 
   ul li{
-    font-size: .7rem;
+    font-size: .8rem;
   }
 
   /* .spot-low {

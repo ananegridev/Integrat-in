@@ -58,6 +58,8 @@ form span {
 
 .row-register-company {
   margin-bottom: 1%;
+  
+flex-direction: column;
 }
 
 #form-company div {
@@ -97,6 +99,11 @@ label{
 
 
   }
+
+  .row-register-company {
+
+      align-items: center;
+    }
 
 
   .form-flag-company {

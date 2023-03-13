@@ -24,8 +24,8 @@ p{
 
 .text-help{
     font-size: .6rem;
-    margin: 4% 0 ;
-    padding: 2% 0;
+    margin-bottom: 2%;
+    padding: 2%;
     border-radius: 5px;
     max-width: 400px;
     background-color: #FEB139;
@@ -57,10 +57,13 @@ p{
 
 @media (max-width: 768px) {
     h2{
-        font-size: 1.6rem;
+        font-size: 1.2rem;
     }
     
     h3{
         font-size: 0.9rem;
+    }
+    p{
+        font-size: .8rem;
     } 
 }

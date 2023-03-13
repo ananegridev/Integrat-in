@@ -74,7 +74,7 @@ rowRegisterPerson.style.display = 'none';
 
 company.addEventListener('change', function () {
   if (company.value === 'Add') {
-    rowRegisterCompany.style.display = 'block';
+    rowRegisterCompany.style.display = 'flex';
     rowRegisterPerson.style.display = 'none';
   } else if (company.value != 'Add') {
     rowRegisterCompany.style.display = 'none';
