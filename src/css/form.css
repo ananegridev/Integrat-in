@@ -3,7 +3,7 @@ form {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  padding: 10px 0;
+  padding: 2% 0;
 }
 
 .form-flag-company {
@@ -84,8 +84,32 @@ label{
   font-size: .8rem;
     margin-bottom: 1%;
     text-align: start;
+
+    display: flex;
+    align-items: center;
 }
 
+.img__tooltip{
+  width: 20px;
+  margin-left: 5px;
+  border-radius: 100%;
+  position: relative;
+}
+
+.img__tooltip:hover{
+  background-color: #feb139;
+}
+
+/* .tooltiptext::after {
+  content: "";
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  margin-left: -5px;
+  border-width: 5px;
+  border-style: solid;
+  border-color: #555 transparent transparent transparent;
+} */
 
 @media (max-width: 768px) {
 

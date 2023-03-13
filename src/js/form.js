@@ -26,6 +26,10 @@ let rowRegisterPerson = document.querySelector(".row-register-person");
 let btnRegisterCompany = document.getElementById("btn-register-company");
 let btnNext = document.getElementById("btn-next");
 
+// REFERENTE AO TOOLTIP
+const icoTooltip = document.querySelector('.img__tooltip');
+const textTooltip = document.querySelector('.tooltip__text');
+
 // URL POSTMAN
 const url =
   "https://03uctuell0.execute-api.us-east-1.amazonaws.com/dev/companies";
@@ -66,6 +70,22 @@ form.addEventListener("submit", (e) => {
   window.location.href = "./quiz.html"+"?"+listRegister;
 });
 
+// --------- APARECER TOOLTIP
+
+textTooltip.style.display = 'none';
+
+icoTooltip.addEventListener('click', function () {
+  if (textTooltip.style.display = 'none') {
+    textTooltip.style.display = 'block';
+  }
+});
+
+company.addEventListener('change', function () {
+  if (company.value === 'None') {
+    rowRegisterCompany.style.display = 'none';
+    rowRegisterPerson.style.display = 'none';
+  }
+});
 
 // --------- APARECER CAMPO PARA NOVA EMPRESA
 
@@ -225,10 +245,6 @@ inputsFormRequired.forEach((field) => {
 })
 
 // --------- VALIDAÇÃO CAMPO NULO FORMULÁRIO ADD NEW COMPANY
-
-// let newCompany 
-// let domain 
-// let sector 
 
 function checkNullField(campo) {
   if (!campo || campo.trim() === '') {

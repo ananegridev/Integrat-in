@@ -43,66 +43,58 @@
         </section>
 
         <section class="content__start-box">
-          
           <form id="form" data-formulario>
             <!-- <form method="GET" action="quiz.html" id="form"> -->
-            
-            <div class="row-select-company" >
 
+            <div class="row-select-company">
               <fieldset class="form__camp">
                 <label class="tag" for="company">Company</label>
                 <select
-                name="company"
-                id="company"
-                class="js-input-company"
-                required
-              >
-                <option value="None">Select your company*</option>
-                <option value="Add">Add a new Company</option>
-              </select>
-              <span class="text-error"></span>
-                </fieldset>
-
-              
+                  name="company"
+                  id="company"
+                  class="js-input-company"
+                  required
+                >
+                  <option value="None">Select your company*</option>
+                  <option value="Add">Add a new Company</option>
+                </select>
+                <span class="text-error"></span>
+              </fieldset>
             </div>
 
             <!-- START REGISTER NEW COMPANY -->
 
             <div id="form-company" class="row-register-company">
-              
-              <p class="text-help">When choosing the "<b>Add a new Company</b>" option, you must register your company</p> 
+              <p class="text-help">
+                When choosing the "<b>Add a new Company</b>" option, you must
+                register your company
+              </p>
 
               <fieldset class="form__camp">
                 <label class="tag" for="name">New Company</label>
                 <input
-                type="text"
-                name="newCompany"
-                id="newCompany"
-                class="js-input-companyname"
-                placeholder="Whats your company name?*"
-              />
-                </fieldset>
+                  type="text"
+                  name="newCompany"
+                  id="newCompany"
+                  class="js-input-companyname"
+                  placeholder="Whats your company name?*"
+                />
+              </fieldset>
 
-     
-                <fieldset class="form__camp">
-                  <label class="tag" for="name">Domain</label>
-                  <input 
+              <fieldset class="form__camp">
+                <label class="tag" for="name">Domain</label>
+                <input
                   type="text"
                   name="domain"
                   id="domain"
                   class="js-input-domain"
                   placeholder="Please what your domain company?"
                 />
-                  </fieldset>
+              </fieldset>
 
-  
-                <fieldset class="form__camp">
-                  <label class="tag" for="name">Sector</label>
-                  <select 
-                  name="sector"
-                  id="sector"
-                  class="js-input-sector"
-                >
+              <fieldset class="form__camp">
+                <label class="tag" for="name">Sector</label>
+                <select name="sector" id="sector" class="js-input-sector">
                   <option value="Other">What is your sector?*</option>
                   <option value="Energy">Energy</option>
                   <option value="Materials">Materials</option>
@@ -110,117 +102,135 @@
                   <option value="Utilities">Utilities</option>
                   <option value="Healthcare">Healthcare</option>
                   <option value="Financials">Financials</option>
-                  <option value="Consumer Discretionary">Consumer Discretionary</option>
+                  <option value="Consumer Discretionary">
+                    Consumer Discretionary
+                  </option>
                   <option value="Consumer Staples">Consumer Staples</option>
                   <option value="Other">Other</option>
                 </select>
-                  </fieldset>
+              </fieldset>
 
-  
-                  <button class="btn" type="submit" onclick="cancelSubmitForm()" id="btn-register-company">Register Company</button>
+              <button
+                class="btn"
+                type="submit"
+                onclick="cancelSubmitForm()"
+                id="btn-register-company"
+              >
+                Register Company
+              </button>
 
-                  <!-- <button class="btn" id="btnCancel">Cancel</button> -->
-
+              <!-- <button class="btn" id="btnCancel">Cancel</button> -->
             </div>
             <!-- END REGISTER NEW COMPANY -->
 
             <!-- START REGISTER PERSON -->
             <div class="row-register-person">
-              
               <fieldset class="form__camp">
                 <label class="tag" for="name">Name</label>
                 <input
-                type="text"
-                name="name"
-                id="name"
-                class="js-input-name written__field smaller__writing-field"
-                placeholder="Whats your name?*"
-                minlength="3"
-                required
-              />
-              <span class="text-error"></span>
+                  type="text"
+                  name="name"
+                  id="name"
+                  class="js-input-name written__field smaller__writing-field"
+                  placeholder="Whats your name?*"
+                  minlength="3"
+                  required
+                />
+                <span class="text-error"></span>
               </fieldset>
 
               <fieldset class="form__camp">
                 <label class="tag" for="email">Email</label>
-                <input 
-                type="email"
-                name="email"
-                id="email"
-                class="js-input-email written__field smaller__writing-field"
-                placeholder="Whats your e-mail?*"
-                minlength="4" 
-                required
-              />
-              <span class="text-error"></span>
-              </fieldset>
-  
-              <fieldset class="form__camp">
-                <label class="tag" for="departament">Departament</label>
-                <select 
-                name="departament"
-                id="departament"
-                class="js-input-departament"
-                required
-              >
-                <option value="" disabled selected>What is your departament*</option>
-                <option value="Administration/Operations">Administration/Operations</option>
-                <option value="Research and development">Research and development</option>
-                <option value="Marketing and sales">Marketing and sales</option>
-                <option value="Human resources">Human resources</option>
-                <option value="Customer service">Customer service</option>
-                <option value="Accounting and finance">Accounting and finance</option>
-                <option value="Other">Other</option>
-              </select>
-              <span class="text-error"></span>
+                <input
+                  type="email"
+                  name="email"
+                  id="email"
+                  class="js-input-email written__field smaller__writing-field"
+                  placeholder="Whats your e-mail?*"
+                  minlength="4"
+                  required
+                />
+                <span class="text-error"></span>
               </fieldset>
 
               <fieldset class="form__camp">
-                <label class="tag" for="calculation">Type of calculation  </label> 
-                <select 
-                name="calculation"
-                id="calculation"
-                class="js-input-calculation"
-                required
-              >
-                <option value="" disabled selected>Choose the type of calculation*</option>
-                <option value="i">Individual</option>
-                <option value="c">By company group</option>
+                <label class="tag" for="departament">Departament</label>
+                <select
+                  name="departament"
+                  id="departament"
+                  class="js-input-departament"
+                  required
+                >
+                  <option value="" disabled selected>
+                    What is your departament*
+                  </option>
+                  <option value="Administration/Operations">
+                    Administration/Operations
+                  </option>
+                  <option value="Research and development">
+                    Research and development
+                  </option>
+                  <option value="Marketing and sales">
+                    Marketing and sales
+                  </option>
+                  <option value="Human resources">Human resources</option>
+                  <option value="Customer service">Customer service</option>
+                  <option value="Accounting and finance">
+                    Accounting and finance
+                  </option>
+                  <option value="Other">Other</option>
+                </select>
+                <span class="text-error"></span>
+              </fieldset>
+
+              <fieldset class="form__camp">
+                <label class="tag" for="calculation"
+                  >Type of calculation
+                  <img class="img__tooltip" src="./src/img/help.svg" alt=""
+                /></label>
   
-              </select>
-              <span class="text-error"></span>
+                  <p class="tooltip__text">
+                    <b>Individual</b> <br />
+                    Calculations will be performed based on your
+                    individual answer. <br /><br />
+                    <b>By company Group.</b> <br />
+                    In case other employees of your company have already
+                    answered this questionnaire. The calculations will consider
+                    all previous answers. <br />
+                  </p>
+
+
+                <select
+                  name="calculation"
+                  id="calculation"
+                  class="js-input-calculation"
+                  required
+                >
+                  <option value="" disabled selected>
+                    Choose the type of calculation*
+                  </option>
+                  <option value="i">Individual</option>
+                  <option value="c">By company group</option>
+                </select>
+                <span class="text-error"></span>
               </fieldset>
 
               <div>
                 <button class="btn" id="btn-next">Next</button>
                 <span class="text-error"></span>
               </div>
-              
             </div>
-             <!-- END REGISTER PERSON -->
-
+            <!-- END REGISTER PERSON -->
           </form>
 
           <div class="content__start-img">
             <img src="./src/img/introduction.svg" alt="" />
           </div>
-          
         </section>
       </div>
       <!-- END CONTAINER -->
 
       <!-- N ALTERAR ABAIXO -->
-
-      <!-- <div id="help-calc">
-        <p class="text__modal">
-          <b>Individual</b> <br> Calculations will be performed based on your individual answer. <br><br>
-          <b>By company Group.</b> <br> In case other employees of your company have already answered this questionnaire. The calculations will consider all previous answers. <br>
-        
-          <button class="">Close</button>
-          
-        </p>
-      </div> -->
-
       <footer>
         <!-- <a href="#">{code:ananegri}</a> -->
         <a href="#"

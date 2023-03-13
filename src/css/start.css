@@ -13,7 +13,7 @@ main {
 
   .container{
     width: 80%;
-    height: 100vh;
+    height: auto;
 
     display: flex;
     flex-direction: column;
@@ -26,6 +26,8 @@ main {
     display: flex;
   justify-content: space-evenly;
     border-left: 1px solid #000;
+    margin: 4% 0;
+
   }
 
   .content__start-img{

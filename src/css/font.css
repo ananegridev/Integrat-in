@@ -32,7 +32,7 @@ p{
     text-align: center;
 }
 
-.text__modal{
+.tooltip__text{
     font-size: .6rem;
     line-height: 2;
     padding: 2%;
@@ -41,6 +41,9 @@ p{
     text-align: start;
 
     background-color: #FEB139;
+
+    margin: 2% 0;
+    
 
 }
 

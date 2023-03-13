@@ -26,6 +26,8 @@ main {
     justify-content: space-evenly;
 
     border-left: 1px solid #000;
+
+    margin: 4% 0;
   }
 
   .content__home div{
