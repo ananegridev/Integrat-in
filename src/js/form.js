@@ -67,7 +67,8 @@ form.addEventListener("submit", (e) => {
   };
 
   localStorage.setItem("register", JSON.stringify(listRegister));
-  window.location.href = "./quiz.html"+"?"+listRegister;
+  // window.location.href = "./quiz.html"+"?"+listRegister;
+  window.location.href = "./quiz.html";
 });
 
 // --------- APARECER TOOLTIP
