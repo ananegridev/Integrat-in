@@ -10,7 +10,6 @@ let low_iif1 = ilfef.results.iif1.orientations.low;
 let low_fif1 = ilfef.results.fif1.orientations.low;
 let low_c1 = ilfef.results.c1.orientations.low;
 
-// console.log(typeof high_iif1)
 // HTML VIA JS
 let html = ``;
 
@@ -39,41 +38,84 @@ function landingPage() {
         result = result + '<li>' + element + '</li>'
       });
     }
-    // else{
-    //   result = result + '<li>'+'Nothing to add'+'</li>'
-    // }
     return result
   }
 
 
 
-  function contentDiv(iif1, fif1, c1, divClass) {
+  function contentDiv(iif1 = [], fif1 = [], c1 = [], divClass) {
     var divContent = ``;
     var divImg = ``;
     var h4title = ``;
     if (divClass ==="spot-high"){
       divImg = "./src/img/feedback-good.png"
       h4title = "In your company, the integration between Marketing, Logistics and Production is supported by"
+      if (iif1.length > 0 || fif1.length > 0 || c1.length > 0) {
+        divContent = '<div class="' + divClass + '" > ' +
+          '<div class="spot-title">' +
+          '<img src='+ divImg +' alt="">' +
+          '<h4>' + h4title + '</h4>' +
+          '</div>' +
+          '<div class="spot-result-high">' +
+          '<ul>' +
+          printp(iif1) +
+          printp(fif1) +
+          printp(c1) +
+          '</ul>' +
+          '</div>' +
+          '</div>';
+      }
     }
     else if(divClass ==="spot-low"){
       divImg = "./src/img/feedback-terrible.png"
       h4title = "The cross-functional integration in your company can be improved throgh the following initiatives"
+      if (iif1.length > 0 || fif1.length > 0) {
+        divContent = '<div class="' + divClass + '" > ' +
+          '<div class="spot-title">' +
+          '<img src='+ divImg +' alt="">' +
+          '<h4>' + h4title + '</h4>' +
+          '</div>' +
+          '<div class="spot-result-high">' +
+          '<ul>' +
+          printp(iif1) +
+          printp(fif1) +
+          '</ul>' +
+          '</div>' +
+          '</div>';
+      }
     }
-    if (iif1.length > 0 || fif1.length > 0 || c1.length > 0) {
-      divContent = '<div class="' + divClass + '" > ' +
-        '<div class="spot-title">' +
-        '<img src='+ divImg +' alt="">' +
-        '<h4>' + h4title + '</h4>' +
-        '</div>' +
-        '<div class="spot-result-high">' +
-        '<ul>' +
-        printp(iif1) +
-        printp(fif1) +
-        printp(c1) +
-        '</ul>' +
-        '</div>' +
-        '</div>';
-    }
+    else if(divClass ==="spot-conflict"){
+      divImg = "./src/img/feedback-alert.svg"
+      h4title = "The scarcity of the actions listed above may cause these conflicts within your organization"
+      if (c1.length > 0) {
+        divContent = '<div class="' + divClass + '" > ' +
+          '<div class="spot-title">' +
+          '<img src='+ divImg +' alt="">' +
+          '<h4>' + h4title + '</h4>' +
+          '</div>' +
+          '<div class="spot-result-high">' +
+          '<ul>' +
+          printp(c1) +
+          '</ul>' +
+          '</div>' +
+          '</div>';
+      }
+    } 
+    // if (iif1.length > 0 || fif1.length > 0 || c1.length > 0) {
+    //   divContent = '<div class="' + divClass + '" > ' +
+    //     '<div class="spot-title">' +
+    //     '<img src='+ divImg +' alt="">' +
+    //     '<h4>' + h4title + '</h4>' +
+    //     '</div>' +
+    //     '<div class="spot-result-high">' +
+    //     '<ul>' +
+    //     printp(iif1) +
+    //     printp(fif1) +
+    //     printp(c1) +
+    //     '</ul>' +
+    //     '</div>' +
+    //     '</div>';
+    // }
     return divContent
   }
 
@@ -81,133 +123,12 @@ function landingPage() {
   // ADICIONANDO SCORE TOTAL NA LANDINGPAGE
   integrationLevel.innerText = 'SCORE: ' + ilfef.results.integration_level.score.toFixed(1);
 
-  /* REFINAMENTO */
-
-  //   html =+ '<section class="content__box-spots">' +
-  //   // '<h2>Integration level for each factor</h2>' +
-  //   '<section class="spot">' +
-  //   '<div class="spot-card-text">' +
-  //     '<h4>Formal Integration Factors (FIF)</h4>' +
-  //     '<h4 class="spot-high-title-score">Score '+ ilfef.results.iif1.score.toFixed(1) +'</h4>'+
-  //   '</div>' +
-  //    ' <div class="spot-high">' +
-  //       '<div class="spot-title">' +
-  //         '<img src="./src/img/feedback-good.png" alt="">' +
-  //         '<h4>In your company, the integration between Marketing, Logistics and Production is supported by</h4>' +
-  //       '</div>' +
-  //       '<div class="spot-result-high">' +
-  //       '<ul>'+
-  //         printp(high_iif1) +
-  //       '</ul>'+
-  //       '</div>' +
-  //     '</div>' +
-  //     '<div class="spot-low">' +
-  //      ' <div class="spot-title">' +
-  //        '<img src="./src/img/feedback-terrible.png" alt="">' +
-  //         '<h4>The cross-functional integration in your company can be improved throgh the following initiatives</h4>' +
-  //       '</div>' +
-  //       '<div class="spot-result-low">' +
-  //       '<ul>'+
-  //         printp(low_iif1)+
-  //       '</ul>'+
-
-  //       '</div>' +
-  //     '</div>' +
-  //     '</section>' +
-
-  //     // fif1
-  //     '<section class="spot">' +
-  //     '<div class="spot-card-text">' +
-  //       '<h4>Formal Integration Factors (FIF)</h4>' +
-  //       '<h4 class="spot-high-title-score">Score '+ ilfef.results.fif1.score.toFixed(1) +'</h4>'+
-  //     '</div>' +
-  //      ' <div class="spot-high">' +
-  //         '<div class="spot-title">' +
-  //           '<img src="./src/img/feedback-good.png" alt="">' +
-  //           '<h4>In your company, the integration between Marketing, Logistics and Production is supported by</h4>' +
-  //         '</div>' +
-  //         '<div class="spot-result-high">' +
-  //         '<ul>'+
-  //           printp(high_fif1) +
-  //         '</ul>'+
-  //         '</div>' +
-  //       '</div>' +
-  //       '<div class="spot-low">' +
-  //        ' <div class="spot-title">' +
-  //          '<img src="./src/img/feedback-terrible.png" alt="">' +
-  //           '<h4>The cross-functional integration in your company can be improved throgh the following initiatives</h4>' +
-  //         '</div>' +
-  //         '<div class="spot-result-low">' +
-  //         '<ul>'+
-  //           printp(low_fif1)+
-  //         '</ul>'+
-  //         '</div>' +
-  //       '</div>' +
-  //       '</section>' + 
-
-  //     // c1
-  //     '<section class="spot">' +
-  //     '<div class="spot-card-text">' +
-  //       '<h4>Formal Integration Factors (FIF)</h4>' +
-  //       '<h4 class="spot-high-title-score">Score '+ ilfef.results.c1.score.toFixed(1) +'</h4>'+
-  //     '</div>' +
-  //      ' <div class="spot-high">' +
-  //         '<div class="spot-title">' +
-  //           '<img src="./src/img/feedback-good.png" alt="">' +
-  //           '<h4>In your company, the integration between Marketing, Logistics and Production is supported by</h4>' +
-  //         '</div>' +
-  //         '<div class="spot-result-high">' +
-  //         '<ul>'+
-  //           printp(high_c1) +
-  //         '</ul>'+
-  //         '</div>' +
-  //       '</div>' +
-  //       '<div class="spot-low">' +
-  //        ' <div class="spot-title">' +
-  //          '<img src="./src/img/feedback-terrible.png" alt="">' +
-  //           '<h4>The cross-functional integration in your company can be improved throgh the following initiatives</h4>' +
-  //         '</div>' +
-  //         '<div class="spot-result-low">' +
-  //         '<ul>'+
-  //           printp(low_c1)+
-  //         '</ul>'+
-  //         '</div>' +
-  //       '</div>' +
-  //       '</section>';
-
-
-  // html = 
-  // '<div class="spot-high">' +
-  // '<div class="spot-title">' +
-  //   '<img src="./src/img/feedback-good.png" alt="">' +
-  //   '<h4>In your company, the integration between Marketing, Logistics and Production is supported by</h4>' +
-  // '</div>' +
-  // '<div class="spot-result-high">' +
-  //   '<ul>' +
-  //     printp(high_iif1) +
-  //     printp(high_fif1) +
-  //     printp(high_c1) +
-  //   '</ul>' +
-  // '</div>' +
-  // '</div>' +
-
-  // '<div class="spot-low">' +
-  // '<div class="spot-title">' +
-  //   '<img src="./src/img/feedback-terrible.png" alt="">' +
-  //   '<h4>The cross-functional integration in your company can be improved throgh the following initiatives</h4></h4>' +
-  // '</div>' +
-  // '<div class="spot-result-low">' +
-  //   '<ul>' +
-  //     printp(low_iif1) +
-  //     printp(low_fif1) +
-  //     printp(low_c1) +
-  //   '</ul>' +
-  // '</div>' 
-  // ;
-
-  html = contentDiv(high_iif1, high_fif1, high_c1, "spot-high") + contentDiv(low_iif1, low_fif1, low_c1, "spot-low");
+  html = contentDiv(high_iif1, high_fif1, high_c1, "spot-high") + 
+          contentDiv(iif1 = low_iif1, fif1 = low_fif1, c1 = [],"spot-low") + 
+          contentDiv(iif1 = [], fif1 = [], c1 = low_c1, "spot-conflict");
   contentBoxSpots.innerHTML = html;
 
 }
+
 landingPage();
 

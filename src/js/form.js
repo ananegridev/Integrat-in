@@ -16,6 +16,9 @@ let calculation = document.querySelector(".js-input-calculation");
 // TODOS ELEMENTOS COM REQUIRED
 let inputsFormRequired = document.querySelectorAll("[required]");
 
+// TODOS ELEMENTOS
+let inputsNewCompany = document.querySelectorAll("[data-new-company]"); 
+
 // DIV SEPARAÇÃO FORMULARIOS
 
 let rowSelectCompany = document.querySelector(".row-select-company");
@@ -80,6 +83,8 @@ icoTooltip.addEventListener('click', function () {
     textTooltip.style.display = 'block';
   }
 });
+
+// --------- SELECT YOUR COMPANY SELECIONADO
 
 company.addEventListener('change', function () {
   if (company.value === 'None') {
@@ -229,6 +234,7 @@ function checkField(field) {
       msg = msgs[field.name][erro];
     }
   })
+
   const textErro = field.parentNode.querySelector('.text-error')
   const validInput = field.checkValidity();
   if (!validInput) {
@@ -247,12 +253,21 @@ inputsFormRequired.forEach((field) => {
 
 // --------- VALIDAÇÃO CAMPO NULO FORMULÁRIO ADD NEW COMPANY
 
-function checkNullField(campo) {
-  if (!campo || campo.trim() === '') {
-    return true;
-  } else {
-    return false;
-  }
-}
+// function checkNullField(campo) {
+//   if (campo == '' || campo == null) {
+//     console.log('true')
+//     return true;
+//   } else {
+//     console.log('false')
+
+//     return false;
+//   }
+// }
+
+// inputsNewCompany.forEach((e) => {
+//   e.addEventListener("click", () => inputsNewCompany < 0);
+// })
+
+// btnRegisterCompany.addEventListener
 
 

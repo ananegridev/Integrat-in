@@ -78,6 +78,7 @@
                   id="newCompany"
                   class="js-input-companyname"
                   placeholder="Whats your company name?*"
+                  data-new-company
                 />
                 <span class="text-error"></span>
               </fieldset>
@@ -90,13 +91,14 @@
                   id="domain"
                   class="js-input-domain"
                   placeholder="Please what your domain company?"
+                  data-new-company
                 />
                 <span class="text-error"></span>
               </fieldset>
 
               <fieldset class="form__camp">
                 <label class="tag" for="name">Sector</label>
-                <select name="sector" id="sector" class="js-input-sector">
+                <select name="sector" id="sector" class="js-input-sector" data-new-company>
                   <option value="Other">What is your sector?*</option>
                   <option value="Energy">Energy</option>
                   <option value="Materials">Materials</option>

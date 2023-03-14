@@ -76,7 +76,8 @@ ul{
 }
 
 .spot-high,
-.spot-low {
+.spot-low,
+.spot-conflict {
   padding: 2% 5%;
   border-radius: 40px;
   width: 100%;
@@ -89,6 +90,10 @@ ul{
 
 .spot-high {
   background-color: #d8e8d3;
+}
+
+.spot-conflict {
+  background-color: #ffa5a0;
 }
 
 .spot-high-title-score,
