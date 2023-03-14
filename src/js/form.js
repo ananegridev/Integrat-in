@@ -70,7 +70,6 @@ form.addEventListener("submit", (e) => {
   };
 
   localStorage.setItem("register", JSON.stringify(listRegister));
-  // window.location.href = "./quiz.html"+"?"+listRegister;
   window.location.href = "./quiz.html";
 });
 
@@ -135,7 +134,6 @@ btnRegisterCompany.addEventListener("click", function () {
   postNewCompany();
   window.location.reload(true);
 
-
 });
 
 // --------- API: PUXAR AS COMPANYS CADASTRADAS NO SELECT
@@ -144,17 +142,24 @@ async function getCompanies() {
   const response = await fetch(url);
   console.log(response);
   const data = await response.json();
-  console.log(data);
+  console.log(data.length);
+  
   // console.log(Object.keys(data).length);
   // console.log(data[0].company_name);
   // data.sort();
   for (const x of Object.keys(data)) {
     let apiCompanyValue = document.querySelector(".js-input-company");
+    
     // console.log(data[x].company_name);
+
     apiCompanyValue.options[apiCompanyValue.options.length] = new Option(
       data[x].company_name,
       data[x].company_name
     );
+  }
+  if(data.length > 0){
+    loader = document.querySelector('.container-load');
+    loader.style.display = 'none';
   }
 }
 
@@ -253,21 +258,12 @@ inputsFormRequired.forEach((field) => {
 
 // --------- VALIDAÇÃO CAMPO NULO FORMULÁRIO ADD NEW COMPANY
 
-// function checkNullField(campo) {
-//   if (campo == '' || campo == null) {
-//     console.log('true')
-//     return true;
+// function validarCampoVazio(campo) {
+//   if (campo.value.trim() === '') {
+//     return true; // campo está vazio
 //   } else {
-//     console.log('false')
-
-//     return false;
+//     return false; // campo não está vazio
 //   }
 // }
-
-// inputsNewCompany.forEach((e) => {
-//   e.addEventListener("click", () => inputsNewCompany < 0);
-// })
-
-// btnRegisterCompany.addEventListener
 
 

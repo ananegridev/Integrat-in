@@ -13,6 +13,7 @@
     <link rel="stylesheet" href="./src/css/footer.css" />
     <link rel="stylesheet" href="./src/css/nav.css" />
     <link rel="stylesheet" href="./src/css/form.css" />
+    <link rel="stylesheet" href="./src/css/preloader.css" />
 
     <link rel="stylesheet" href="./src/css/start.css" />
 
@@ -44,7 +45,6 @@
 
         <section class="content__start-box">
           <form id="form" data-formulario>
-            <!-- <form method="GET" action="quiz.html" id="form"> -->
 
             <div class="row-select-company">
               <fieldset class="form__camp">
@@ -80,7 +80,7 @@
                   placeholder="Whats your company name?*"
                   data-new-company
                 />
-                <span class="text-error"></span>
+                <span class="text-error newcompany-error"></span>
               </fieldset>
 
               <fieldset class="form__camp">
@@ -124,7 +124,6 @@
                 Register Company
               </button>
 
-              <!-- <button class="btn" id="btnCancel">Cancel</button> -->
             </div>
             <!-- END REGISTER NEW COMPANY -->
 
@@ -204,7 +203,6 @@
                     all previous answers. <br />
                   </p>
 
-
                 <select
                   name="calculation"
                   id="calculation"
@@ -226,6 +224,7 @@
               </div>
             </div>
             <!-- END REGISTER PERSON -->
+
           </form>
 
           <div class="content__start-img">
@@ -242,8 +241,16 @@
           ><img src="./src/img/author-code/brackets.svg" alt="brackets"
         /></a>
       </footer>
+
+      
+      <div class="container-load"> 
+        <div class="load">
+          <hr/><hr/><hr/><hr/>
+        </div>
+      </div>
+      
     </main>
 
-    <script src="./src/js/form.js" defer></script>
+    <script src="./src/js/form.js"></script>
   </body>
 </html>

@@ -1,38 +1,7 @@
-// const startForm = localStorage.getItem('register')
+// REGISTRO START.HTML
 var answer = JSON.parse(window.localStorage.getItem('register'));
 
-
-//if (answer.calculation === 'i'){
-//    format_answer[result_type] = "individual";
-//}
-//if(answer.calculation === 'c'){
-//    format_answer[result_type] = "company-wide";
-//}
-//console.log(format_answer)
-// console.log('---------------------------------------------------------------')
-
-
-// calculation: "i"
-// company: "BOTICARIO"
-// departament: "Marketing and sales"
-// email: "anywtf@outlook.com"
-// name: "Ana Paula Negri de Macedo"
-
-// var answers = {};
-
-function storeAnswer(question_number, event) {
-    if (event.target.type === 'radio') {
-        var question = {}
-        question[question_number] = parseInt(event.target.value);
-        Object.assign(answer, question)
-        // answer[question_number] = parseInt(event.target.value);
-        // var jsonAnswers = JSON.stringify({answer}); 
-
-    }
-    // console.log(JSON.stringify(answer));
-    return answer;
-}
-
+// VARIAVEIS DAS QUESTÕES
 var q1 = document.getElementById('question-1');
 var q2 = document.getElementById('question-2');
 var q3 = document.getElementById('question-3');
@@ -67,6 +36,22 @@ var q31 = document.getElementById('question-31');
 var q32 = document.getElementById('question-32');
 var q33 = document.getElementById('question-33');
 var q34 = document.getElementById('question-34');
+
+//
+function storeAnswer(question_number, event) {
+    if (event.target.type === 'radio') {
+        var question = {}
+        question[question_number] = parseInt(event.target.value);
+        Object.assign(answer, question)
+        // answer[question_number] = parseInt(event.target.value);
+        // var jsonAnswers = JSON.stringify({answer}); 
+
+    }
+    // console.log(JSON.stringify(answer));
+    return answer;
+}
+
+
 
 
 // --------- 
@@ -109,11 +94,6 @@ q34.addEventListener('click', function (event) { answer = storeAnswer("IM1.3", e
 // URL POSTMAN
 
 var url = ""; 
-
-// const urlIndividual =
-//     "https://03uctuell0.execute-api.us-east-1.amazonaws.com/dev/companies/fef24e30-4114-4393-88d7-20b7f89ce091/answers";
-
-// const urlCompanyWide = "https://03uctuell0.execute-api.us-east-1.amazonaws.com/dev/companies/ed9786fb-e8e3-45bc-9c61-9b2b22b2f190/answers";
 
     async function postAnswer(answer, event) {
 
@@ -165,32 +145,6 @@ var url = "";
             })
             .catch(error => console.log('error', error));
     }
-
-    
-    // var myHeaders = new Headers();
-    // myHeaders.append("Content-Type", "application/json");
-    // myHeaders.append("Connection", "keep-alive");
-    // myHeaders.append("x-amzn-RequestId", "11c436f5-e53a-4c9e-b719-250a146c3cb6");
-    // myHeaders.append("Access-Control-Allow-Origin","*");
-    // myHeaders.append("x-amz-apigw-id","BVFvVFDOoAMF7IA=");
-    // myHeaders.append("X-Amzn-Trace-Id","Root=1-64051cc8-6c49f7aa4c541e0f1b39cfa7;Sampled=0");
-
-    // if (event.target.type === 'submit') {
-    //     var requestOptions = {
-    //         method: 'POST',
-    //         mode: "no-cors",
-    //         headers: myHeaders,
-    //         body: body
-    //     };
-
-    //     fetch(url, requestOptions)
-    //         .then(response => response.text())
-    //         .then(result => console.log(result))
-    //         .catch(error => console.log('error', error));
-
-
-    //     }
-
 }
 
 // --------- PAGINAÇÃO QUIZ
