@@ -13,6 +13,8 @@ let email = document.querySelector(".js-input-email");
 let departament = document.querySelector(".js-input-departament");
 let calculation = document.querySelector(".js-input-calculation");
 
+// company - newCompany - domain - sector - fullname - email - departament - calculation
+
 // TODOS ELEMENTOS COM REQUIRED
 let inputsFormRequired = document.querySelectorAll("[required]");
 
@@ -106,7 +108,7 @@ company.addEventListener('change', function () {
     rowRegisterPerson.style.display = 'block';
   } else {
     rowRegisterCompany.style.display = 'none';
-    rowRegisterCompany.style.display = 'none';
+    rowRegisterPerson.style.display = 'none';
   }
 });
 
@@ -128,10 +130,14 @@ function cancelSubmitForm() {
 // --------- RECARREGAR PÁGINA
 
 btnRegisterCompany.addEventListener("click", function () {
+  
+// company - newCompany - domain - sector - fullname - email - departament - calculation
+
   document.location.reload();
   location.reload();
   jsonNewCompany();
   postNewCompany();
+  getCompanies();
   window.location.reload(true);
 
 });
@@ -142,16 +148,9 @@ async function getCompanies() {
   const response = await fetch(url);
   console.log(response);
   const data = await response.json();
-  console.log(data.length);
-  
-  // console.log(Object.keys(data).length);
-  // console.log(data[0].company_name);
-  // data.sort();
+  console.log(data);
   for (const x of Object.keys(data)) {
     let apiCompanyValue = document.querySelector(".js-input-company");
-    
-    // console.log(data[x].company_name);
-
     apiCompanyValue.options[apiCompanyValue.options.length] = new Option(
       data[x].company_name,
       data[x].company_name
@@ -220,6 +219,15 @@ const msgs = {
   },
   company: {
     valueMissing: "You must choose a company before continuing",
+  },
+  newCompany: {
+    valueMissing: "The new company field cannot be empty.",
+  },
+  domain: {
+    valueMissing: "The domain field cannot be empty.",
+  },
+  sector: {
+    valueMissing: "You need to select a sector type to continue.",
   }
 }
 
@@ -258,12 +266,42 @@ inputsFormRequired.forEach((field) => {
 
 // --------- VALIDAÇÃO CAMPO NULO FORMULÁRIO ADD NEW COMPANY
 
-// function validarCampoVazio(campo) {
-//   if (campo.value.trim() === '') {
-//     return true; // campo está vazio
+// function fieldNull() {
+//   if (newCompany.value.trim().length === 0 || sector.value.trim().length === 'None' || domain.value.trim().length === 0) {
+//     btnRegisterCompany.disabled = true;
 //   } else {
-//     return false; // campo não está vazio
+//     btnRegisterCompany.disabled = false;
 //   }
 // }
 
+// fieldNull();
 
+let textErrorNewCompany = document.querySelectorAll('[data-newcompany-error]');
+
+
+
+inputsNewCompany.forEach((field) => {
+  field.addEventListener("blur", event => {
+    if (field.value.trim().length === 0) {
+      field.style.border = '2px solid red';
+      textErrorNewCompany.style.display = "flex";
+    } else {
+      field.style.border = '1px solid black'
+      textErrorNewCompany.style.display = "none";
+    }
+  });
+
+})
+
+// textErrorNewCompany.forEach((field, error) => {
+//   field.addEventListener("blur", event => {
+//     if (field.value.trim().length === 0) {
+//       field.style.border = '2px solid red';
+//       document.querySelector('[data-newcompany-error]').innerText = "teste"
+//     } else {
+//       field.style.border = '1px solid black'
+//       document.querySelector('[data-newcompany-error]').innerText = ""
+//     }
+//   });
+
+// })

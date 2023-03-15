@@ -275,7 +275,7 @@ back2.addEventListener('click', function () {
         row3.style.display = 'none';
         row4.style.display = 'none';
 
-        boxBtn1.style.display = 'block';
+        boxBtn1.style.display = 'flex';
         boxBtn2.style.display = 'none';
         boxBtn3.style.display = 'none';
 
@@ -296,7 +296,7 @@ back3.addEventListener('click', function () {
         row4.style.display = 'none';
 
         boxBtn1.style.display = 'none';
-        boxBtn2.style.display = 'block';
+        boxBtn2.style.display = 'flex';
         boxBtn3.style.display = 'none';
 
         finish.style.display = 'none';
@@ -317,7 +317,7 @@ back4.addEventListener('click', function () {
 
         boxBtn1.style.display = 'none';
         boxBtn2.style.display = 'none';
-        boxBtn3.style.display = 'block';
+        boxBtn3.style.display = 'flex';
 
         finish.style.display = 'none';
         back4.style.display = 'none';

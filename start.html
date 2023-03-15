@@ -78,9 +78,10 @@
                   id="newCompany"
                   class="js-input-companyname"
                   placeholder="Whats your company name?*"
-                  data-new-company
+     
                 />
-                <span class="text-error newcompany-error"></span>
+                <!-- <span class="text-error" data-newcompany-error>New company field cannot be empty.</span> -->
+                <span class="text-error" data-newcompany-error></span>
               </fieldset>
 
               <fieldset class="form__camp">
@@ -91,15 +92,16 @@
                   id="domain"
                   class="js-input-domain"
                   placeholder="Please what your domain company?"
-                  data-new-company
+  
                 />
-                <span class="text-error"></span>
+                <!-- <span class="text-error" data-newcompany-error>Domain field cannot be empty.</span> -->
+                <span class="text-error" data-newcompany-error></span>
               </fieldset>
 
               <fieldset class="form__camp">
                 <label class="tag" for="name">Sector</label>
-                <select name="sector" id="sector" class="js-input-sector" data-new-company>
-                  <option value="Other">What is your sector?*</option>
+                <select name="sector" id="sector" class="js-input-sector" >
+                  <option value="None" disabled selected>What is your sector?*</option>
                   <option value="Energy">Energy</option>
                   <option value="Materials">Materials</option>
                   <option value="Insdustrials">Industrials</option>
@@ -112,7 +114,8 @@
                   <option value="Consumer Staples">Consumer Staples</option>
                   <option value="Other">Other</option>
                 </select>
-                <span class="text-error"></span>
+                <!-- <span class="text-error" data-newcompany-error>Sector field cannot be empty.</span> -->
+                <span class="text-error" data-newcompany-error></span>
               </fieldset>
 
               <button
@@ -120,6 +123,7 @@
                 type="submit"
                 onclick="cancelSubmitForm()"
                 id="btn-register-company"
+
               >
                 Register Company
               </button>
@@ -248,7 +252,7 @@
           <hr/><hr/><hr/><hr/>
         </div>
       </div>
-      
+
     </main>
 
     <script src="./src/js/form.js"></script>
