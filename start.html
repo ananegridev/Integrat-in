@@ -81,7 +81,7 @@
      
                 />
                 <!-- <span class="text-error" data-newcompany-error>New company field cannot be empty.</span> -->
-                <span class="text-error" data-newcompany-error></span>
+                <span class="text-error-newcompany" data-newcompany-error></span>
               </fieldset>
 
               <fieldset class="form__camp">
@@ -95,7 +95,7 @@
   
                 />
                 <!-- <span class="text-error" data-newcompany-error>Domain field cannot be empty.</span> -->
-                <span class="text-error" data-newcompany-error></span>
+                <span class="text-error-domain" data-newcompany-error></span>
               </fieldset>
 
               <fieldset class="form__camp">
@@ -115,18 +115,28 @@
                   <option value="Other">Other</option>
                 </select>
                 <!-- <span class="text-error" data-newcompany-error>Sector field cannot be empty.</span> -->
-                <span class="text-error" data-newcompany-error></span>
+                <span class="text-error-sector" data-newcompany-error></span>
               </fieldset>
 
-              <button
+              <!-- <button
                 class="btn"
                 type="submit"
                 onclick="cancelSubmitForm()"
                 id="btn-register-company"
-
+                
               >
                 Register Company
-              </button>
+              </button> -->
+
+              <button
+              class="btn"
+              type="submit"
+              onclick="verifyFields()"
+              id="btn-register-company"
+              
+            >
+              Register Company
+            </button>
 
             </div>
             <!-- END REGISTER NEW COMPANY -->
@@ -255,6 +265,6 @@
 
     </main>
 
-    <script src="./src/js/form.js"></script>
+    <script src="./src/js/form.js" defer></script>
   </body>
 </html>

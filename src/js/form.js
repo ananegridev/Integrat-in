@@ -131,14 +131,14 @@ function cancelSubmitForm() {
 
 btnRegisterCompany.addEventListener("click", function () {
   
-// company - newCompany - domain - sector - fullname - email - departament - calculation
 
-  document.location.reload();
-  location.reload();
   jsonNewCompany();
-  postNewCompany();
   getCompanies();
-  window.location.reload(true);
+
+  // document.location.reload();
+  // location.reload();
+  // window.location.reload(true);
+  
 
 });
 
@@ -179,6 +179,32 @@ function jsonNewCompany() {
 
 // --------- API: CADASTRO NOVA EMPRESA POSTMAN
 
+let errorNewCompany = document.querySelector('.text-error-newcompany');
+let errorDomain = document.querySelector('.text-error-domain');
+let errorSector = document.querySelector('.text-error-sector');
+
+function verifyFields(){
+  if (newCompany.value.trim().length === 0 ) {
+    newCompany.style.border = '2px solid red';
+    errorNewCompany.innerText = 'Company name field cannot be empty.';
+
+  }
+
+  if (sector.value === 'None') {
+    sector.style.border = '2px solid red';
+    errorSector.innerText = 'Sector field cannot be empty.';
+  }
+
+  if (domain.value.trim().length === 0) {
+    domain.style.border = '2px solid red';
+    errorDomain.innerText = 'Domain field cannot be empty.';
+  }
+
+  if (newCompany.value.trim().length > 0 || sector.value != 'None' || domain.value.trim().length > 0){
+    postNewCompany()
+  }
+}
+
 function postNewCompany() {
   fetch(url, {
     method: "POST",
@@ -196,6 +222,9 @@ function postNewCompany() {
     },
     body: jsonNewCompany(),
   })
+  .then(function () {
+    window.location.href = "./start.html";
+})
 }
 
 // --------- VALIDAÇÃO FORMULÁRIO 1
@@ -266,6 +295,10 @@ inputsFormRequired.forEach((field) => {
 
 // --------- VALIDAÇÃO CAMPO NULO FORMULÁRIO ADD NEW COMPANY
 
+
+
+
+
 // function fieldNull() {
 //   if (newCompany.value.trim().length === 0 || sector.value.trim().length === 'None' || domain.value.trim().length === 0) {
 //     btnRegisterCompany.disabled = true;
@@ -276,22 +309,32 @@ inputsFormRequired.forEach((field) => {
 
 // fieldNull();
 
-let textErrorNewCompany = document.querySelectorAll('[data-newcompany-error]');
+// let textErrorNewCompany = document.querySelectorAll('[data-newcompany-error]');
 
+  // newCompany.addEventListener("blur", () => {
+  //   if (newCompany.value.trim().length === 0) {
+  //     newCompany.style.border = '2px solid red';
+  //   } else {
+  //     newCompany.style.border = '1px solid black';
+  //   }
+  // });
 
+  // domain.addEventListener("blur", () => {
+  //   if (domain.value.trim().length === 0) {
+  //     domain.style.border = '2px solid red';
+  //   } else {
+  //     domain.style.border = '1px solid black';
+  //   }
+  // });
 
-inputsNewCompany.forEach((field) => {
-  field.addEventListener("blur", event => {
-    if (field.value.trim().length === 0) {
-      field.style.border = '2px solid red';
-      textErrorNewCompany.style.display = "flex";
-    } else {
-      field.style.border = '1px solid black'
-      textErrorNewCompany.style.display = "none";
-    }
-  });
+  // sector.addEventListener("blur", () => {
+  //   if (sector.value === 'None') {
+  //     sector.style.border = '2px solid red';
+  //   } else {
+  //     sector.style.border = '1px solid black';
+  //   }
+  // });
 
-})
 
 // textErrorNewCompany.forEach((field, error) => {
 //   field.addEventListener("blur", event => {
@@ -305,3 +348,14 @@ inputsNewCompany.forEach((field) => {
 //   });
 
 // })
+
+
+// function teste(){
+//   if(rowRegisterCompany.style.display === 'flex'){
+// console.log('oi')
+
+//   }
+//   return true
+// }
+
+// teste();
