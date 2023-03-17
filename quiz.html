@@ -13,6 +13,7 @@
     <link rel="stylesheet" href="./src/css/footer.css" />
     <link rel="stylesheet" href="./src/css/nav.css" />
     <link rel="stylesheet" href="./src/css/preloader.css" />
+    <link rel="stylesheet" href="./src/css/toast.css" />
 
     <link rel="stylesheet" href="./src/css/quiz.css" />
     <link rel="stylesheet" href="./src/css/stylequiz.css" />
@@ -23,7 +24,8 @@
       href="https://fonts.googleapis.com/css2?family=Epilogue:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
       rel="stylesheet"
     />
-  </head>
+
+    <script src="https://kit.fontawesome.com/2086ad0887.js" crossorigin="anonymous"></script>
   <body>
     <main>
       <nav>
@@ -48,9 +50,6 @@
         </section>
 
         <section class="content__quiz-value">
-          <!-- <p>
-            Select the answers based on how well each statement describes your company.
-          </p> -->
 
           <div class="box__circle-question">
             <div class="circle circle-color-1">
@@ -78,6 +77,16 @@
         <section class="content__quiz">
           <!-- START QUIZ -->
           <div id="progress_bar"></div>
+  
+          <div class="toast" id="alert">
+            <div class="toast-content">
+              <img src="./src/img/alert.svg" alt="">
+              <div class="message">
+                <span class="text text-1">Alert</span>
+                <span class="text text-2">Please check unanswered questions</span>
+              </div>
+            </div>
+          </div>
 
           <form  class="form__box" id="form__box">
             
@@ -91,31 +100,31 @@
                 <div class="box-question">
                   <div>
                     <div class="box-circle circle-color-1"><p class="circle-p">1</p></div>
-                    <input id="q1" type="radio" name="q1" class="q1" value="1"/><br />
+                    <input id="q1" type="radio" name="q1" value="1" data-page-one/>
                   </div>
                   <div>
                     <div class="box-circle circle-color-2"><p class="circle-p">2</p></div>
-                    <input id="q1" type="radio" name="q1" value="2"/><br />
+                    <input id="q1" type="radio" name="q1" value="2" data-page-one/>
                   </div>
                   <div>
                     <div class="box-circle circle-color-3"><p class="circle-p">3</p></div>
-                    <input id="q1" type="radio" name="q1" value="3"/><br />
+                    <input id="q1" type="radio" name="q1" value="3" data-page-one/>
                   </div>
                   <div>
                     <div class="box-circle circle-color-4"><p class="circle-p">4</p></div>
-                    <input id="q1" type="radio" name="q1" value="4"/><br />
+                    <input id="q1" type="radio" name="q1" value="4" data-page-one/>
                   </div>
                   <div>
                     <div class="box-circle circle-color-5"><p class="circle-p">5</p></div>
-                    <input id="q1" type="radio" name="q1" value="5"/><br />
+                    <input id="q1" type="radio" name="q1" value="5" data-page-one/>
                   </div>
                   <div>
                     <div class="box-circle circle-color-6"><p class="circle-p">6</p></div>
-                    <input id="q1" type="radio" name="q1" value="6"/><br />
+                    <input id="q1" type="radio" name="q1" value="6" data-page-one/>
                   </div>
                   <div>
                     <div class="box-circle circle-color-7"><p class="circle-p">7</p></div>
-                    <input id="q1" type="radio" name="q1" value="7"/><br />
+                    <input id="q1" type="radio" name="q1" value="7" data-page-one/>
                   </div>
                 </div>
               </div>
@@ -129,31 +138,31 @@
                 <div class="box-question">
                   <div>
                    <div class="box-circle circle-color-1"><p class="circle-p">1</p></div>
-                    <input id="answer-a" type="radio" name="q2" value="1" /><br />
+                    <input id="q2" type="radio" name="q2" value="1" data-page-one /><br />
                   </div>
                   <div>
                     <div class="box-circle circle-color-2"><p class="circle-p">2</p></div>
-                    <input id="answer-b" type="radio" name="q2" value="2" /><br />
+                    <input id="q2" type="radio" name="q2" value="2" data-page-one/><br />
                   </div>
                   <div>
                     <div class="box-circle circle-color-3"><p class="circle-p">3</p></div>
-                    <input id="answer-c" type="radio" name="q2" value="3" /><br />
+                    <input id="q2" type="radio" name="q2" value="3" data-page-one/><br />
                   </div>
                   <div>
                     <div class="box-circle circle-color-4"><p class="circle-p">4</p></div>
-                    <input id="answer-d" type="radio" name="q2" value="4" /><br />
+                    <input id="q2" type="radio" name="q2" value="4" data-page-one/><br />
                   </div>
                   <div>
                     <div class="box-circle circle-color-5"><p class="circle-p">5</p></div>
-                    <input id="answer-e" type="radio" name="q2" value="5" /><br />
+                    <input id="q2" type="radio" name="q2" value="5" data-page-one/><br />
                   </div>
                   <div>
                     <div class="box-circle circle-color-6"><p class="circle-p">6</p></div>
-                    <input id="answer-f" type="radio" name="q2" value="6" /><br />
+                    <input id="q2" type="radio" name="q2" value="6" data-page-one/><br />
                   </div>
                   <div>
                     <div class="box-circle circle-color-7"><p class="circle-p">7</p></div>
-                    <input id="answer-g" type="radio" name="q2" value="7" /><br />
+                    <input id="q2" type="radio" name="q2" value="7" data-page-one/><br />
                   </div>
                 </div>
               </div>
@@ -167,31 +176,31 @@
                 <div class="box-question">
                   <div>
                    <div class="box-circle circle-color-1"><p class="circle-p">1</p></div>
-                    <input id="answer-a" type="radio" name="q3" value="1" /><br />
+                    <input id="q3" type="radio" name="q3" value="1" data-page-one/><br />
                   </div>
                   <div>
                     <div class="box-circle circle-color-2"><p class="circle-p">2</p></div>
-                    <input id="answer-b" type="radio" name="q3" value="2" /><br />
+                    <input id="q3" type="radio" name="q3" value="2" data-page-one/><br />
                   </div>
                   <div>
                     <div class="box-circle circle-color-3"><p class="circle-p">3</p></div>
-                    <input id="answer-c" type="radio" name="q3" value="3" /><br />
+                    <input id="q3" type="radio" name="q3" value="3" data-page-one/><br />
                   </div>
                   <div>
                     <div class="box-circle circle-color-4"><p class="circle-p">4</p></div>
-                    <input id="answer-d" type="radio" name="q3" value="4" /><br />
+                    <input id="q3" type="radio" name="q3" value="4" data-page-one/><br />
                   </div>
                   <div>
                     <div class="box-circle circle-color-5"><p class="circle-p">5</p></div>
-                    <input id="answer-e" type="radio" name="q3" value="5" /><br />
+                    <input id="q3" type="radio" name="q3" value="5" data-page-one/><br />
                   </div>
                   <div>
                     <div class="box-circle circle-color-6"><p class="circle-p">6</p></div>
-                    <input id="answer-f" type="radio" name="q3" value="6" /><br />
+                    <input id="q3" type="radio" name="q3" value="6" data-page-one/><br />
                   </div>
                   <div>
                     <div class="box-circle circle-color-7"><p class="circle-p">7</p></div>
-                    <input id="answer-g" type="radio" name="q3" value="7" /><br />
+                    <input id="q3" type="radio" name="q3" value="7" data-page-one/><br />
                   </div>
                 </div>
               </div>
@@ -205,31 +214,31 @@
                 <div class="box-question">
                   <div>
                    <div class="box-circle circle-color-1"><p class="circle-p">1</p></div>
-                    <input id="answer-a" type="radio" name="q4" value="1" /><br />
+                    <input id="q4" type="radio" name="q4" value="1" data-page-one/><br />
                   </div>
                   <div>
                     <div class="box-circle circle-color-2"><p class="circle-p">2</p></div>
-                    <input id="answer-b" type="radio" name="q4" value="2" /><br />
+                    <input id="q4" type="radio" name="q4" value="2" data-page-one/><br />
                   </div>
                   <div>
                     <div class="box-circle circle-color-3"><p class="circle-p">3</p></div>
-                    <input id="answer-c" type="radio" name="q4" value="3" /><br />
+                    <input id="q4" type="radio" name="q4" value="3" data-page-one/><br />
                   </div>
                   <div>
                     <div class="box-circle circle-color-4"><p class="circle-p">4</p></div>
-                    <input id="answer-d" type="radio" name="q4" value="4" /><br />
+                    <input id="q4" type="radio" name="q4" value="4" data-page-one/><br />
                   </div>
                   <div>
                     <div class="box-circle circle-color-5"><p class="circle-p">5</p></div>
-                    <input id="answer-e" type="radio" name="q4" value="5" /><br />
+                    <input id="q4" type="radio" name="q4" value="5" data-page-one/><br />
                   </div>
                   <div>
                     <div class="box-circle circle-color-6"><p class="circle-p">6</p></div>
-                    <input id="answer-f" type="radio" name="q4" value="6" /><br />
+                    <input id="q4" type="radio" name="q4" value="6" data-page-one/><br />
                   </div>
                   <div>
                     <div class="box-circle circle-color-7"><p class="circle-p">7</p></div>
-                    <input id="answer-g" type="radio" name="q4" value="7" /><br />
+                    <input id="q4" type="radio" name="q4" value="7" data-page-one/><br />
                   </div>
                 </div>
               </div>
@@ -243,31 +252,31 @@
                 <div class="box-question">
                   <div>
                    <div class="box-circle circle-color-1"><p class="circle-p">1</p></div>
-                    <input id="answer-a" type="radio" name="q5" value="1" /><br />
+                    <input id="q5" type="radio" name="q5" value="1" data-page-one/><br />
                   </div>
                   <div>
                     <div class="box-circle circle-color-2"><p class="circle-p">2</p></div>
-                    <input id="answer-b" type="radio" name="q5" value="2" /><br />
+                    <input id="q5" type="radio" name="q5" value="2" data-page-one/><br />
                   </div>
                   <div>
                     <div class="box-circle circle-color-3"><p class="circle-p">3</p></div>
-                    <input id="answer-c" type="radio" name="q5" value="3" /><br />
+                    <input id="q5" type="radio" name="q5" value="3" data-page-one/><br />
                   </div>
                   <div>
                     <div class="box-circle circle-color-4"><p class="circle-p">4</p></div>
-                    <input id="answer-c" type="radio" name="q5" value="4" /><br />
+                    <input id="q5" type="radio" name="q5" value="4" data-page-one/><br />
                   </div>
                   <div>
                     <div class="box-circle circle-color-5"><p class="circle-p">5</p></div>
-                    <input id="answer-c" type="radio" name="q5" value="5" /><br />
+                    <input id="q5" type="radio" name="q5" value="5" data-page-one/><br />
                   </div>
                   <div>
                     <div class="box-circle circle-color-6"><p class="circle-p">6</p></div>
-                    <input id="answer-c" type="radio" name="q5" value="6" /><br />
+                    <input id="q5" type="radio" name="q5" value="6" data-page-one/><br />
                   </div>
                   <div>
                     <div class="box-circle circle-color-7"><p class="circle-p">7</p></div>
-                    <input id="answer-c" type="radio" name="q5" value="7" /><br />
+                    <input id="q5" type="radio" name="q5" value="7" data-page-one/><br />
                   </div>
                 </div>
               </div>
@@ -282,31 +291,31 @@
                 <div class="box-question">
                   <div>
                    <div class="box-circle circle-color-1"><p class="circle-p">1</p></div>
-                    <input id="answer-a" type="radio" name="q6" value="1" /><br />
+                    <input id="q6" type="radio" name="q6" value="1" data-page-one/><br />
                   </div>
                   <div>
                     <div class="box-circle circle-color-2"><p class="circle-p">2</p></div>
-                    <input id="answer-b" type="radio" name="q6" value="2" /><br />
+                    <input id="q6" type="radio" name="q6" value="2" data-page-one/><br />
                   </div>
                   <div>
                     <div class="box-circle circle-color-3"><p class="circle-p">3</p></div>
-                    <input id="answer-c" type="radio" name="q6" value="3" /><br />
+                    <input id="q6" type="radio" name="q6" value="3" data-page-one/><br />
                   </div>
                   <div>
                     <div class="box-circle circle-color-4"><p class="circle-p">4</p></div>
-                    <input id="answer-c" type="radio" name="q6" value="4" /><br />
+                    <input id="q6" type="radio" name="q6" value="4" data-page-one/><br />
                   </div>
                   <div>
                     <div class="box-circle circle-color-5"><p class="circle-p">5</p></div>
-                    <input id="answer-c" type="radio" name="q6" value="5" /><br />
+                    <input id="q6" type="radio" name="q6" value="5" data-page-one/><br />
                   </div>
                   <div>
                     <div class="box-circle circle-color-6"><p class="circle-p">6</p></div>
-                    <input id="answer-c" type="radio" name="q6" value="6" /><br />
+                    <input id="q6" type="radio" name="q6" value="6" data-page-one/><br />
                   </div>
                   <div>
                     <div class="box-circle circle-color-7"><p class="circle-p">7</p></div>
-                    <input id="answer-c" type="radio" name="q6" value="7" /><br />
+                    <input id="q6" type="radio" name="q6" value="7" data-page-one/><br />
                   </div>
                 </div>
               </div>
@@ -320,31 +329,31 @@
                 <div class="box-question">
                   <div>
                    <div class="box-circle circle-color-1"><p class="circle-p">1</p></div>
-                    <input id="answer-a" type="radio" name="q7" value="1" /><br />
+                    <input id="q7" type="radio" name="q7" value="1" data-page-one/><br />
                   </div>
                   <div>
                     <div class="box-circle circle-color-2"><p class="circle-p">2</p></div>
-                    <input id="answer-b" type="radio" name="q7" value="2" /><br />
+                    <input id="q7" type="radio" name="q7" value="2" data-page-one/><br />
                   </div>
                   <div>
                     <div class="box-circle circle-color-3"><p class="circle-p">3</p></div>
-                    <input id="answer-c" type="radio" name="q7" value="3" /><br />
+                    <input id="q7" type="radio" name="q7" value="3" data-page-one/><br />
                   </div>
                   <div>
                     <div class="box-circle circle-color-4"><p class="circle-p">4</p></div>
-                    <input id="answer-c" type="radio" name="q7" value="4" /><br />
+                    <input id="q7" type="radio" name="q7" value="4" data-page-one/><br />
                   </div>
                   <div>
                     <div class="box-circle circle-color-5"><p class="circle-p">5</p></div>
-                    <input id="answer-c" type="radio" name="q7" value="5" /><br />
+                    <input id="q7" type="radio" name="q7" value="5" data-page-one/><br />
                   </div>
                   <div>
                     <div class="box-circle circle-color-6"><p class="circle-p">6</p></div>
-                    <input id="answer-c" type="radio" name="q7" value="6" /><br />
+                    <input id="q7" type="radio" name="q7" value="6" data-page-one/><br />
                   </div>
                   <div>
                     <div class="box-circle circle-color-7"><p class="circle-p">7</p></div>
-                    <input id="answer-c" type="radio" name="q7" value="7" /><br />
+                    <input id="q7" type="radio" name="q7" value="7" data-page-one/><br />
                   </div>
                 </div>
               </div>
@@ -359,31 +368,31 @@
                 <div class="box-question">
                   <div>
                    <div class="box-circle circle-color-1"><p class="circle-p">1</p></div>
-                    <input id="answer-a" type="radio" name="q4" value="1" /><br />
+                    <input id="q8" type="radio" name="q8" value="1" data-page-one/><br />
                   </div>
                   <div>
                     <div class="box-circle circle-color-2"><p class="circle-p">2</p></div>
-                    <input id="answer-b" type="radio" name="q4" value="2" /><br />
+                    <input id="q8" type="radio" name="q8" value="2" data-page-one/><br />
                   </div>
                   <div>
                     <div class="box-circle circle-color-3"><p class="circle-p">3</p></div>
-                    <input id="answer-c" type="radio" name="q4" value="3" /><br />
+                    <input id="q8" type="radio" name="q8" value="3" data-page-one/><br />
                   </div>
                   <div>
                     <div class="box-circle circle-color-4"><p class="circle-p">4</p></div>
-                    <input id="answer-c" type="radio" name="q4" value="4" /><br />
+                    <input id="q8" type="radio" name="q8" value="4" data-page-one/><br />
                   </div>
                   <div>
                     <div class="box-circle circle-color-5"><p class="circle-p">5</p></div>
-                    <input id="answer-c" type="radio" name="q4" value="5" /><br />
+                    <input id="q8" type="radio" name="q8" value="5" data-page-one/><br />
                   </div>
                   <div>
                     <div class="box-circle circle-color-6"><p class="circle-p">6</p></div>
-                    <input id="answer-c" type="radio" name="q4" value="6" /><br />
+                    <input id="q8" type="radio" name="q8" value="6" data-page-one/><br />
                   </div>
                   <div>
                     <div class="box-circle circle-color-7"><p class="circle-p">7</p></div>
-                    <input id="answer-c" type="radio" name="q4" value="7" /><br />
+                    <input id="q8" type="radio" name="q8" value="7" data-page-one/><br />
                   </div>
                 </div>
               </div>
@@ -397,31 +406,31 @@
                 <div class="box-question">
                   <div>
                    <div class="box-circle circle-color-1"><p class="circle-p">1</p></div>
-                    <input id="answer-a" type="radio" name="q9" value="1" /><br />
+                    <input id="q9" type="radio" name="q9" value="1" data-page-one/><br />
                   </div>
                   <div>
                     <div class="box-circle circle-color-2"><p class="circle-p">2</p></div>
-                    <input id="answer-b" type="radio" name="q9" value="2" /><br />
+                    <input id="q9" type="radio" name="q9" value="2" data-page-one/><br />
                   </div>
                   <div>
                     <div class="box-circle circle-color-3"><p class="circle-p">3</p></div>
-                    <input id="answer-c" type="radio" name="q9" value="3" /><br />
+                    <input id="q9" type="radio" name="q9" value="3" data-page-one/><br />
                   </div>
                   <div>
                     <div class="box-circle circle-color-4"><p class="circle-p">4</p></div>
-                    <input id="answer-c" type="radio" name="q9" value="4" /><br />
+                    <input id="q9" type="radio" name="q9" value="4" data-page-one/><br />
                   </div>
                   <div>
                     <div class="box-circle circle-color-5"><p class="circle-p">5</p></div>
-                    <input id="answer-c" type="radio" name="q9" value="5" /><br />
+                    <input id="q9" type="radio" name="q9" value="5" data-page-one/><br />
                   </div>
                   <div>
                     <div class="box-circle circle-color-6"><p class="circle-p">6</p></div>
-                    <input id="answer-c" type="radio" name="q9" value="6" /><br />
+                    <input id="q9" type="radio" name="q9" value="6" data-page-one/><br />
                   </div>
                   <div>
                     <div class="box-circle circle-color-7"><p class="circle-p">7</p></div>
-                    <input id="answer-c" type="radio" name="q9" value="7" /><br />
+                    <input id="q9" type="radio" name="q9" value="7" data-page-one/><br />
                   </div>
                 </div>
               </div>
@@ -433,64 +442,71 @@
                   <div>
                    <div class="box-circle circle-color-1"><p class="circle-p">1</p></div>
                     <input
-                      id="answer-a"
+                      id="q10"
                       type="radio"
                       name="q10"
                       value="1"
+                      data-page-one
                     /><br />
                   </div>
                   <div>
                     <div class="box-circle circle-color-2"><p class="circle-p">2</p></div>
                     <input
-                      id="answer-b"
+                      id="q10"
                       type="radio"
                       name="q10"
                       value="2"
+                      data-page-one
                     /><br />
                   </div>
                   <div>
                     <div class="box-circle circle-color-3"><p class="circle-p">3</p></div>
                     <input
-                      id="answer-c"
+                      id="q10"
                       type="radio"
                       name="q10"
                       value="3"
+                      data-page-one
                     /><br />
                   </div>
                   <div>
                     <div class="box-circle circle-color-4"><p class="circle-p">4</p></div>
                     <input
-                      id="answer-c"
+                      id="q10"
                       type="radio"
                       name="q10"
                       value="4"
+                      data-page-one
                     /><br />
                   </div>
                   <div>
                     <div class="box-circle circle-color-5"><p class="circle-p">5</p></div>
                     <input
-                      id="answer-c"
+                      id="q10"
                       type="radio"
                       name="q10"
                       value="5"
+                      data-page-one
                     /><br />
                   </div>
                   <div>
                     <div class="box-circle circle-color-6"><p class="circle-p">6</p></div>
                     <input
-                      id="answer-c"
+                      id="q10"
                       type="radio"
                       name="q10"
                       value="6"
+                      data-page-one
                     /><br />
                   </div>
                   <div>
                     <div class="box-circle circle-color-7"><p class="circle-p">7</p></div>
                     <input
-                      id="answer-c"
+                      id="q10"
                       type="radio"
                       name="q10"
                       value="7"
+                      data-page-one
                     /><br />
                   </div>
                 </div>
@@ -500,37 +516,38 @@
             </div>
 
             <div class="row-box-2" id="row-box-2"> 
+
               <div id="question-11" class="question">
                 <h2 class="q-title">Question 11</h2>
                 <h3>There is trust and commitment in the relationships among marketing, logistics, and production.</h3>
                 <div class="box-question">
                   <div>
                    <div class="box-circle circle-color-1"><p class="circle-p">1</p></div>
-                    <input id="answer-a" type="radio" name="q11" value="1"/><br />
+                    <input id="q11" type="radio" name="q11" value="1" data-page-two/><br />
                   </div>
                   <div>
                     <div class="box-circle circle-color-2"><p class="circle-p">2</p></div>
-                    <input id="answer-b" type="radio" name="q11" value="2"/><br />
+                    <input id="q11" type="radio" name="q11" value="2" data-page-two/><br />
                   </div>
                   <div>
                     <div class="box-circle circle-color-3"><p class="circle-p">3</p></div>
-                    <input id="answer-c" type="radio" name="q11" value="3"/><br />
+                    <input id="q11" type="radio" name="q11" value="3" data-page-two/><br />
                   </div>
                   <div>
                     <div class="box-circle circle-color-4"><p class="circle-p">4</p></div>
-                    <input id="answer-c" type="radio" name="q11" value="4"/><br />
+                    <input id="q11" type="radio" name="q11" value="4" data-page-two/><br />
                   </div>
                   <div>
                     <div class="box-circle circle-color-5"><p class="circle-p">5</p></div>
-                    <input id="answer-c" type="radio" name="q11" value="5"/><br />
+                    <input id="q11" type="radio" name="q11" value="5" data-page-two/><br />
                   </div>
                   <div>
                     <div class="box-circle circle-color-6"><p class="circle-p">6</p></div>
-                    <input id="answer-c" type="radio" name="q11" value="6"/><br />
+                    <input id="q11" type="radio" name="q11" value="6" data-page-two/><br />
                   </div>
                   <div>
                     <div class="box-circle circle-color-7"><p class="circle-p">7</p></div>
-                    <input id="answer-c" type="radio" name="q11" value="7"/><br />
+                    <input id="q11" type="radio" name="q11" value="7" data-page-two/><br />
                   </div>
                 </div>
               </div>
@@ -541,31 +558,31 @@
                 <div class="box-question">
                   <div>
                    <div class="box-circle circle-color-1"><p class="circle-p">1</p></div>
-                    <input id="answer-a" type="radio" name="q12" value="1"/><br />
+                    <input id="q12" type="radio" name="q12" value="1" data-page-two/><br />
                   </div>
                   <div>
                     <div class="box-circle circle-color-2"><p class="circle-p">2</p></div>
-                    <input id="answer-b" type="radio" name="q12" value="2"/><br />
+                    <input id="q12" type="radio" name="q12" value="2" data-page-two/><br />
                   </div>
                   <div>
                     <div class="box-circle circle-color-3"><p class="circle-p">3</p></div>
-                    <input id="answer-c" type="radio" name="q12" value="3"/><br />
+                    <input id="q12" type="radio" name="q12" value="3" data-page-two/><br />
                   </div>
                   <div>
                     <div class="box-circle circle-color-4"><p class="circle-p">4</p></div>
-                    <input id="answer-c" type="radio" name="q12" value="4"/><br />
+                    <input id="q12" type="radio" name="q12" value="4" data-page-two/><br />
                   </div>
                   <div>
                     <div class="box-circle circle-color-5"><p class="circle-p">5</p></div>
-                    <input id="answer-c" type="radio" name="q12" value="5"/><br />
+                    <input id="q12" type="radio" name="q12" value="5" data-page-two/><br />
                   </div>
                   <div>
                     <div class="box-circle circle-color-6"><p class="circle-p">6</p></div>
-                    <input id="answer-c" type="radio" name="q12" value="6"/><br />
+                    <input id="q12" type="radio" name="q12" value="6" data-page-two/><br />
                   </div>
                   <div>
                     <div class="box-circle circle-color-7"><p class="circle-p">7</p></div>
-                    <input id="answer-c" type="radio" name="q12" value="7"/><br />
+                    <input id="q12" type="radio" name="q12" value="7" data-page-two/><br />
                   </div>
                 </div>
               </div>
@@ -576,31 +593,31 @@
                 <div class="box-question">
                   <div>
                    <div class="box-circle circle-color-1"><p class="circle-p">1</p></div>
-                    <input id="answer-a" type="radio" name="q13" value="1"/><br />
+                    <input id="q13" type="radio" name="q13" value="1" data-page-two/><br />
                   </div>
                   <div>
                     <div class="box-circle circle-color-2"><p class="circle-p">2</p></div>
-                    <input id="answer-b" type="radio" name="q13" value="2"/><br />
+                    <input id="q13" type="radio" name="q13" value="2" data-page-two/><br />
                   </div>
                   <div>
                     <div class="box-circle circle-color-3"><p class="circle-p">3</p></div>
-                    <input id="answer-c" type="radio" name="q13" value="3"/><br />
+                    <input id="q13" type="radio" name="q13" value="3" data-page-two/><br />
                   </div>
                   <div>
                     <div class="box-circle circle-color-4"><p class="circle-p">4</p></div>
-                    <input id="answer-c" type="radio" name="q13" value="4"/><br />
+                    <input id="q13" type="radio" name="q13" value="4" data-page-two/><br />
                   </div>
                   <div>
                     <div class="box-circle circle-color-5"><p class="circle-p">5</p></div>
-                    <input id="answer-c" type="radio" name="q13" value="5"/><br />
+                    <input id="q13" type="radio" name="q13" value="5" data-page-two/><br />
                   </div>
                   <div>
                     <div class="box-circle circle-color-6"><p class="circle-p">6</p></div>
-                    <input id="answer-c" type="radio" name="q13" value="6"/><br />
+                    <input id="q13" type="radio" name="q13" value="6" data-page-two/><br />
                   </div>
                   <div>
                     <div class="box-circle circle-color-7"><p class="circle-p">7</p></div>
-                    <input id="answer-c" type="radio" name="q13" value="7"/><br />
+                    <input id="q13" type="radio" name="q13" value="7" data-page-two/><br />
                   </div>
                 </div>
               </div>
@@ -611,31 +628,31 @@
                 <div class="box-question">
                   <div>
                    <div class="box-circle circle-color-1"><p class="circle-p">1</p></div>
-                    <input id="answer-a" type="radio" name="q14" value="1"/><br />
+                    <input id="q14" type="radio" name="q14" value="1" data-page-two/><br />
                   </div>
                   <div>
                     <div class="box-circle circle-color-2"><p class="circle-p">2</p></div>
-                    <input id="answer-b" type="radio" name="q14" value="2"/><br />
+                    <input id="q14" type="radio" name="q14" value="2" data-page-two/><br />
                   </div>
                   <div>
                     <div class="box-circle circle-color-3"><p class="circle-p">3</p></div>
-                    <input id="answer-c" type="radio" name="q14" value="3"/><br />
+                    <input id="q14" type="radio" name="q14" value="3" data-page-two/><br />
                   </div>
                   <div>
                     <div class="box-circle circle-color-4"><p class="circle-p">4</p></div>
-                    <input id="answer-c" type="radio" name="q14" value="4"/><br />
+                    <input id="q14" type="radio" name="q14" value="4" data-page-two/><br />
                   </div>
                   <div>
                     <div class="box-circle circle-color-5"><p class="circle-p">5</p></div>
-                    <input id="answer-c" type="radio" name="q14" value="5"/><br />
+                    <input id="q14" type="radio" name="q14" value="5" data-page-two/><br />
                   </div>
                   <div>
                     <div class="box-circle circle-color-6"><p class="circle-p">6</p></div>
-                    <input id="answer-c" type="radio" name="q14" value="6"/><br />
+                    <input id="q14" type="radio" name="q14" value="6" data-page-two/><br />
                   </div>
                   <div>
                     <div class="box-circle circle-color-7"><p class="circle-p">7</p></div>
-                    <input id="answer-c" type="radio" name="q14" value="7"/><br />
+                    <input id="q14" type="radio" name="q14" value="7" data-page-two/><br />
                   </div>
                 </div>
               </div>
@@ -646,31 +663,31 @@
                 <div class="box-question">
                   <div>
                    <div class="box-circle circle-color-1"><p class="circle-p">1</p></div>
-                    <input id="answer-a" type="radio" name="q15" value="1"/><br />
+                    <input id="q15" type="radio" name="q15" value="1" data-page-two/><br />
                   </div>
                   <div>
                     <div class="box-circle circle-color-2"><p class="circle-p">2</p></div>
-                    <input id="answer-b" type="radio" name="q15" value="2"/><br />
+                    <input id="q15" type="radio" name="q15" value="2" data-page-two/><br />
                   </div>
                   <div>
                     <div class="box-circle circle-color-3"><p class="circle-p">3</p></div>
-                    <input id="answer-c" type="radio" name="q15" value="3"/><br />
+                    <input id="q15" type="radio" name="q15" value="3" data-page-two/><br />
                   </div>
                   <div>
                     <div class="box-circle circle-color-4"><p class="circle-p">4</p></div>
-                    <input id="answer-c" type="radio" name="q15" value="4"/><br />
+                    <input id="q15" type="radio" name="q15" value="4" data-page-two/><br />
                   </div>
                   <div>
                     <div class="box-circle circle-color-5"><p class="circle-p">5</p></div>
-                    <input id="answer-c" type="radio" name="q15" value="5"/><br />
+                    <input id="q15" type="radio" name="q15" value="5" data-page-two/><br />
                   </div>
                   <div>
                     <div class="box-circle circle-color-6"><p class="circle-p">6</p></div>
-                    <input id="answer-c" type="radio" name="q15" value="6"/><br />
+                    <input id="q15" type="radio" name="q15" value="6" data-page-two/><br />
                   </div>
                   <div>
                     <div class="box-circle circle-color-7"><p class="circle-p">7</p></div>
-                    <input id="answer-c" type="radio" name="q15" value="7"/><br />
+                    <input id="q15" type="radio" name="q15" value="7" data-page-two/><br />
                   </div>
                 </div>
               </div>
@@ -681,31 +698,31 @@
                 <div class="box-question">
                   <div>
                    <div class="box-circle circle-color-1"><p class="circle-p">1</p></div>
-                    <input id="answer-a" type="radio" name="q16" value="1"/><br />
+                    <input id="q16" type="radio" name="q16" value="1" data-page-two/><br />
                   </div>
                   <div>
                     <div class="box-circle circle-color-2"><p class="circle-p">2</p></div>
-                    <input id="answer-b" type="radio" name="q16" value="2"/><br />
+                    <input id="q16" type="radio" name="q16" value="2" data-page-two/><br />
                   </div>
                   <div>
                     <div class="box-circle circle-color-3"><p class="circle-p">3</p></div>
-                    <input id="answer-c" type="radio" name="q16" value="3"/><br />
+                    <input id="q16" type="radio" name="q16" value="3" data-page-two/><br />
                   </div>
                   <div>
                     <div class="box-circle circle-color-4"><p class="circle-p">4</p></div>
-                    <input id="answer-c" type="radio" name="q16" value="4"/><br />
+                    <input id="q16" type="radio" name="q16" value="4" data-page-two/><br />
                   </div>
                   <div>
                     <div class="box-circle circle-color-5"><p class="circle-p">5</p></div>
-                    <input id="answer-c" type="radio" name="q16" value="5"/><br />
+                    <input id="q16" type="radio" name="q16" value="5" data-page-two/><br />
                   </div>
                   <div>
                     <div class="box-circle circle-color-6"><p class="circle-p">6</p></div>
-                    <input id="answer-c" type="radio" name="q16" value="6"/><br />
+                    <input id="q16" type="radio" name="q16" value="6" data-page-two/><br />
                   </div>
                   <div>
                     <div class="box-circle circle-color-7"><p class="circle-p">7</p></div>
-                    <input id="answer-c" type="radio" name="q16" value="7"/><br />
+                    <input id="q16" type="radio" name="q16" value="7" data-page-two/><br />
                   </div>
                 </div>
               </div>
@@ -716,31 +733,31 @@
                 <div class="box-question">
                   <div>
                    <div class="box-circle circle-color-1"><p class="circle-p">1</p></div>
-                    <input id="answer-a" type="radio" name="q17" value="1"/><br />
+                    <input id="q17" type="radio" name="q17" value="1" data-page-two/><br />
                   </div>
                   <div>
                     <div class="box-circle circle-color-2"><p class="circle-p">2</p></div>
-                    <input id="answer-b" type="radio" name="q17" value="2"/><br />
+                    <input id="q17" type="radio" name="q17" value="2" data-page-two/><br />
                   </div>
                   <div>
                     <div class="box-circle circle-color-3"><p class="circle-p">3</p></div>
-                    <input id="answer-c" type="radio" name="q17" value="3"/><br />
+                    <input id="q17" type="radio" name="q17" value="3" data-page-two/><br />
                   </div>
                   <div>
                     <div class="box-circle circle-color-4"><p class="circle-p">4</p></div>
-                    <input id="answer-c" type="radio" name="q17" value="4"/><br />
+                    <input id="q17" type="radio" name="q17" value="4" data-page-two/><br />
                   </div>
                   <div>
                     <div class="box-circle circle-color-5"><p class="circle-p">5</p></div>
-                    <input id="answer-c" type="radio" name="q17" value="5"/><br />
+                    <input id="q17" type="radio" name="q17" value="5" data-page-two/><br />
                   </div>
                   <div>
                     <div class="box-circle circle-color-6"><p class="circle-p">6</p></div>
-                    <input id="answer-c" type="radio" name="q17" value="6"/><br />
+                    <input id="q17" type="radio" name="q17" value="6" data-page-two/><br />
                   </div>
                   <div>
                     <div class="box-circle circle-color-7"><p class="circle-p">7</p></div>
-                    <input id="answer-c" type="radio" name="q17" value="7"/><br />
+                    <input id="q17" type="radio" name="q17" value="7" data-page-two/><br />
                   </div>
                 </div>
               </div>
@@ -751,31 +768,31 @@
                 <div class="box-question">
                   <div>
                    <div class="box-circle circle-color-1"><p class="circle-p">1</p></div>
-                    <input id="answer-a" type="radio" name="q18" value="1"/><br />
+                    <input id="answer-a" type="radio" name="q18" value="1" data-page-two/><br />
                   </div>
                   <div>
                     <div class="box-circle circle-color-2"><p class="circle-p">2</p></div>
-                    <input id="answer-b" type="radio" name="q18" value="2"/><br />
+                    <input id="answer-b" type="radio" name="q18" value="2" data-page-two/><br />
                   </div>
                   <div>
                     <div class="box-circle circle-color-3"><p class="circle-p">3</p></div>
-                    <input id="answer-c" type="radio" name="q18" value="3"/><br />
+                    <input id="answer-c" type="radio" name="q18" value="3" data-page-two/><br />
                   </div>
                   <div>
                     <div class="box-circle circle-color-4"><p class="circle-p">4</p></div>
-                    <input id="answer-c" type="radio" name="q18" value="4"/><br />
+                    <input id="answer-c" type="radio" name="q18" value="4" data-page-two/><br />
                   </div>
                   <div>
                     <div class="box-circle circle-color-5"><p class="circle-p">5</p></div>
-                    <input id="answer-c" type="radio" name="q18" value="5"/><br />
+                    <input id="answer-c" type="radio" name="q18" value="5" data-page-two/><br />
                   </div>
                   <div>
                     <div class="box-circle circle-color-6"><p class="circle-p">6</p></div>
-                    <input id="answer-c" type="radio" name="q18" value="6"/><br />
+                    <input id="answer-c" type="radio" name="q18" value="6" data-page-two/><br />
                   </div>
                   <div>
                     <div class="box-circle circle-color-7"><p class="circle-p">7</p></div>
-                    <input id="answer-c" type="radio" name="q18" value="7"/><br />
+                    <input id="answer-c" type="radio" name="q18" value="7" data-page-two/><br />
                   </div>
                 </div>
               </div>
@@ -786,31 +803,31 @@
                 <div class="box-question">
                   <div>
                    <div class="box-circle circle-color-1"><p class="circle-p">1</p></div>
-                    <input id="answer-a" type="radio" name="q19" value="1"/><br />
+                    <input id="answer-a" type="radio" name="q19" value="1" data-page-two/><br />
                   </div>
                   <div>
                     <div class="box-circle circle-color-2"><p class="circle-p">2</p></div>
-                    <input id="answer-b" type="radio" name="q19" value="2"/><br />
+                    <input id="answer-b" type="radio" name="q19" value="2" data-page-two/><br />
                   </div>
                   <div>
                     <div class="box-circle circle-color-3"><p class="circle-p">3</p></div>
-                    <input id="answer-c" type="radio" name="q19" value="3"/><br />
+                    <input id="answer-c" type="radio" name="q19" value="3" data-page-two/><br />
                   </div>
                   <div>
                     <div class="box-circle circle-color-4"><p class="circle-p">4</p></div>
-                    <input id="answer-c" type="radio" name="q19" value="4"/><br />
+                    <input id="answer-c" type="radio" name="q19" value="4" data-page-two/><br />
                   </div>
                   <div>
                     <div class="box-circle circle-color-5"><p class="circle-p">5</p></div>
-                    <input id="answer-c" type="radio" name="q19" value="5"/><br />
+                    <input id="answer-c" type="radio" name="q19" value="5" data-page-two/><br />
                   </div>
                   <div>
                     <div class="box-circle circle-color-6"><p class="circle-p">6</p></div>
-                    <input id="answer-c" type="radio" name="q19" value="6"/><br />
+                    <input id="answer-c" type="radio" name="q19" value="6" data-page-two/><br />
                   </div>
                   <div>
                     <div class="box-circle circle-color-7"><p class="circle-p">7</p></div>
-                    <input id="answer-c" type="radio" name="q19" value="7"/><br />
+                    <input id="answer-c" type="radio" name="q19" value="7" data-page-two/><br />
                   </div>
                 </div>
               </div>
@@ -821,31 +838,31 @@
                 <div class="box-question">
                   <div>
                    <div class="box-circle circle-color-1"><p class="circle-p">1</p></div>
-                    <input id="answer-a" type="radio" name="q20" value="1"/><br />
+                    <input id="answer-a" type="radio" name="q20" value="1" data-page-two/><br />
                   </div>
                   <div>
                     <div class="box-circle circle-color-2"><p class="circle-p">2</p></div>
-                    <input id="answer-b" type="radio" name="q20" value="2"/><br />
+                    <input id="answer-b" type="radio" name="q20" value="2" data-page-two/><br />
                   </div>
                   <div>
                     <div class="box-circle circle-color-3"><p class="circle-p">3</p></div>
-                    <input id="answer-c" type="radio" name="q20" value="3"/><br />
+                    <input id="answer-c" type="radio" name="q20" value="3" data-page-two/><br />
                   </div>
                   <div>
                     <div class="box-circle circle-color-4"><p class="circle-p">4</p></div>
-                    <input id="answer-c" type="radio" name="q20" value="4"/><br />
+                    <input id="answer-c" type="radio" name="q20" value="4" data-page-two/><br />
                   </div>
                   <div>
                     <div class="box-circle circle-color-5"><p class="circle-p">5</p></div>
-                    <input id="answer-c" type="radio" name="q20" value="5"/><br />
+                    <input id="answer-c" type="radio" name="q20" value="5" data-page-two/><br />
                   </div>
                   <div>
                     <div class="box-circle circle-color-6"><p class="circle-p">6</p></div>
-                    <input id="answer-c" type="radio" name="q20" value="6"/><br />
+                    <input id="answer-c" type="radio" name="q20" value="6" data-page-two/><br />
                   </div>
                   <div>
                     <div class="box-circle circle-color-7"><p class="circle-p">7</p></div>
-                    <input id="answer-c" type="radio" name="q20" value="7"/><br />
+                    <input id="answer-c" type="radio" name="q20" value="7" data-page-two/><br />
                   </div>
                 </div>
               </div>
@@ -861,31 +878,31 @@
                 <div class="box-question">
                   <div>
                    <div class="box-circle circle-color-1"><p class="circle-p">1</p></div>
-                    <input id="answer-a" type="radio" name="q21" value="1"/><br />
+                    <input id="answer-a" type="radio" name="q21" value="1" data-page-three/><br />
                   </div>
                   <div>
                     <div class="box-circle circle-color-2"><p class="circle-p">2</p></div>
-                    <input id="answer-b" type="radio" name="q21" value="2"/><br />
+                    <input id="answer-b" type="radio" name="q21" value="2" data-page-three/><br />
                   </div>
                   <div>
                     <div class="box-circle circle-color-3"><p class="circle-p">3</p></div>
-                    <input id="answer-c" type="radio" name="q21" value="3"/><br />
+                    <input id="answer-c" type="radio" name="q21" value="3" data-page-three /><br />
                   </div>
                   <div>
                     <div class="box-circle circle-color-4"><p class="circle-p">4</p></div>
-                    <input id="answer-c" type="radio" name="q21" value="4"/><br />
+                    <input id="answer-c" type="radio" name="q21" value="4" data-page-three/><br />
                   </div>
                   <div>
                     <div class="box-circle circle-color-5"><p class="circle-p">5</p></div>
-                    <input id="answer-c" type="radio" name="q21" value="5"/><br />
+                    <input id="answer-c" type="radio" name="q21" value="5" data-page-three/><br />
                   </div>
                   <div>
                     <div class="box-circle circle-color-6"><p class="circle-p">6</p></div>
-                    <input id="answer-c" type="radio" name="q21" value="6"/><br />
+                    <input id="answer-c" type="radio" name="q21" value="6" data-page-three/><br />
                   </div>
                   <div>
                     <div class="box-circle circle-color-7"><p class="circle-p">7</p></div>
-                    <input id="answer-c" type="radio" name="q21" value="7"/><br />
+                    <input id="answer-c" type="radio" name="q21" value="7" data-page-three/><br />
                   </div>
                 </div>
               </div>
@@ -896,31 +913,31 @@
                 <div class="box-question">
                   <div>
                    <div class="box-circle circle-color-1"><p class="circle-p">1</p></div>
-                    <input id="answer-a" type="radio" name="q22" value="1"/><br />
+                    <input id="answer-a" type="radio" name="q22" value="1" data-page-three/><br />
                   </div>
                   <div>
                     <div class="box-circle circle-color-2"><p class="circle-p">2</p></div>
-                    <input id="answer-b" type="radio" name="q22" value="2"/><br />
+                    <input id="answer-b" type="radio" name="q22" value="2" data-page-three/><br />
                   </div>
                   <div>
                     <div class="box-circle circle-color-3"><p class="circle-p">3</p></div>
-                    <input id="answer-c" type="radio" name="q22" value="3"/><br />
+                    <input id="answer-c" type="radio" name="q22" value="3" data-page-three/><br />
                   </div>
                   <div>
                     <div class="box-circle circle-color-4"><p class="circle-p">4</p></div>
-                    <input id="answer-c" type="radio" name="q22" value="4"/><br />
+                    <input id="answer-c" type="radio" name="q22" value="4" data-page-three/><br />
                   </div>
                   <div>
                     <div class="box-circle circle-color-5"><p class="circle-p">5</p></div>
-                    <input id="answer-c" type="radio" name="q22" value="5"/><br />
+                    <input id="answer-c" type="radio" name="q22" value="5" data-page-three/><br />
                   </div>
                   <div>
                     <div class="box-circle circle-color-6"><p class="circle-p">6</p></div>
-                    <input id="answer-c" type="radio" name="q22" value="6"/><br />
+                    <input id="answer-c" type="radio" name="q22" value="6" data-page-three/><br />
                   </div>
                   <div>
                     <div class="box-circle circle-color-7"><p class="circle-p">7</p></div>
-                    <input id="answer-c" type="radio" name="q22" value="7"/><br />
+                    <input id="answer-c" type="radio" name="q22" value="7" data-page-three/><br />
                   </div>
                 </div>
               </div>
@@ -931,31 +948,31 @@
                 <div class="box-question">
                   <div>
                    <div class="box-circle circle-color-1"><p class="circle-p">1</p></div>
-                    <input id="answer-a" type="radio" name="q23" value="1"/><br />
+                    <input id="answer-a" type="radio" name="q23" value="1" data-page-three/><br />
                   </div>
                   <div>
                     <div class="box-circle circle-color-2"><p class="circle-p">2</p></div>
-                    <input id="answer-b" type="radio" name="q23" value="2"/><br />
+                    <input id="answer-b" type="radio" name="q23" value="2" data-page-three/><br />
                   </div>
                   <div>
                     <div class="box-circle circle-color-3"><p class="circle-p">3</p></div>
-                    <input id="answer-c" type="radio" name="q23" value="3"/><br />
+                    <input id="answer-c" type="radio" name="q23" value="3" data-page-three/><br />
                   </div>
                   <div>
                     <div class="box-circle circle-color-4"><p class="circle-p">4</p></div>
-                    <input id="answer-c" type="radio" name="q23" value="4"/><br />
+                    <input id="answer-c" type="radio" name="q23" value="4" data-page-three/><br />
                   </div>
                   <div>
                     <div class="box-circle circle-color-5"><p class="circle-p">5</p></div>
-                    <input id="answer-c" type="radio" name="q23" value="5"/><br />
+                    <input id="answer-c" type="radio" name="q23" value="5" data-page-three/><br />
                   </div>
                   <div>
                     <div class="box-circle circle-color-6"><p class="circle-p">6</p></div>
-                    <input id="answer-c" type="radio" name="q23" value="6"/><br />
+                    <input id="answer-c" type="radio" name="q23" value="6" data-page-three/><br />
                   </div>
                   <div>
                     <div class="box-circle circle-color-7"><p class="circle-p">7</p></div>
-                    <input id="answer-c" type="radio" name="q23" value="7"/><br />
+                    <input id="answer-c" type="radio" name="q23" value="7" data-page-three/><br />
                   </div>
                 </div>
               </div>
@@ -966,31 +983,31 @@
                 <div class="box-question">
                   <div>
                    <div class="box-circle circle-color-1"><p class="circle-p">1</p></div>
-                    <input id="answer-a" type="radio" name="q24" value="1"/><br />
+                    <input id="answer-a" type="radio" name="q24" value="1" data-page-three/><br />
                   </div>
                   <div>
                     <div class="box-circle circle-color-2"><p class="circle-p">2</p></div>
-                    <input id="answer-b" type="radio" name="q24" value="2"/><br />
+                    <input id="answer-b" type="radio" name="q24" value="2" data-page-three/><br />
                   </div>
                   <div>
                     <div class="box-circle circle-color-3"><p class="circle-p">3</p></div>
-                    <input id="answer-c" type="radio" name="q24" value="3"/><br />
+                    <input id="answer-c" type="radio" name="q24" value="3" data-page-three/><br />
                   </div>
                   <div>
                     <div class="box-circle circle-color-4"><p class="circle-p">4</p></div>
-                    <input id="answer-c" type="radio" name="q24" value="4"/><br />
+                    <input id="answer-c" type="radio" name="q24" value="4" data-page-three/><br />
                   </div>
                   <div>
                     <div class="box-circle circle-color-5"><p class="circle-p">5</p></div>
-                    <input id="answer-c" type="radio" name="q24" value="5"/><br />
+                    <input id="answer-c" type="radio" name="q24" value="5" data-page-three/><br />
                   </div>
                   <div>
                     <div class="box-circle circle-color-6"><p class="circle-p">6</p></div>
-                    <input id="answer-c" type="radio" name="q24" value="6"/><br />
+                    <input id="answer-c" type="radio" name="q24" value="6" data-page-three/><br />
                   </div>
                   <div>
                     <div class="box-circle circle-color-7"><p class="circle-p">7</p></div>
-                    <input id="answer-c" type="radio" name="q24" value="7"/><br />
+                    <input id="answer-c" type="radio" name="q24" value="7" data-page-three/><br />
                   </div>
                 </div>
               </div>
@@ -1001,31 +1018,31 @@
                 <div class="box-question">
                   <div>
                    <div class="box-circle circle-color-1"><p class="circle-p">1</p></div>
-                    <input id="answer-a" type="radio" name="q25" value="1"/><br />
+                    <input id="answer-a" type="radio" name="q25" value="1" data-page-three/><br />
                   </div>
                   <div>
                     <div class="box-circle circle-color-2"><p class="circle-p">2</p></div>
-                    <input id="answer-b" type="radio" name="q25" value="2"/><br />
+                    <input id="answer-b" type="radio" name="q25" value="2" data-page-three/><br />
                   </div>
                   <div>
                     <div class="box-circle circle-color-3"><p class="circle-p">3</p></div>
-                    <input id="answer-c" type="radio" name="q25" value="3"/><br />
+                    <input id="answer-c" type="radio" name="q25" value="3" data-page-three/><br />
                   </div>
                   <div>
                     <div class="box-circle circle-color-4"><p class="circle-p">4</p></div>
-                    <input id="answer-c" type="radio" name="q25" value="4"/><br />
+                    <input id="answer-c" type="radio" name="q25" value="4" data-page-three/><br />
                   </div>
                   <div>
                     <div class="box-circle circle-color-5"><p class="circle-p">5</p></div>
-                    <input id="answer-c" type="radio" name="q25" value="5"/><br />
+                    <input id="answer-c" type="radio" name="q25" value="5" data-page-three/><br />
                   </div>
                   <div>
                     <div class="box-circle circle-color-6"><p class="circle-p">6</p></div>
-                    <input id="answer-c" type="radio" name="q25" value="6"/><br />
+                    <input id="answer-c" type="radio" name="q25" value="6" data-page-three/><br />
                   </div>
                   <div>
                     <div class="box-circle circle-color-7"><p class="circle-p">7</p></div>
-                    <input id="answer-c" type="radio" name="q25" value="7"/><br />
+                    <input id="answer-c" type="radio" name="q25" value="7" data-page-three/><br />
                   </div>
                 </div>
               </div>
@@ -1036,31 +1053,31 @@
                 <div class="box-question">
                   <div>
                    <div class="box-circle circle-color-1"><p class="circle-p">1</p></div>
-                    <input id="answer-a" type="radio" name="q26" value="1"/><br />
+                    <input id="answer-a" type="radio" name="q26" value="1" data-page-three/><br />
                   </div>
                   <div>
                     <div class="box-circle circle-color-2"><p class="circle-p">2</p></div>
-                    <input id="answer-b" type="radio" name="q26" value="2"/><br />
+                    <input id="answer-b" type="radio" name="q26" value="2" data-page-three/><br />
                   </div>
                   <div>
                     <div class="box-circle circle-color-3"><p class="circle-p">3</p></div>
-                    <input id="answer-c" type="radio" name="q26" value="3"/><br />
+                    <input id="answer-c" type="radio" name="q26" value="3" data-page-three/><br />
                   </div>
                   <div>
                     <div class="box-circle circle-color-4"><p class="circle-p">4</p></div>
-                    <input id="answer-c" type="radio" name="q26" value="4"/><br />
+                    <input id="answer-c" type="radio" name="q26" value="4" data-page-three/><br />
                   </div>
                   <div>
                     <div class="box-circle circle-color-5"><p class="circle-p">5</p></div>
-                    <input id="answer-c" type="radio" name="q26" value="5"/><br />
+                    <input id="answer-c" type="radio" name="q26" value="5" data-page-three/><br />
                   </div>
                   <div>
                     <div class="box-circle circle-color-6"><p class="circle-p">6</p></div>
-                    <input id="answer-c" type="radio" name="q26" value="6"/><br />
+                    <input id="answer-c" type="radio" name="q26" value="6" data-page-three/><br />
                   </div>
                   <div>
                     <div class="box-circle circle-color-7"><p class="circle-p">7</p></div>
-                    <input id="answer-c" type="radio" name="q26" value="7"/><br />
+                    <input id="answer-c" type="radio" name="q26" value="7" data-page-three/><br />
                   </div>
                 </div>
               </div>
@@ -1071,31 +1088,31 @@
                 <div class="box-question">
                   <div>
                    <div class="box-circle circle-color-1"><p class="circle-p">1</p></div>
-                    <input id="answer-a" type="radio" name="q27" value="1"/><br />
+                    <input id="answer-a" type="radio" name="q27" value="1" data-page-three/><br />
                   </div>
                   <div>
                     <div class="box-circle circle-color-2"><p class="circle-p">2</p></div>
-                    <input id="answer-b" type="radio" name="q27" value="2"/><br />
+                    <input id="answer-b" type="radio" name="q27" value="2" data-page-three/><br />
                   </div>
                   <div>
                     <div class="box-circle circle-color-3"><p class="circle-p">3</p></div>
-                    <input id="answer-c" type="radio" name="q27" value="3"/><br />
+                    <input id="answer-c" type="radio" name="q27" value="3" data-page-three/><br />
                   </div>
                   <div>
                     <div class="box-circle circle-color-4"><p class="circle-p">4</p></div>
-                    <input id="answer-c" type="radio" name="q27" value="4"/><br />
+                    <input id="answer-c" type="radio" name="q27" value="4" data-page-three/><br />
                   </div>
                   <div>
                     <div class="box-circle circle-color-5"><p class="circle-p">5</p></div>
-                    <input id="answer-c" type="radio" name="q27" value="5"/><br />
+                    <input id="answer-c" type="radio" name="q27" value="5" data-page-three/><br />
                   </div>
                   <div>
                     <div class="box-circle circle-color-6"><p class="circle-p">6</p></div>
-                    <input id="answer-c" type="radio" name="q27" value="6"/><br />
+                    <input id="answer-c" type="radio" name="q27" value="6" data-page-three/><br />
                   </div>
                   <div>
                     <div class="box-circle circle-color-7"><p class="circle-p">7</p></div>
-                    <input id="answer-c" type="radio" name="q27" value="4"/><br />
+                    <input id="answer-c" type="radio" name="q27" value="4" data-page-three/><br />
                   </div>
                 </div>
               </div>
@@ -1106,31 +1123,31 @@
                 <div class="box-question">
                   <div>
                    <div class="box-circle circle-color-1"><p class="circle-p">1</p></div>
-                    <input id="answer-a" type="radio" name="q28" value="1"/><br />
+                    <input id="answer-a" type="radio" name="q28" value="1" data-page-three/><br />
                   </div>
                   <div>
                     <div class="box-circle circle-color-2"><p class="circle-p">2</p></div>
-                    <input id="answer-b" type="radio" name="q28" value="2"/><br />
+                    <input id="answer-b" type="radio" name="q28" value="2" data-page-three/><br />
                   </div>
                   <div>
                     <div class="box-circle circle-color-3"><p class="circle-p">3</p></div>
-                    <input id="answer-c" type="radio" name="q28" value="3"/><br />
+                    <input id="answer-c" type="radio" name="q28" value="3" data-page-three/><br />
                   </div>
                   <div>
                     <div class="box-circle circle-color-4"><p class="circle-p">4</p></div>
-                    <input id="answer-c" type="radio" name="q28" value="4"/><br />
+                    <input id="answer-c" type="radio" name="q28" value="4" data-page-three/><br />
                   </div>
                   <div>
                     <div class="box-circle circle-color-5"><p class="circle-p">5</p></div>
-                    <input id="answer-c" type="radio" name="q28" value="5"/><br />
+                    <input id="answer-c" type="radio" name="q28" value="5" data-page-three/><br />
                   </div>
                   <div>
                     <div class="box-circle circle-color-6"><p class="circle-p">6</p></div>
-                    <input id="answer-c" type="radio" name="q28" value="6"/><br />
+                    <input id="answer-c" type="radio" name="q28" value="6" data-page-three/><br />
                   </div>
                   <div>
                     <div class="box-circle circle-color-7"><p class="circle-p">7</p></div>
-                    <input id="answer-c" type="radio" name="q28" value="7"/><br />
+                    <input id="answer-c" type="radio" name="q28" value="7" data-page-three/><br />
                   </div>
                 </div>
               </div>
@@ -1141,31 +1158,31 @@
                 <div class="box-question">
                   <div>
                    <div class="box-circle circle-color-1"><p class="circle-p">1</p></div>
-                    <input id="answer-a" type="radio" name="29" value="1"/><br />
+                    <input id="answer-a" type="radio" name="29" value="1" data-page-three/><br />
                   </div>
                   <div>
                     <div class="box-circle circle-color-2"><p class="circle-p">2</p></div>
-                    <input id="answer-b" type="radio" name="29" value="2"/><br />
+                    <input id="answer-b" type="radio" name="29" value="2" data-page-three/><br />
                   </div>
                   <div>
                     <div class="box-circle circle-color-3"><p class="circle-p">3</p></div>
-                    <input id="answer-c" type="radio" name="29" value="3"/><br />
+                    <input id="answer-c" type="radio" name="29" value="3" data-page-three/><br />
                   </div>
                   <div>
                     <div class="box-circle circle-color-4"><p class="circle-p">4</p></div>
-                    <input id="answer-c" type="radio" name="29" value="4"/><br />
+                    <input id="answer-c" type="radio" name="29" value="4" data-page-three/><br />
                   </div>
                   <div>
                     <div class="box-circle circle-color-5"><p class="circle-p">5</p></div>
-                    <input id="answer-c" type="radio" name="29" value="5"/><br />
+                    <input id="answer-c" type="radio" name="29" value="5" data-page-three/><br />
                   </div>
                   <div>
                     <div class="box-circle circle-color-6"><p class="circle-p">6</p></div>
-                    <input id="answer-c" type="radio" name="29" value="6"/><br />
+                    <input id="answer-c" type="radio" name="29" value="6" data-page-three/><br />
                   </div>
                   <div>
                     <div class="box-circle circle-color-7"><p class="circle-p">7</p></div>
-                    <input id="answer-c" type="radio" name="29" value="7"/><br />
+                    <input id="answer-c" type="radio" name="29" value="7" data-page-three/><br />
                   </div>
                 </div>
               </div>
@@ -1176,31 +1193,31 @@
                 <div class="box-question">
                   <div>
                    <div class="box-circle circle-color-1"><p class="circle-p">1</p></div>
-                    <input id="answer-a" type="radio" name="q30" value="1"/><br />
+                    <input id="answer-a" type="radio" name="q30" value="1" data-page-three/><br />
                   </div>
                   <div>
                     <div class="box-circle circle-color-2"><p class="circle-p">2</p></div>
-                    <input id="answer-b" type="radio" name="q30" value="2"/><br />
+                    <input id="answer-b" type="radio" name="q30" value="2" data-page-three/><br />
                   </div>
                   <div>
                     <div class="box-circle circle-color-3"><p class="circle-p">3</p></div>
-                    <input id="answer-c" type="radio" name="q30" value="3"/><br />
+                    <input id="answer-c" type="radio" name="q30" value="3" data-page-three/><br />
                   </div>
                   <div>
                     <div class="box-circle circle-color-4"><p class="circle-p">4</p></div>
-                    <input id="answer-c" type="radio" name="q30" value="4"/><br />
+                    <input id="answer-c" type="radio" name="q30" value="4" data-page-three/><br />
                   </div>
                   <div>
                     <div class="box-circle circle-color-5"><p class="circle-p">5</p></div>
-                    <input id="answer-c" type="radio" name="q30" value="5"/><br />
+                    <input id="answer-c" type="radio" name="q30" value="5" data-page-three/><br />
                   </div>
                   <div>
                     <div class="box-circle circle-color-6"><p class="circle-p">6</p></div>
-                    <input id="answer-c" type="radio" name="q30" value="6"/><br />
+                    <input id="answer-c" type="radio" name="q30" value="6" data-page-three/><br />
                   </div>
                   <div>
                     <div class="box-circle circle-color-7"><p class="circle-p">7</p></div>
-                    <input id="answer-c" type="radio" name="q30" value="7"/><br />
+                    <input id="answer-c" type="radio" name="q30" value="7" data-page-three/><br />
                   </div>
                 </div>
               </div>
@@ -1211,31 +1228,31 @@
                 <div class="box-question">
                   <div>
                    <div class="box-circle circle-color-1"><p class="circle-p">1</p></div>
-                    <input id="answer-a" type="radio" name="q31" value="1"/><br />
+                    <input id="answer-a" type="radio" name="q31" value="1" data-page-three/><br />
                   </div>
                   <div>
                     <div class="box-circle circle-color-2"><p class="circle-p">2</p></div>
-                    <input id="answer-b" type="radio" name="q31" value="2"/><br />
+                    <input id="answer-b" type="radio" name="q31" value="2" data-page-three/><br />
                   </div>
                   <div>
                     <div class="box-circle circle-color-3"><p class="circle-p">3</p></div>
-                    <input id="answer-c" type="radio" name="q31" value="3"/><br />
+                    <input id="answer-c" type="radio" name="q31" value="3" data-page-three/><br />
                   </div>
                   <div>
                     <div class="box-circle circle-color-4"><p class="circle-p">4</p></div>
-                    <input id="answer-c" type="radio" name="q31" value="4"/><br />
+                    <input id="answer-c" type="radio" name="q31" value="4" data-page-three/><br />
                   </div>
                   <div>
                     <div class="box-circle circle-color-5"><p class="circle-p">5</p></div>
-                    <input id="answer-c" type="radio" name="q31" value="5"/><br />
+                    <input id="answer-c" type="radio" name="q31" value="5" data-page-three/><br />
                   </div>
                   <div>
                     <div class="box-circle circle-color-6"><p class="circle-p">6</p></div>
-                    <input id="answer-c" type="radio" name="q31" value="6"/><br />
+                    <input id="answer-c" type="radio" name="q31" value="6" data-page-three/><br />
                   </div>
                   <div>
                     <div class="box-circle circle-color-7"><p class="circle-p">7</p></div>
-                    <input id="answer-c" type="radio" name="q31" value="7"/><br />
+                    <input id="answer-c" type="radio" name="q31" value="7" data-page-three/><br />
                   </div>
                 </div>
               </div>
@@ -1252,31 +1269,31 @@
                 <div class="box-question">
                   <div>
                    <div class="box-circle circle-color-1"><p class="circle-p">1</p></div>
-                    <input id="answer-a" type="radio" name="q32" value="1"/><br />
+                    <input id="answer-a" type="radio" name="q32" value="1" data-page-four/><br />
                   </div>
                   <div>
                     <div class="box-circle circle-color-2"><p class="circle-p">2</p></div>
-                    <input id="answer-b" type="radio" name="q32" value="2"/><br />
+                    <input id="answer-b" type="radio" name="q32" value="2" data-page-four/><br />
                   </div>
                   <div>
                     <div class="box-circle circle-color-3"><p class="circle-p">3</p></div>
-                    <input id="answer-c" type="radio" name="q32" value="3"/><br />
+                    <input id="answer-c" type="radio" name="q32" value="3" data-page-four/><br />
                   </div>
                   <div>
                     <div class="box-circle circle-color-4"><p class="circle-p">4</p></div>
-                    <input id="answer-c" type="radio" name="q32" value="4"/><br />
+                    <input id="answer-c" type="radio" name="q32" value="4" data-page-four/><br />
                   </div>
                   <div>
                     <div class="box-circle circle-color-5"><p class="circle-p">5</p></div>
-                    <input id="answer-c" type="radio" name="q32" value="5"/><br />
+                    <input id="answer-c" type="radio" name="q32" value="5" data-page-four/><br />
                   </div>
                   <div>
                     <div class="box-circle circle-color-6"><p class="circle-p">6</p></div>
-                    <input id="answer-c" type="radio" name="q32" value="6"/><br />
+                    <input id="answer-c" type="radio" name="q32" value="6" data-page-four/><br />
                   </div>
                   <div>
                     <div class="box-circle circle-color-7"><p class="circle-p">7</p></div>
-                    <input id="answer-c" type="radio" name="q32" value="7"/><br />
+                    <input id="answer-c" type="radio" name="q32" value="7" data-page-four/><br />
                   </div>
                 </div>
               </div>
@@ -1287,31 +1304,31 @@
                 <div class="box-question">
                   <div>
                    <div class="box-circle circle-color-1"><p class="circle-p">1</p></div>
-                    <input id="answer-a" type="radio" name="q33" value="1"/><br />
+                    <input id="answer-a" type="radio" name="q33" value="1" data-page-four/><br />
                   </div>
                   <div>
                     <div class="box-circle circle-color-2"><p class="circle-p">2</p></div>
-                    <input id="answer-b" type="radio" name="q33" value="2"/><br />
+                    <input id="answer-b" type="radio" name="q33" value="2" data-page-four/><br />
                   </div>
                   <div>
                     <div class="box-circle circle-color-3"><p class="circle-p">3</p></div>
-                    <input id="answer-c" type="radio" name="q33" value="3"/><br />
+                    <input id="answer-c" type="radio" name="q33" value="3" data-page-four/><br />
                   </div>
                   <div>
                     <div class="box-circle circle-color-4"><p class="circle-p">4</p></div>
-                    <input id="answer-c" type="radio" name="q33" value="4"/><br />
+                    <input id="answer-c" type="radio" name="q33" value="4" data-page-four/><br />
                   </div>
                   <div>
                     <div class="box-circle circle-color-5"><p class="circle-p">5</p></div>
-                    <input id="answer-c" type="radio" name="q33" value="5"/><br />
+                    <input id="answer-c" type="radio" name="q33" value="5" data-page-four/><br />
                   </div>
                   <div>
                     <div class="box-circle circle-color-6"><p class="circle-p">6</p></div>
-                    <input id="answer-c" type="radio" name="q33" value="6"/><br />
+                    <input id="answer-c" type="radio" name="q33" value="6" data-page-four/><br />
                   </div>
                   <div>
                     <div class="box-circle circle-color-7"><p class="circle-p">7</p></div>
-                    <input id="answer-c" type="radio" name="q33" value="7"/><br />
+                    <input id="answer-c" type="radio" name="q33" value="7" data-page-four/><br />
                   </div>
                 </div>
               </div>
@@ -1322,31 +1339,31 @@
                 <div class="box-question">
                   <div>
                    <div class="box-circle circle-color-1"><p class="circle-p">1</p></div>
-                    <input id="answer-a" type="radio" name="q34" value="1"/><br />
+                    <input id="answer-a" type="radio" name="q34" value="1" data-page-four/><br />
                   </div>
                   <div>
                     <div class="box-circle circle-color-2"><p class="circle-p">2</p></div>
-                    <input id="answer-b" type="radio" name="q34" value="2"/><br />
+                    <input id="answer-b" type="radio" name="q34" value="2" data-page-four/><br />
                   </div>
                   <div>
                     <div class="box-circle circle-color-3"><p class="circle-p">3</p></div>
-                    <input id="answer-c" type="radio" name="q34" value="3"/><br />
+                    <input id="answer-c" type="radio" name="q34" value="3" data-page-four/><br />
                   </div>
                   <div>
                     <div class="box-circle circle-color-4"><p class="circle-p">4</p></div>
-                    <input id="answer-c" type="radio" name="q34" value="4"/><br />
+                    <input id="answer-c" type="radio" name="q34" value="4" data-page-four/><br />
                   </div>
                   <div>
                     <div class="box-circle circle-color-5"><p class="circle-p">5</p></div>
-                    <input id="answer-c" type="radio" name="q34" value="5"/><br />
+                    <input id="answer-c" type="radio" name="q34" value="5" data-page-four/><br />
                   </div>
                   <div>
                     <div class="box-circle circle-color-6"><p class="circle-p">6</p></div>
-                    <input id="answer-c" type="radio" name="q34" value="6"/><br />
+                    <input id="answer-c" type="radio" name="q34" value="6" data-page-four/><br />
                   </div>
                   <div>
                     <div class="box-circle circle-color-7"><p class="circle-p">7</p></div>
-                    <input id="answer-c" type="radio" name="q34" value="7"/><br />
+                    <input id="answer-c" type="radio" name="q34" value="7" data-page-four/><br />
                   </div>
                 </div>
               </div>

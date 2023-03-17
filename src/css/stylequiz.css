@@ -16,22 +16,22 @@
 
 
 
-#question-2,
+/* #question-2,
 #question-3,
 #question-4,
 #question-5,
 #question-6 {
-  /* display: none; */
+
   margin-top: 5%;
   width: 100%;
   justify-content: start;
-}
-
+} */
+/* 
 #question-1{
 
   width: 100%;
   justify-content: start;
-}
+} */
 
 #progress_bar {
   background-color: #153462;
@@ -62,7 +62,9 @@
 
 .question{
   border-bottom: 1px solid #d9d9d9;
-  padding: 5px 0;
+  padding: 1%;
+  margin: 2% 0;
+  border-radius: 12px;
 }
 
 #question-10,#question-20, #question-31, #question-34{
@@ -93,6 +95,23 @@
   }
   .box-circle{
     height: 55px;
+  }
+  .toast{
+    justify-content: center;
+  }
+  .toast .toast-content{
+    flex-direction: column;
+
+  }
+
+  .toast-content img {
+    padding: 2%;
+}
+
+  .toast-content .message{
+    align-items: center;
+    margin: 5px 0;
+    text-align: center;
   }
 }
 

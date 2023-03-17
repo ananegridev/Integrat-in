@@ -19,7 +19,7 @@ let calculation = document.querySelector(".js-input-calculation");
 let inputsFormRequired = document.querySelectorAll("[required]");
 
 // TODOS ELEMENTOS
-let inputsNewCompany = document.querySelectorAll("[data-new-company]"); 
+let inputsNewCompany = document.querySelectorAll("[data-new-company]");
 
 // DIV SEPARAÇÃO FORMULARIOS
 
@@ -130,7 +130,7 @@ function cancelSubmitForm() {
 // --------- RECARREGAR PÁGINA
 
 btnRegisterCompany.addEventListener("click", function () {
-  
+
 
   jsonNewCompany();
   getCompanies();
@@ -138,7 +138,7 @@ btnRegisterCompany.addEventListener("click", function () {
   // document.location.reload();
   // location.reload();
   // window.location.reload(true);
-  
+
 
 });
 
@@ -156,7 +156,7 @@ async function getCompanies() {
       data[x].company_name
     );
   }
-  if(data.length > 0){
+  if (data.length > 0) {
     loader = document.querySelector('.container-load');
     loader.style.display = 'none';
   }
@@ -177,14 +177,14 @@ function jsonNewCompany() {
   return registerNewCompany;
 }
 
-// --------- API: CADASTRO NOVA EMPRESA POSTMAN
+// --------- VALIDAÇÃO CAMPO NULO FORMULÁRIO ADD NEW COMPANY
 
 let errorNewCompany = document.querySelector('.text-error-newcompany');
 let errorDomain = document.querySelector('.text-error-domain');
 let errorSector = document.querySelector('.text-error-sector');
 
-function verifyFields(){
-  if (newCompany.value.trim().length === 0 ) {
+function verifyFields() {
+  if (newCompany.value.trim().length === 0) {
     newCompany.style.border = '2px solid red';
     errorNewCompany.innerText = 'Company name field cannot be empty.';
 
@@ -200,10 +200,12 @@ function verifyFields(){
     errorDomain.innerText = 'Domain field cannot be empty.';
   }
 
-  if (newCompany.value.trim().length > 0 || sector.value != 'None' || domain.value.trim().length > 0){
+  if (newCompany.value.trim().length > 0 || sector.value != 'None' || domain.value.trim().length > 0) {
     postNewCompany()
   }
 }
+
+// --------- API: CADASTRO NOVA EMPRESA POSTMAN
 
 function postNewCompany() {
   fetch(url, {
@@ -222,12 +224,12 @@ function postNewCompany() {
     },
     body: jsonNewCompany(),
   })
-  .then(function () {
-    window.location.href = "./start.html";
-})
+    .then(function () {
+      window.location.href = "./start.html";
+    })
 }
 
-// --------- VALIDAÇÃO FORMULÁRIO 1
+// --------- VALIDAÇÃO FORMULÁRIO EMPRESA JA CADASTRADA
 
 const msgs = {
   name: {
@@ -293,69 +295,6 @@ inputsFormRequired.forEach((field) => {
   field.addEventListener("invalid", event => event.preventDefault());
 })
 
-// --------- VALIDAÇÃO CAMPO NULO FORMULÁRIO ADD NEW COMPANY
 
 
 
-
-
-// function fieldNull() {
-//   if (newCompany.value.trim().length === 0 || sector.value.trim().length === 'None' || domain.value.trim().length === 0) {
-//     btnRegisterCompany.disabled = true;
-//   } else {
-//     btnRegisterCompany.disabled = false;
-//   }
-// }
-
-// fieldNull();
-
-// let textErrorNewCompany = document.querySelectorAll('[data-newcompany-error]');
-
-  // newCompany.addEventListener("blur", () => {
-  //   if (newCompany.value.trim().length === 0) {
-  //     newCompany.style.border = '2px solid red';
-  //   } else {
-  //     newCompany.style.border = '1px solid black';
-  //   }
-  // });
-
-  // domain.addEventListener("blur", () => {
-  //   if (domain.value.trim().length === 0) {
-  //     domain.style.border = '2px solid red';
-  //   } else {
-  //     domain.style.border = '1px solid black';
-  //   }
-  // });
-
-  // sector.addEventListener("blur", () => {
-  //   if (sector.value === 'None') {
-  //     sector.style.border = '2px solid red';
-  //   } else {
-  //     sector.style.border = '1px solid black';
-  //   }
-  // });
-
-
-// textErrorNewCompany.forEach((field, error) => {
-//   field.addEventListener("blur", event => {
-//     if (field.value.trim().length === 0) {
-//       field.style.border = '2px solid red';
-//       document.querySelector('[data-newcompany-error]').innerText = "teste"
-//     } else {
-//       field.style.border = '1px solid black'
-//       document.querySelector('[data-newcompany-error]').innerText = ""
-//     }
-//   });
-
-// })
-
-
-// function teste(){
-//   if(rowRegisterCompany.style.display === 'flex'){
-// console.log('oi')
-
-//   }
-//   return true
-// }
-
-// teste();

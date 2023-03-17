@@ -37,24 +37,24 @@ var q32 = document.getElementById('question-32');
 var q33 = document.getElementById('question-33');
 var q34 = document.getElementById('question-34');
 
-//
-function storeAnswer(question_number, event) {
-    if (event.target.type === 'radio') {
-        var question = {}
-        question[question_number] = parseInt(event.target.value);
-        Object.assign(answer, question)
-        // answer[question_number] = parseInt(event.target.value);
-        // var jsonAnswers = JSON.stringify({answer}); 
+// NODE LIST DAS QUESTÕES
+let pagOne = document.querySelectorAll('[data-page-one]');
+let pagTwo = document.querySelectorAll('[data-page-two]');
+let pagThree = document.querySelectorAll('[data-page-three]');
+let pagFour = document.querySelectorAll('[data-page-four]');
 
-    }
-    // console.log(JSON.stringify(answer));
-    return answer;
-}
+// --------------------------------------------------------------------
+// --------------------------------------------------------------------
+// --------------------------------------------------------------------
+// --------------------------------------------------------------------
+// --------------------------------------------------------------------
+// --------------------------------------------------------------------
+// --------------------------------------------------------------------
+// --------------------------------------------------------------------
+// --------------------------------------------------------------------
+// --------------------------------------------------------------------
 
-
-
-
-// --------- 
+// --------- EVENTOS DE CLICK DO BOTÃO
 
 q1.addEventListener('click', function (event) { answer = storeAnswer("FIF1.1", event) });
 q2.addEventListener('click', function (event) { answer = storeAnswer("FIF1.2", event) });
@@ -91,21 +91,36 @@ q32.addEventListener('click', function (event) { answer = storeAnswer("IM1.1", e
 q33.addEventListener('click', function (event) { answer = storeAnswer("IM1.2", event) });
 q34.addEventListener('click', function (event) { answer = storeAnswer("IM1.3", event) });
 
-// URL POSTMAN
+// --------- PEGAR VALUE DO QUIZ
 
-var url = ""; 
+function storeAnswer(question_number, event) {
+    if (event.target.type === 'radio') {
+        var question = {}
+        question[question_number] = parseInt(event.target.value);
+        Object.assign(answer, question)
+        // answer[question_number] = parseInt(event.target.value);
+        // var jsonAnswers = JSON.stringify({answer}); 
 
-    async function postAnswer(answer, event) {
+    }
+    // console.log(JSON.stringify(answer));
+    return answer;
+}
+
+// --------- URL POSTMAN
+
+var url = "";
+
+async function postAnswer(answer, event) {
 
     var result_type = {}
     if (answer.calculation === 'i') {
-         result_type["result_type"] = "individual"; 
+        result_type["result_type"] = "individual";
         url = "https://03uctuell0.execute-api.us-east-1.amazonaws.com/dev/companies/fef24e30-4114-4393-88d7-20b7f89ce091/answers";
-        }
+    }
     if (answer.calculation === 'c') {
-         result_type["result_type"] = "company-wide"; 
+        result_type["result_type"] = "company-wide";
         url = "https://03uctuell0.execute-api.us-east-1.amazonaws.com/dev/companies/ed9786fb-e8e3-45bc-9c61-9b2b22b2f190/answers";
-        }
+    }
     var format_answer = {}
     Object.assign(format_answer, result_type)
     delete answer.calculation
@@ -117,7 +132,7 @@ var url = "";
     if (event.target.type === 'submit') {
 
         var myHeaders = new Headers();
-        myHeaders.append("Access-Control-Request-Method", "POST", "Content-Type", "application/json", "Access-Control-Allow-Origin", "*","Access-Control-Allow-Origin", "https://127.0.0.1:5500");
+        myHeaders.append("Access-Control-Request-Method", "POST", "Content-Type", "application/json", "Access-Control-Allow-Origin", "*", "Access-Control-Allow-Origin", "https://127.0.0.1:5500");
         // myHeaders.append("Content-Type", "application/json");
         // myHeaders.append("Content-Length", "");
         // myHeaders.append("Host", "");
@@ -125,7 +140,6 @@ var url = "";
         // myHeaders.append("Accept","*/*");
         // myHeaders.append("Accept-Encoding","gzip, deflate, br");
         // myHeaders.append("Connection","keep-alive");
-
 
         var requestOptions = {
             method: 'POST',
@@ -147,20 +161,22 @@ var url = "";
     }
 }
 
-// --------- PAGINAÇÃO QUIZ
+// --------- LOAD QUIZ 
 
 let load = document.querySelector('.container-load');
-
 load.style.display = 'none';
+
+// --------- PAGINAÇÃO QUIZ
 
 let sub1 = document.getElementById('submit-1');
 let sub2 = document.getElementById('submit-2');
 let sub3 = document.getElementById('submit-3');
+
 let finish = document.getElementById('submit-4');
 
-finish.addEventListener('click', function (event) {
-    postAnswer(answer, event)
-});
+// finish.addEventListener('click', function (event) {
+//     postAnswer(answer, event)
+// });
 
 let back1 = document.getElementById('back-1');
 let back2 = document.getElementById('back-2');
@@ -192,82 +208,107 @@ finish.style.display = 'none';
 back4.style.display = 'none';
 
 sub1.addEventListener('click', function () {
-    if (row1.style.display === 'block') {
-        row1.style.display = 'none';
-        row2.style.display = 'block';
-        row3.style.display = 'none';
-        row4.style.display = 'none';
+    if (checkValidation(pagOne, 1)) {
+        if (row1.style.display === 'block') {
+            row1.style.display = 'none';
+            row2.style.display = 'block';
+            row3.style.display = 'none';
+            row4.style.display = 'none';
 
-        boxBtn1.style.display = 'none';
-        boxBtn2.style.display = 'flex';
-        boxBtn3.style.display = 'none';
-        boxBtn4.style.display = 'none';
+            boxBtn1.style.display = 'none';
+            boxBtn2.style.display = 'flex';
+            boxBtn3.style.display = 'none';
+            boxBtn4.style.display = 'none';
 
-        finish.style.display = 'none';
-        back4.style.display = 'none';
+            finish.style.display = 'none';
+            back4.style.display = 'none';
 
-        growProgressBar('25%');
-        window.location.href = "#progress_bar";
+            growProgressBar('25%');
+            document.querySelector('.toast').style.display = "none";
+            window.location.href = "#progress_bar";
+        }
+    } else {
+        window.location.href = "#alert";
+        document.querySelector('.toast').style.display = "flex";
     }
 })
 
 sub2.addEventListener('click', function () {
-    if (row2.style.display === 'block') {
-        row1.style.display = 'none';
-        row2.style.display = 'none';
-        row3.style.display = 'block';
-        row4.style.display = 'none';
+    if (checkValidation(pagTwo, 11)) {
+        if (row2.style.display === 'block') {
+            row1.style.display = 'none';
+            row2.style.display = 'none';
+            row3.style.display = 'block';
+            row4.style.display = 'none';
 
 
-        boxBtn1.style.display = 'none';
-        boxBtn2.style.display = 'none';
-        boxBtn3.style.display = 'flex';
-        boxBtn4.style.display = 'none';
+            boxBtn1.style.display = 'none';
+            boxBtn2.style.display = 'none';
+            boxBtn3.style.display = 'flex';
+            boxBtn4.style.display = 'none';
 
-        finish.style.display = 'none';
-        back4.style.display = 'none';
+            finish.style.display = 'none';
+            back4.style.display = 'none';
 
-        growProgressBar('50%');
-        window.location.href = "#progress_bar";
+            growProgressBar('50%');
+            document.querySelector('.toast').style.display = "none";
+            window.location.href = "#progress_bar";
+        }
+    } else {
+        window.location.href = "#alert";
+        document.querySelector('.toast').style.display = "flex";
     }
 })
 
 sub3.addEventListener('click', function () {
-    if (row3.style.display === 'block') {
-        row1.style.display = 'none';
-        row1.style.display = 'none';
-        row2.style.display = 'none';
-        row3.style.display = 'none';
-        row4.style.display = 'block';
+    if (checkValidation(pagThree, 21)) {
+        if (row3.style.display === 'block') {
+            row1.style.display = 'none';
+            row1.style.display = 'none';
+            row2.style.display = 'none';
+            row3.style.display = 'none';
+            row4.style.display = 'block';
 
-        boxBtn1.style.display = 'none';
-        boxBtn2.style.display = 'none';
-        boxBtn3.style.display = 'none';
-        boxBtn4.style.display = 'flex';
+            boxBtn1.style.display = 'none';
+            boxBtn2.style.display = 'none';
+            boxBtn3.style.display = 'none';
+            boxBtn4.style.display = 'flex';
 
-        finish.style.display = 'block';
-        back4.style.display = 'block';
+            finish.style.display = 'block';
+            back4.style.display = 'block';
 
-        growProgressBar('75%');
-        window.location.href = "#progress_bar";
-
+            growProgressBar('75%');
+            document.querySelector('.toast').style.display = "none";
+            window.location.href = "#progress_bar";
+        }
+    } else {
+        window.location.href = "#alert";
+        document.querySelector('.toast').style.display = "flex";
     }
 })
 
-finish.addEventListener('click', function () {
-    if (row4.style.display === 'block') {
-        row1.style.display = 'none';
-        row2.style.display = 'none';
-        row3.style.display = 'none';
-        row4.style.display = 'none';
+finish.addEventListener('click', function (event) {
+    if (checkValidation(pagFour, 32)) {
+        if (row4.style.display === 'block') {
+            row1.style.display = 'none';
+            row2.style.display = 'none';
+            row3.style.display = 'none';
+            row4.style.display = 'none';
 
-        load.style.display = 'flex';
-        growProgressBar('100%');
+            load.style.display = 'flex';
+            growProgressBar('100%');
+            document.querySelector('.toast').style.display = "none";
 
+            postAnswer(answer, event);
+        }
+    } else {
+        window.location.href = "#alert";
+        document.querySelector('.toast').style.display = "flex";
     }
 })
 
-// BOTÃO BACK
+// --------- BOTÃO BACK
+
 back2.addEventListener('click', function () {
     if (row2.style.display === 'block') {
         row1.style.display = 'block';
@@ -284,7 +325,6 @@ back2.addEventListener('click', function () {
 
         growProgressBar('0%');
         window.location.href = "#progress_bar";
-
     }
 })
 
@@ -304,7 +344,6 @@ back3.addEventListener('click', function () {
 
         growProgressBar('25%');
         window.location.href = "#progress_bar";
-
     }
 })
 
@@ -322,11 +361,8 @@ back4.addEventListener('click', function () {
         finish.style.display = 'none';
         back4.style.display = 'none';
 
-
-
         growProgressBar('100%');
         window.location.href = "#progress_bar";
-
     }
 })
 
@@ -347,3 +383,31 @@ document.querySelector('form').addEventListener('submit', event => {
 
     // window.location.href = "/result.html";
 })
+
+// --------- VALIDAÇÃO QUIZ
+
+function checkValidation(pagenum, start) {
+    var can_next = []
+    var array_pagina = [];
+    var num_questions = pagenum.length / 7;
+    var array_questions = [];
+
+    pagenum.forEach(item => {
+        array_pagina.push(item.checked);
+    })
+
+    while (array_pagina.length) array_questions.push(array_pagina.splice(0, 7));
+
+    for (var i = 0; i < num_questions; i++) {
+        var checkquestion = Boolean(array_questions[i].reduce((a, b) => a + b))
+        can_next.push(checkquestion)
+        var identf_question = "question-" + (i + start)
+        if (checkquestion === false) {
+
+            document.getElementById(identf_question).style.background = '#e2242442';
+        } else {
+            document.getElementById(identf_question).style.background = 'none';
+        }
+    }
+    return can_next.reduce((a, b) => a + b) === num_questions
+}
