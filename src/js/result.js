@@ -132,3 +132,9 @@ function landingPage() {
 
 landingPage();
 
+function limparLocalStorage() {
+  localStorage.removeItem('company_response')
+  localStorage.removeItem('companyid')
+  localStorage.removeItem('register')
+}
+limparLocalStorage();

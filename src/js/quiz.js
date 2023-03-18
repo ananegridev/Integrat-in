@@ -1,5 +1,6 @@
 // REGISTRO START.HTML
 var answer = JSON.parse(window.localStorage.getItem('register'));
+var companyid = JSON.parse(window.localStorage.getItem('companyid'));
 
 // VARIAVEIS DAS QUESTÕES
 var q1 = document.getElementById('question-1');
@@ -108,18 +109,16 @@ function storeAnswer(question_number, event) {
 
 // --------- URL POSTMAN
 
-var url = "";
+var url = "https://03uctuell0.execute-api.us-east-1.amazonaws.com/dev/companies/"+companyid+"/answers";
 
 async function postAnswer(answer, event) {
 
     var result_type = {}
     if (answer.calculation === 'i') {
         result_type["result_type"] = "individual";
-        url = "https://03uctuell0.execute-api.us-east-1.amazonaws.com/dev/companies/fef24e30-4114-4393-88d7-20b7f89ce091/answers";
     }
     if (answer.calculation === 'c') {
         result_type["result_type"] = "company-wide";
-        url = "https://03uctuell0.execute-api.us-east-1.amazonaws.com/dev/companies/ed9786fb-e8e3-45bc-9c61-9b2b22b2f190/answers";
     }
     var format_answer = {}
     Object.assign(format_answer, result_type)
@@ -171,18 +170,12 @@ load.style.display = 'none';
 let sub1 = document.getElementById('submit-1');
 let sub2 = document.getElementById('submit-2');
 let sub3 = document.getElementById('submit-3');
-
 let finish = document.getElementById('submit-4');
-
-// finish.addEventListener('click', function (event) {
-//     postAnswer(answer, event)
-// });
 
 let back1 = document.getElementById('back-1');
 let back2 = document.getElementById('back-2');
 let back3 = document.getElementById('back-3');
 let back4 = document.getElementById('back-4');
-
 
 let row1 = document.getElementById('row-box-1');
 let row2 = document.getElementById('row-box-2');
@@ -374,14 +367,13 @@ function growProgressBar(percentage_width) {
 }
 
 // --------- RETIRANDO PREVENT DEFAULT DO FORM
+
 function submitForm(event) {
     event.preventDefault();
 }
 
 document.querySelector('form').addEventListener('submit', event => {
     event.preventDefault();
-
-    // window.location.href = "/result.html";
 })
 
 // --------- VALIDAÇÃO QUIZ
