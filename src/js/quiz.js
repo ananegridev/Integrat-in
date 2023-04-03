@@ -201,9 +201,8 @@ sub1.addEventListener('click', function () {
             finish.style.display = 'none';
             back4.style.display = 'none';
 
-            growProgressBar('25%');
             document.querySelector('.toast').style.display = "none";
-            window.location.href = "#progress_bar";
+            window.location.href = "#row-box-2";
         }
     } else {
         window.location.href = "#alert";
@@ -228,9 +227,8 @@ sub2.addEventListener('click', function () {
             finish.style.display = 'none';
             back4.style.display = 'none';
 
-            growProgressBar('50%');
             document.querySelector('.toast').style.display = "none";
-            window.location.href = "#progress_bar";
+            window.location.href = "#row-box-3";
         }
     } else {
         window.location.href = "#alert";
@@ -255,9 +253,8 @@ sub3.addEventListener('click', function () {
             finish.style.display = 'block';
             back4.style.display = 'block';
 
-            growProgressBar('75%');
             document.querySelector('.toast').style.display = "none";
-            window.location.href = "#progress_bar";
+            window.location.href = "#row-box-4";
         }
     } else {
         window.location.href = "#alert";
@@ -274,7 +271,6 @@ finish.addEventListener('click', function (event) {
             row4.style.display = 'none';
 
             load.style.display = 'flex';
-            growProgressBar('100%');
             document.querySelector('.toast').style.display = "none";
 
             postAnswer(answer, event);
@@ -301,8 +297,7 @@ back2.addEventListener('click', function () {
         finish.style.display = 'none';
         back4.style.display = 'none';
 
-        growProgressBar('0%');
-        window.location.href = "#progress_bar";
+        window.location.href = "#row-box-1";
     }
 })
 
@@ -320,8 +315,7 @@ back3.addEventListener('click', function () {
         finish.style.display = 'none';
         back4.style.display = 'none';
 
-        growProgressBar('25%');
-        window.location.href = "#progress_bar";
+        window.location.href = "#row-box-2";
     }
 })
 
@@ -339,8 +333,7 @@ back4.addEventListener('click', function () {
         finish.style.display = 'none';
         back4.style.display = 'none';
 
-        growProgressBar('100%');
-        window.location.href = "#progress_bar";
+        window.location.href = "#row-box-3";
     }
 })
 
