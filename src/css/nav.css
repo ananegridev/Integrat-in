@@ -1,20 +1,19 @@
 nav {
-    width: 80%;
-    height: 50px;
-    border-bottom: 1px solid black;
-    display: flex;
-    align-items: center;
-  
-    padding: 10px 0;
-  }
-  
-  nav div {
-    width: 130px;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-  }
-  
-  nav img {
-    width: 30px;
-  }
+  width: 80%;
+  height: 50px;
+  border-bottom: 1px solid black;
+  display: flex;
+  align-items: center;
+  padding: 10px 0;
+}
+
+nav div {
+  width: 130px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+nav img {
+  width: 30px;
+}

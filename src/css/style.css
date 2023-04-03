@@ -1,19 +1,18 @@
-/* CSS RESET */
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-  }
-  
-  img {
-    max-width: 100%;
-  }
-  
-  a {
-    text-decoration: none;
-  }
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 
-  body{
-    height: 100%;
-    font-family: 'Epilogue', sans-serif;
-  }
+img {
+  max-width: 100%;
+}
+
+a {
+  text-decoration: none;
+}
+
+body {
+  height: 100%;
+  font-family: "Epilogue", sans-serif;
+}

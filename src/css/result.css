@@ -8,12 +8,9 @@ main {
   margin: 10px 0;
 }
 
-/* container ---------- */
-
 .container {
   width: 80%;
   height: auto;
-
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
@@ -23,12 +20,10 @@ main {
 .content__result {
   display: flex;
   justify-content: space-evenly;
-  /* border-left: 1px solid #000; */
 }
 
 .content__result div {
   width: 45%;
-  /* display: flex; */
   flex-direction: column;
   justify-content: center;
 }
@@ -38,7 +33,7 @@ main {
   display: flex;
 }
 
-ul{
+ul {
   list-style-position: inside;
   line-height: 2;
   margin: 2% 0;
@@ -56,18 +51,14 @@ ul{
   margin-top: 5%;
 }
 
-/* AAAAAAAAAA */
-
 .spot {
   width: 100%;
   margin-top: 2%;
   border: 1px solid #c9c9c9;
-
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-
   padding: 2% 0 1% 0;
 }
 
@@ -126,10 +117,6 @@ ul{
   line-height: 1.5;
 }
 
-/* end container ---------- */
-
-/* media ----  */
-
 @media (max-width: 768px) {
   main {
     height: auto;
@@ -138,14 +125,10 @@ ul{
     justify-content: space-between;
   }
 
-  .container {
-  }
-
   .content__result {
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
-    /* border-left: 1px solid #000; */
   }
 
   .content__result div {
@@ -171,13 +154,11 @@ ul{
     text-align: center;
   }
 
-  /* AAAAAAAAAAAAAAA */
   .spot {
     width: 100%;
     margin-top: 0%;
     margin: 5% 0;
     border: 1px solid #c9c9c9;
-
     padding: 5% 0;
   }
 
@@ -192,29 +173,13 @@ ul{
     margin-bottom: 1%;
   }
 
-  ul li{
-    font-size: .8rem;
+  ul li {
+    font-size: 0.8rem;
   }
-
-  /* .spot-low {
-    background-color: #f6f6c9;
-  }
-  
-  .spot-high {
-    background-color: #d8e8d3;
-  } */
-
-  /* .spot-high-title-score,
-  .spot-low-title-score {
-    margin: 2% 0;
-    text-transform: uppercase;
-  } */
 
   .spot-score-title {
     margin-bottom: 2%;
   }
-
-
 
   .spot-title {
     margin-bottom: 5%;
@@ -224,7 +189,7 @@ ul{
     line-height: 1.5;
   }
 
-  .spot-title img{
+  .spot-title img {
     margin-bottom: 2%;
   }
 
@@ -232,14 +197,4 @@ ul{
   .spot-result-high p {
     margin: 4% 0;
   }
-  /*   
-  .spot-result-low p:first-child {
-    color: #fd7e14;
-    font-weight: 600;
-  }
-  
-  .spot-result-high p:first-child {
-    color: #12b886;
-    font-weight: 600;
-  }*/
 }

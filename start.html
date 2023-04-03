@@ -14,9 +14,7 @@
     <link rel="stylesheet" href="./src/css/nav.css" />
     <link rel="stylesheet" href="./src/css/form.css" />
     <link rel="stylesheet" href="./src/css/preloader.css" />
-
     <link rel="stylesheet" href="./src/css/start.css" />
-
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -33,7 +31,6 @@
         </div>
       </nav>
 
-      <!-- N ALTERAR ACIMA -->
       <div class="container">
         <section class="content__start-text">
           <h1 class="font-700">About</h1>
@@ -45,7 +42,6 @@
 
         <section class="content__start-box">
           <form id="form" data-formulario>
-
             <div class="row-select-company">
               <fieldset class="form__camp">
                 <label class="tag" for="company">Company</label>
@@ -62,8 +58,6 @@
               </fieldset>
             </div>
 
-            <!-- START REGISTER NEW COMPANY -->
-
             <div id="form-company" class="row-register-company">
               <p class="text-help">
                 When choosing the "<b>Add a new Company</b>" option, you must
@@ -78,10 +72,11 @@
                   id="newCompany"
                   class="js-input-companyname"
                   placeholder="Whats your company name?*"
-     
                 />
-                <!-- <span class="text-error" data-newcompany-error>New company field cannot be empty.</span> -->
-                <span class="text-error-newcompany" data-newcompany-error></span>
+                <span
+                  class="text-error-newcompany"
+                  data-newcompany-error
+                ></span>
               </fieldset>
 
               <fieldset class="form__camp">
@@ -92,16 +87,16 @@
                   id="domain"
                   class="js-input-domain"
                   placeholder="Please what your domain company?"
-  
                 />
-                <!-- <span class="text-error" data-newcompany-error>Domain field cannot be empty.</span> -->
                 <span class="text-error-domain" data-newcompany-error></span>
               </fieldset>
 
               <fieldset class="form__camp">
                 <label class="tag" for="name">Sector</label>
-                <select name="sector" id="sector" class="js-input-sector" >
-                  <option value="None" disabled selected>What is your sector?*</option>
+                <select name="sector" id="sector" class="js-input-sector">
+                  <option value="None" disabled selected>
+                    What is your sector?*
+                  </option>
                   <option value="Energy">Energy</option>
                   <option value="Materials">Materials</option>
                   <option value="Insdustrials">Industrials</option>
@@ -114,34 +109,19 @@
                   <option value="Consumer Staples">Consumer Staples</option>
                   <option value="Other">Other</option>
                 </select>
-                <!-- <span class="text-error" data-newcompany-error>Sector field cannot be empty.</span> -->
                 <span class="text-error-sector" data-newcompany-error></span>
               </fieldset>
 
-              <!-- <button
+              <button
                 class="btn"
                 type="submit"
-                onclick="cancelSubmitForm()"
+                onclick="verifyFields()"
                 id="btn-register-company"
-                
               >
                 Register Company
-              </button> -->
-
-              <button
-              class="btn"
-              type="submit"
-              onclick="verifyFields()"
-              id="btn-register-company"
-              
-            >
-              Register Company
-            </button>
-
+              </button>
             </div>
-            <!-- END REGISTER NEW COMPANY -->
 
-            <!-- START REGISTER PERSON -->
             <div class="row-register-person">
               <fieldset class="form__camp">
                 <label class="tag" for="name">Name</label>
@@ -206,16 +186,16 @@
                   >Type of calculation
                   <img class="img__tooltip" src="./src/img/help.svg" alt=""
                 /></label>
-  
-                  <p class="tooltip__text">
-                    <b>Individual</b> <br />
-                    Calculations will be performed based on your
-                    individual answer. <br /><br />
-                    <b>By company Group.</b> <br />
-                    In case other employees of your company have already
-                    answered this questionnaire. The calculations will consider
-                    all previous answers. <br />
-                  </p>
+
+                <p class="tooltip__text">
+                  <b>Individual</b> <br />
+                  Calculations will be performed based on your
+                  individual answer. <br /><br />
+                  <b>By company Group.</b> <br />
+                  In case other employees of your company have already answered
+                  this questionnaire. The calculations will consider all
+                  previous answers. <br />
+                </p>
 
                 <select
                   name="calculation"
@@ -237,8 +217,6 @@
                 <span class="text-error"></span>
               </div>
             </div>
-            <!-- END REGISTER PERSON -->
-
           </form>
 
           <div class="content__start-img">
@@ -246,25 +224,22 @@
           </div>
         </section>
       </div>
-      <!-- END CONTAINER -->
 
-      <!-- N ALTERAR ABAIXO -->
       <footer>
-        <!-- <a href="#">{code:ananegri}</a> -->
-        <a href="#"
+        <a href="https://www.linkedin.com/in/apnmacedo/"
           ><img src="./src/img/author-code/brackets.svg" alt="brackets"
         /></a>
       </footer>
 
-      
-      <div class="container-load"> 
+      <div class="container-load">
         <div class="load">
-          <hr/><hr/><hr/><hr/>
+          <hr />
+          <hr />
+          <hr />
+          <hr />
         </div>
       </div>
-
     </main>
-
     <script src="./src/js/form.js" defer></script>
   </body>
 </html>

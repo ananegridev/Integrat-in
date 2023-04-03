@@ -1,11 +1,7 @@
-
 .form__box {
   width: 100%;
-
   text-align: left;
-  /* max-width: 960px; */
 }
-
 
 .button {
   margin-top: 20px;
@@ -14,42 +10,14 @@
   justify-content: center;
 }
 
-
-
-/* #question-2,
-#question-3,
-#question-4,
-#question-5,
-#question-6 {
-
-  margin-top: 5%;
-  width: 100%;
-  justify-content: start;
-} */
-/* 
-#question-1{
-
-  width: 100%;
-  justify-content: start;
-} */
-
-#progress_bar {
-  background-color: #153462;
-  width: 0%;
-  height: 10px;
-  transition: all 100ms ease-in-out;
-  margin: 2% 0;
-}
-
-
-.box-question{
+.box-question {
   width: 100%;
   display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
+  justify-content: center;
+  flex-wrap: wrap;
 }
 
-.box-question div{
+.box-question div {
   max-width: 75px;
   width: 100%;
   display: flex;
@@ -60,22 +28,27 @@
   margin: 5px;
 }
 
-.question{
+.question {
   border-bottom: 1px solid #d9d9d9;
   padding: 1%;
   margin: 2% 0;
   border-radius: 12px;
 }
 
-#question-10,#question-20, #question-31, #question-34{
+#question-10,
+#question-20,
+#question-31,
+#question-34 {
   border-bottom: none;
 }
 
-#row-box-1{
+#row-box-1 {
   display: block;
-
 }
-#row-box-2, #row-box-3, #row-box-4{
+
+#row-box-2,
+#row-box-3,
+#row-box-4 {
   display: none;
 }
 
@@ -86,29 +59,33 @@
 }
 
 @media (max-width: 768px) {
-  .question p, h2{
+  .question p,
+  h2 {
     text-align: center;
   }
-  .box-question div{
+
+  .box-question div {
     max-width: 55px;
     width: 100%;
   }
-  .box-circle{
+
+  .box-circle {
     height: 55px;
   }
-  .toast{
+
+  .toast {
     justify-content: center;
   }
-  .toast .toast-content{
-    flex-direction: column;
 
+  .toast .toast-content {
+    flex-direction: column;
   }
 
   .toast-content img {
     padding: 2%;
-}
+  }
 
-  .toast-content .message{
+  .toast-content .message {
     align-items: center;
     margin: 5px 0;
     text-align: center;
@@ -116,34 +93,39 @@
 }
 
 @media (max-width: 580px) {
-  .box-question div{
+  .box-question div {
     max-width: 45px;
     width: 100%;
   }
-  .box-circle{
+
+  .box-circle {
     height: 45px;
   }
 }
 
 @media (max-width: 482px) {
-  .box-question div{
+  .box-question div {
     max-width: 35px;
     width: 100%;
   }
-  .box-circle{
+
+  .box-circle {
     height: 35px;
   }
 }
 
 @media (max-width: 394px) {
-  .question p, h2{
+  .question p,
+  h2 {
     text-align: center;
   }
-  .box-question div{
+
+  .box-question div {
     max-width: 30px;
     width: 100%;
   }
-  .box-circle{
+
+  .box-circle {
     height: 30px;
   }
 }

@@ -44,16 +44,14 @@ let pagTwo = document.querySelectorAll('[data-page-two]');
 let pagThree = document.querySelectorAll('[data-page-three]');
 let pagFour = document.querySelectorAll('[data-page-four]');
 
-// --------------------------------------------------------------------
-// --------------------------------------------------------------------
-// --------------------------------------------------------------------
-// --------------------------------------------------------------------
-// --------------------------------------------------------------------
-// --------------------------------------------------------------------
-// --------------------------------------------------------------------
-// --------------------------------------------------------------------
-// --------------------------------------------------------------------
-// --------------------------------------------------------------------
+// -----------------------------------------
+// -----------------------------------------
+// -----------------------------------------
+// -----------------------------------------
+// -----------------------------------------
+// -----------------------------------------
+// -----------------------------------------
+// -----------------------------------------
 
 // --------- EVENTOS DE CLICK DO BOTÃO
 
@@ -99,11 +97,7 @@ function storeAnswer(question_number, event) {
         var question = {}
         question[question_number] = parseInt(event.target.value);
         Object.assign(answer, question)
-        // answer[question_number] = parseInt(event.target.value);
-        // var jsonAnswers = JSON.stringify({answer}); 
-
     }
-    // console.log(JSON.stringify(answer));
     return answer;
 }
 
@@ -132,17 +126,9 @@ async function postAnswer(answer, event) {
 
         var myHeaders = new Headers();
         myHeaders.append("Access-Control-Request-Method", "POST", "Content-Type", "application/json", "Access-Control-Allow-Origin", "*", "Access-Control-Allow-Origin", "https://127.0.0.1:5500");
-        // myHeaders.append("Content-Type", "application/json");
-        // myHeaders.append("Content-Length", "");
-        // myHeaders.append("Host", "");
-        // myHeaders.append("User-Agent","PostmanRuntime/7.31.1");
-        // myHeaders.append("Accept","*/*");
-        // myHeaders.append("Accept-Encoding","gzip, deflate, br");
-        // myHeaders.append("Connection","keep-alive");
 
         var requestOptions = {
             method: 'POST',
-            // mode: "no-cors",
             dataType: 'json',
             headers: myHeaders,
             body: JSON.stringify(format_answer),
@@ -152,7 +138,6 @@ async function postAnswer(answer, event) {
         fetch(url, requestOptions)
             .then(response => response.json())
             .then(function (result) {
-                // localStorage.setItem("result", JSON.stringify(listRegister));
                 localStorage.setItem("result", JSON.stringify(result));
                 window.location.href = "./result.html";
             })
@@ -358,13 +343,6 @@ back4.addEventListener('click', function () {
         window.location.href = "#progress_bar";
     }
 })
-
-// --------- PROGRESS BAR
-
-function growProgressBar(percentage_width) {
-    var bar = document.getElementById("progress_bar");
-    bar.style.width = percentage_width;
-}
 
 // --------- RETIRANDO PREVENT DEFAULT DO FORM
 

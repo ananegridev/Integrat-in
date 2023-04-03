@@ -1,4 +1,4 @@
-.container-load{
+.container-load {
   width: 100%;
   height: 100%;
   background: rgba(255, 255, 255, 1);
@@ -13,10 +13,10 @@
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  /*change these sizes to fit into your project*/
   width: 100px;
   height: 100px;
 }
+
 .load hr {
   border: 0;
   margin: 0;
@@ -28,15 +28,15 @@
 }
 
 .load :first-child {
-  background: #4FA095;
+  background: #4fa095;
   animation-delay: -1.5s;
 }
 .load :nth-child(2) {
-  background: #BAD1C2;
+  background: #bad1c2;
   animation-delay: -1s;
 }
 .load :nth-child(3) {
-  background: #FEB139;
+  background: #feb139;
   animation-delay: -0.5s;
 }
 .load :last-child {

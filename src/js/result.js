@@ -29,6 +29,8 @@ const integrationLevel = document.querySelector('.integration-level');
 // -----------------------------------------
 // -----------------------------------------
 
+// --------- FUNÇÃO PARA PREENCHER O RESULTADO NA TELA 
+
 function landingPage() {
 
   function printp(desc_score) {
@@ -40,8 +42,6 @@ function landingPage() {
     }
     return result
   }
-
-
 
   function contentDiv(iif1 = [], fif1 = [], c1 = [], divClass) {
     var divContent = ``;
@@ -101,26 +101,11 @@ function landingPage() {
           '</div>';
       }
     } 
-    // if (iif1.length > 0 || fif1.length > 0 || c1.length > 0) {
-    //   divContent = '<div class="' + divClass + '" > ' +
-    //     '<div class="spot-title">' +
-    //     '<img src='+ divImg +' alt="">' +
-    //     '<h4>' + h4title + '</h4>' +
-    //     '</div>' +
-    //     '<div class="spot-result-high">' +
-    //     '<ul>' +
-    //     printp(iif1) +
-    //     printp(fif1) +
-    //     printp(c1) +
-    //     '</ul>' +
-    //     '</div>' +
-    //     '</div>';
-    // }
     return divContent
   }
 
+// --------- ADICIONANDO SCORE TOTAL NA LANDINGPAGE
 
-  // ADICIONANDO SCORE TOTAL NA LANDINGPAGE
   integrationLevel.innerText = 'SCORE: ' + ilfef.results.integration_level.score.toFixed(1);
 
   html = contentDiv(high_iif1, high_fif1, high_c1, "spot-high") + 
@@ -132,9 +117,12 @@ function landingPage() {
 
 landingPage();
 
+// --------- FUNÇÃO PARA LIMPAR O LOCALSTORAGE DO USUÁRIO
+
 function limparLocalStorage() {
   localStorage.removeItem('company_response')
   localStorage.removeItem('companyid')
   localStorage.removeItem('register')
 }
+
 limparLocalStorage();
