@@ -192,15 +192,12 @@ sub1.addEventListener('click', function () {
             row2.style.display = 'block';
             row3.style.display = 'none';
             row4.style.display = 'none';
-
             boxBtn1.style.display = 'none';
             boxBtn2.style.display = 'flex';
             boxBtn3.style.display = 'none';
             boxBtn4.style.display = 'none';
-
             finish.style.display = 'none';
             back4.style.display = 'none';
-
             document.querySelector('.toast').style.display = "none";
             window.location.href = "#row-box-2";
         }
@@ -217,16 +214,12 @@ sub2.addEventListener('click', function () {
             row2.style.display = 'none';
             row3.style.display = 'block';
             row4.style.display = 'none';
-
-
             boxBtn1.style.display = 'none';
             boxBtn2.style.display = 'none';
             boxBtn3.style.display = 'flex';
             boxBtn4.style.display = 'none';
-
             finish.style.display = 'none';
             back4.style.display = 'none';
-
             document.querySelector('.toast').style.display = "none";
             window.location.href = "#row-box-3";
         }
@@ -244,15 +237,12 @@ sub3.addEventListener('click', function () {
             row2.style.display = 'none';
             row3.style.display = 'none';
             row4.style.display = 'block';
-
             boxBtn1.style.display = 'none';
             boxBtn2.style.display = 'none';
             boxBtn3.style.display = 'none';
             boxBtn4.style.display = 'flex';
-
             finish.style.display = 'block';
             back4.style.display = 'block';
-
             document.querySelector('.toast').style.display = "none";
             window.location.href = "#row-box-4";
         }
@@ -269,10 +259,8 @@ finish.addEventListener('click', function (event) {
             row2.style.display = 'none';
             row3.style.display = 'none';
             row4.style.display = 'none';
-
             load.style.display = 'flex';
             document.querySelector('.toast').style.display = "none";
-
             postAnswer(answer, event);
         }
     } else {
@@ -289,14 +277,11 @@ back2.addEventListener('click', function () {
         row2.style.display = 'none';
         row3.style.display = 'none';
         row4.style.display = 'none';
-
         boxBtn1.style.display = 'flex';
         boxBtn2.style.display = 'none';
         boxBtn3.style.display = 'none';
-
         finish.style.display = 'none';
         back4.style.display = 'none';
-
         window.location.href = "#row-box-1";
     }
 })
@@ -307,14 +292,11 @@ back3.addEventListener('click', function () {
         row2.style.display = 'block';
         row3.style.display = 'none';
         row4.style.display = 'none';
-
         boxBtn1.style.display = 'none';
         boxBtn2.style.display = 'flex';
         boxBtn3.style.display = 'none';
-
         finish.style.display = 'none';
         back4.style.display = 'none';
-
         window.location.href = "#row-box-2";
     }
 })
@@ -325,14 +307,11 @@ back4.addEventListener('click', function () {
         row2.style.display = 'none';
         row3.style.display = 'block';
         row4.style.display = 'none';
-
         boxBtn1.style.display = 'none';
         boxBtn2.style.display = 'none';
         boxBtn3.style.display = 'flex';
-
         finish.style.display = 'none';
         back4.style.display = 'none';
-
         window.location.href = "#row-box-3";
     }
 })
@@ -366,7 +345,6 @@ function checkValidation(pagenum, start) {
         can_next.push(checkquestion)
         var identf_question = "question-" + (i + start)
         if (checkquestion === false) {
-
             document.getElementById(identf_question).style.background = '#e2242442';
         } else {
             document.getElementById(identf_question).style.background = 'none';

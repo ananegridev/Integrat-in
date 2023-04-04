@@ -112,7 +112,6 @@ function landingPage() {
           contentDiv(iif1 = low_iif1, fif1 = low_fif1, c1 = [],"spot-low") + 
           contentDiv(iif1 = [], fif1 = [], c1 = low_c1, "spot-conflict");
   contentBoxSpots.innerHTML = html;
-
 }
 
 landingPage();

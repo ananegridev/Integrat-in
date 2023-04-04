@@ -90,7 +90,6 @@ company.addEventListener('change', function () {
 
 async function getCompanies() {
   const response = await fetch(url);
-  // console.log(response);
   const data = await response.json();
   var data_companyes = Object.values(data)
   localStorage.setItem("company_response", JSON.stringify(data_companyes));
@@ -118,8 +117,7 @@ function jsonNewCompany() {
     domain: domain.value,
     sector: sector.value,
   };
-  registerNewCompany = JSON.stringify(registerNewCompany);
-  console.log(registerNewCompany.company_name);
+  registerNewCompany = JSON.stringify(registerNewCompany);        
   return registerNewCompany;
 }
 
@@ -201,19 +199,15 @@ function verifyFields() {
   if (newCompany.value.trim().length === 0) {
     newCompany.style.border = '2px solid red';
     errorNewCompany.innerText = 'Company name field cannot be empty.';
-
   }
-
   if (sector.value === 'None') {
     sector.style.border = '2px solid red';
     errorSector.innerText = 'Sector field cannot be empty.';
   }
-
   if (domain.value.trim().length === 0) {
     domain.style.border = '2px solid red';
     errorDomain.innerText = 'Domain field cannot be empty.';
   }
-
   if (newCompany.value.trim().length > 0 || sector.value != 'None' || domain.value.trim().length > 0) {
     postNewCompany()
   }
